@@ -42,7 +42,7 @@
                         <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
                         <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
                         <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                        <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
+                        <li class="nav-item"><a href="#gallery" class="nav-link">Our Work</a></li>
                         <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
                     </ul>
                     
@@ -75,16 +75,16 @@
                     
                     <div class="hero-stats">
                         <div class="stat">
-                            <span class="stat-number" data-count="500">0</span><span>+</span>
-                            <span class="stat-text">Projects Completed</span>
+                            <span class="stat-number" data-count="14">0</span>
+                            <span class="stat-text">Jobs Completed</span>
                         </div>
                         <div class="stat">
                             <span class="stat-number" data-count="100">0</span><span>%</span>
-                            <span class="stat-text">Customer Satisfaction</span>
+                            <span class="stat-text">Client Focused</span>
                         </div>
                         <div class="stat">
                             <span class="stat-number" data-count="5">0</span>
-                            <span class="stat-text">Star Rating</span>
+                            <span class="stat-text">Star Service</span>
                         </div>
                     </div>
                 </div>
@@ -235,56 +235,38 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
+    <!-- Gallery Section - Simplified -->
     <section id="gallery" class="gallery section-padding">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <span class="section-subtitle">Our Work</span>
-                <h2 class="section-title">Before & After <span class="highlight">Results</span></h2>
-                <p class="section-description">See the dramatic transformations we achieve with professional pressure washing.</p>
+                <span class="section-subtitle">Quality Work</span>
+                <h2 class="section-title">Professional <span class="highlight">Results</span></h2>
+                <p class="section-description">We deliver exceptional pressure washing results that transform your property.</p>
             </div>
             
-            <div class="gallery-grid">
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="gallery-placeholder">
+            <div class="results-showcase">
+                <div class="result-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="result-icon">
                         <i class="fas fa-home"></i>
-                        <p>House Exterior<br>Before/After</p>
                     </div>
+                    <h3>House Exteriors</h3>
+                    <p>Professional house washing removes years of dirt, mildew, and grime, restoring your home's beauty and curb appeal.</p>
                 </div>
                 
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="gallery-placeholder">
+                <div class="result-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="result-icon">
                         <i class="fas fa-car"></i>
-                        <p>Driveway Cleaning<br>Before/After</p>
                     </div>
+                    <h3>Driveways & Walkways</h3>
+                    <p>Deep cleaning removes oil stains, moss, and dirt buildup, making your driveway and walkways look brand new.</p>
                 </div>
                 
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="gallery-placeholder">
-                        <i class="fas fa-tree"></i>
-                        <p>Deck Restoration<br>Before/After</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="gallery-placeholder">
-                        <i class="fas fa-walking"></i>
-                        <p>Sidewalk Cleaning<br>Before/After</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
-                    <div class="gallery-placeholder">
+                <div class="result-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="result-icon">
                         <i class="fas fa-building"></i>
-                        <p>Commercial Building<br>Before/After</p>
                     </div>
-                </div>
-                
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="600">
-                    <div class="gallery-placeholder">
-                        <i class="fas fa-border-all"></i>
-                        <p>Fence Cleaning<br>Before/After</p>
-                    </div>
+                    <h3>Commercial Properties</h3>
+                    <p>Professional cleaning maintains your business image with spotless storefronts and clean commercial spaces.</p>
                 </div>
             </div>
         </div>
@@ -359,13 +341,13 @@
                 </div>
                 
                 <div class="contact-form-container">
-                    <!-- FormSubmit.co form - no server-side code needed -->
-                    <form class="contact-form" action="https://formsubmit.co/jackodseattle@gmail.com" method="POST">
+                    <!-- FormSubmit.co form with better configuration -->
+                    <form id="contactForm" class="contact-form" action="https://formsubmit.co/jackodseattle@gmail.com" method="POST">
                         <!-- Hidden fields for FormSubmit configuration -->
-                        <input type="hidden" name="_subject" value="New Pressure Washing Inquiry!">
+                        <input type="hidden" name="_subject" value="New Pressure Washing Inquiry - PWashing.com">
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_next" value="https://pwashing.com/?thankyou=true">
+                        <input type="hidden" name="_autoresponse" value="Thank you for contacting PWashing! We've received your request and will get back to you within 24 hours with your free quote.">
                         
                         <div class="form-group">
                             <label for="name">Full Name *</label>
@@ -408,6 +390,11 @@
                         
                         <button type="submit" class="btn btn-primary btn-block">Get Free Quote</button>
                     </form>
+                    
+                    <div id="successMessage" class="success-message" style="display: none;">
+                        <i class="fas fa-check-circle"></i>
+                        Thank you! Your message has been sent successfully. We'll contact you within 24 hours with your free quote.
+                    </div>
                 </div>
             </div>
         </div>
@@ -455,7 +442,7 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#about">About Us</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#gallery">Our Work</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -541,7 +528,7 @@
             
             window.addEventListener('scroll', scrollActive);
 
-            // Counter Animation
+            // Counter Animation - Start immediately on page load
             const counters = document.querySelectorAll('.stat-number');
             let started = false;
 
@@ -550,13 +537,13 @@
                     counters.forEach(counter => {
                         const target = +counter.dataset.count;
                         let count = 0;
-                        const increment = target / 50;
+                        const increment = target / 60; // Slower animation
                         
                         function updateCount() {
                             if (count < target) {
                                 count += increment;
                                 counter.innerHTML = Math.ceil(count);
-                                setTimeout(updateCount, 30);
+                                setTimeout(updateCount, 50); // Slower timing
                             } else {
                                 counter.innerHTML = target;
                             }
@@ -569,8 +556,52 @@
                 }
             }
 
-            window.addEventListener('load', startCounter);
-            window.addEventListener('scroll', startCounter);
+            // Start counter animation immediately when page loads
+            setTimeout(startCounter, 1000);
+
+            // Form submission handling inspired by Jack's website
+            const contactForm = document.getElementById('contactForm');
+            const successMessage = document.getElementById('successMessage');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const formData = new FormData(contactForm);
+                    const submitButton = contactForm.querySelector('button[type="submit"]');
+                    const originalButtonText = submitButton.textContent;
+                    
+                    // Show loading state
+                    submitButton.textContent = 'Sending...';
+                    submitButton.disabled = true;
+                    
+                    // Submit the form using fetch
+                    fetch('https://formsubmit.co/jackodseattle@gmail.com', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            // Hide form and show success message
+                            contactForm.style.display = 'none';
+                            successMessage.style.display = 'flex';
+                            
+                            // Scroll to success message
+                            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        } else {
+                            throw new Error('Form submission failed');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('There was an error sending your message. Please try again or call us directly.');
+                        
+                        // Reset button
+                        submitButton.textContent = originalButtonText;
+                        submitButton.disabled = false;
+                    });
+                });
+            }
 
             // Back to Top Button
             const backToTop = document.querySelector('.back-to-top');
