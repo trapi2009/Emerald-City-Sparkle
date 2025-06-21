@@ -337,19 +337,38 @@
                             </div>
                             <div>
                                 <strong>Email:</strong>
-                                <p>jackodseattle@gmail.com</p>
+                                <p>pwashing@gmail.com</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="contact-form-container">
-                    <!-- FormSubmit.co - Same configuration as Jack's website -->
-                    <form id="contactForm" class="contact-form" action="https://formsubmit.co/jackodseattle@gmail.com" method="POST">
-                        <!-- Hidden fields for FormSubmit configuration -->
-                        <input type="hidden" name="_subject" value="New Pressure Washing Inquiry - PWashing.com">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_template" value="table">
+                    <!-- Notice about form and alternative contact methods -->
+                    <div class="form-notice">
+                        <div class="notice-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <div class="notice-content">
+                            <p><strong>Having trouble with the form?</strong> You can also reach us directly:</p>
+                            <div class="contact-alternatives">
+                                <div class="contact-method">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <a href="tel:2063006614">(206) 300-6614</a>
+                                </div>
+                                <div class="contact-method">
+                                    <i class="fas fa-envelope"></i>
+                                    <a href="mailto:jackodseattle@gmail.com">jackodseattle@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FormSubmit.co - Simplified setup -->
+                    <form id="contactForm" class="contact-form" action="https://formsubmit.co/pwashing@gmail.com" method="POST" target="_blank">
+                        <!-- Simplified FormSubmit configuration -->
+                        <input type="hidden" name="_subject" value="New Pressure Washing Inquiry">
+                        <input type="hidden" name="_next" value="https://pwashing.com/thank-you.html">
                         
                         <div class="form-group">
                             <label for="name">Full Name *</label>
@@ -578,7 +597,7 @@
                     submitButton.disabled = true;
                     
                     // Submit the form using fetch - same as Jack's website
-                    fetch('https://formsubmit.co/jackodseattle@gmail.com', {
+                    fetch('https://formsubmit.co/pwashing@gmail.com', {
                         method: 'POST',
                         body: formData
                     })
