@@ -255,6 +255,12 @@ ul, ol {
     align-items: center;
 }
 
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
 .logo-text {
     font-size: 2.8rem;
     font-weight: var(--font-weight-bold);
@@ -266,6 +272,14 @@ ul, ol {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+.logo-subtitle {
+    font-size: 1.1rem;
+    font-weight: var(--font-weight-medium);
+    color: var(--text-muted);
+    margin-top: -0.2rem;
+    letter-spacing: 0.5px;
 }
 
 .nav-container {
