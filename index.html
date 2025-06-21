@@ -3,76 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Pressure Washing Services | PWashing</title>
+    <title>PWashing | Professional Pressure Washing Services</title>
     <meta name="description" content="Professional pressure washing services for driveways, sidewalks, decks, houses, and commercial properties. Quality, reliability, and professional results guaranteed.">
-    <link rel="stylesheet" href="/styles.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+    </div>
+
     <!-- Header -->
     <header class="header">
-        <nav class="nav">
-            <div class="nav-brand">
-                <h1>PWashing</h1>
-                <p>Professional Pressure Washing</p>
-            </div>
-            <div class="nav-links">
-                <a href="#services">Services</a>
-                <a href="#about">About</a>
-                <a href="#gallery">Gallery</a>
-                <a href="#contact" class="cta-button">Get Quote</a>
-            </div>
-        </nav>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#home" class="logo">
+                    <span class="logo-text">P<span class="highlight">Washing</span></span>
+                </a>
+                
+                <div class="nav-container">
+                    <ul class="nav-menu">
+                        <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                        <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
+                        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                    
+                    <a href="#contact" class="btn btn-sm btn-primary header-cta">Get Free Quote</a>
+                </div>
+                
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Transform Your Property with Professional Pressure Washing</h1>
-            <p>Quality, reliability, and professional results for driveways, sidewalks, decks, houses, and commercial properties</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn-primary">Get Free Quote</a>
-                <a href="#services" class="btn-secondary">Our Services</a>
+    <section id="home" class="hero">
+        <div class="hero-particles"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text" data-aos="fade-up" data-aos-delay="200">
+                    <div class="badge"><i class="fas fa-spray-can"></i> Professional Pressure Washing</div>
+                    <h1 class="hero-title">Transform Your Property with <span class="highlight">Professional</span> Pressure Washing</h1>
+                    <p class="hero-description">Quality, reliability, and professional results for driveways, sidewalks, decks, houses, and commercial properties. See the difference pressure washing can make!</p>
+                    
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn btn-primary btn-lg btn-pulse">Get Free Quote</a>
+                        <a href="#gallery" class="btn btn-outline-primary">See Our Work</a>
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number" data-count="500">0</span><span>+</span>
+                            <span class="stat-text">Projects Completed</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-count="100">0</span><span>%</span>
+                            <span class="stat-text">Customer Satisfaction</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-count="5">0</span>
+                            <span class="stat-text">Star Rating</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-image" data-aos="fade-left" data-aos-delay="400">
+                    <div class="floating-image">
+                        <div class="hero-placeholder">
+                            <i class="fas fa-home fa-3x"></i>
+                            <p>Professional Pressure Washing in Action</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="hero-image">
-            <div class="placeholder-image">
-                <p>Professional Pressure Washing in Action</p>
-            </div>
+        
+        <div class="hero-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#ffffff" fill-opacity="1" d="M0,288L48,272C96,256,192,224,288,213.3C384,203,480,213,576,224C672,235,768,245,864,240C960,235,1056,213,1152,202.7C1248,192,1344,192,1392,192L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services">
+    <section id="services" class="services section-padding">
         <div class="container">
-            <h2>Our Professional Services</h2>
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Our Services</span>
+                <h2 class="section-title">Professional <span class="highlight">Cleaning</span> Solutions</h2>
+                <p class="section-description">We provide comprehensive pressure washing services for residential and commercial properties.</p>
+            </div>
+            
             <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🏠</div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
                     <h3>House Washing</h3>
-                    <p>Complete exterior cleaning for residential properties. Remove dirt, mold, and mildew safely and effectively.</p>
+                    <p>Complete exterior cleaning for residential properties. Remove dirt, mold, and mildew safely and effectively with our professional techniques.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🚗</div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
                     <h3>Driveway Cleaning</h3>
-                    <p>Restore your driveway to like-new condition. Remove oil stains, dirt, and grime from concrete and asphalt.</p>
+                    <p>Restore your driveway to like-new condition. Remove oil stains, dirt, and grime from concrete and asphalt surfaces.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🌿</div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
                     <h3>Deck & Patio</h3>
-                    <p>Revitalize your outdoor living spaces. Clean and prepare decks, patios, and outdoor furniture.</p>
+                    <p>Revitalize your outdoor living spaces. Clean and prepare decks, patios, and outdoor furniture for the season ahead.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🚶</div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-walking"></i>
+                    </div>
                     <h3>Sidewalk Cleaning</h3>
-                    <p>Keep walkways safe and attractive. Remove slippery moss, algae, and accumulated dirt.</p>
+                    <p>Keep walkways safe and attractive. Remove slippery moss, algae, and accumulated dirt for improved curb appeal.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🏢</div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
                     <h3>Commercial Properties</h3>
                     <p>Professional cleaning for businesses, storefronts, and commercial buildings. Maintain your professional image.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🧽</div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
                     <h3>Specialized Cleaning</h3>
                     <p>Fences, outdoor furniture, equipment, and more. Custom solutions for all your pressure washing needs.</p>
                 </div>
@@ -81,33 +169,65 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="about section-padding bg-light">
         <div class="container">
-            <div class="about-content">
+            <div class="about-content" data-aos="fade-up">
                 <div class="about-text">
-                    <h2>Why Choose PWashing?</h2>
+                    <div class="section-header">
+                        <span class="section-subtitle">Why Choose Us</span>
+                        <h2 class="section-title">Professional <span class="highlight">Results</span> Every Time</h2>
+                    </div>
+                    
                     <div class="features">
-                        <div class="feature">
-                            <h3>✓ Professional Results</h3>
-                            <p>Years of experience delivering exceptional cleaning results that transform your property.</p>
+                        <div class="feature" data-aos="fade-right" data-aos-delay="100">
+                            <div class="feature-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Professional Results</h3>
+                                <p>Years of experience delivering exceptional cleaning results that transform your property and exceed expectations.</p>
+                            </div>
                         </div>
-                        <div class="feature">
-                            <h3>✓ Reliable Service</h3>
-                            <p>We show up on time, every time. Dependable service you can count on.</p>
+                        
+                        <div class="feature" data-aos="fade-right" data-aos-delay="200">
+                            <div class="feature-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Reliable Service</h3>
+                                <p>We show up on time, every time. Dependable service you can count on with clear communication throughout.</p>
+                            </div>
                         </div>
-                        <div class="feature">
-                            <h3>✓ Safe & Eco-Friendly</h3>
-                            <p>Professional equipment and environmentally responsible cleaning methods.</p>
+                        
+                        <div class="feature" data-aos="fade-right" data-aos-delay="300">
+                            <div class="feature-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Safe & Eco-Friendly</h3>
+                                <p>Professional equipment and environmentally responsible cleaning methods that protect your property and landscape.</p>
+                            </div>
                         </div>
-                        <div class="feature">
-                            <h3>✓ Competitive Pricing</h3>
-                            <p>Fair, transparent pricing with no hidden fees. Free estimates on all projects.</p>
+                        
+                        <div class="feature" data-aos="fade-right" data-aos-delay="400">
+                            <div class="feature-icon">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Competitive Pricing</h3>
+                                <p>Fair, transparent pricing with no hidden fees. Free estimates on all projects with detailed explanations.</p>
+                            </div>
                         </div>
                     </div>
-                    <a href="#contact" class="btn-primary">Get Your Free Quote</a>
+                    
+                    <div class="cta-section" data-aos="fade-up" data-aos-delay="500">
+                        <a href="#contact" class="btn btn-primary btn-lg">Get Your Free Quote</a>
+                    </div>
                 </div>
-                <div class="about-image">
-                    <div class="placeholder-image">
+                
+                <div class="about-image" data-aos="fade-left" data-aos-delay="300">
+                    <div class="image-placeholder">
+                        <i class="fas fa-spray-can fa-4x"></i>
                         <p>Professional Equipment & Team</p>
                     </div>
                 </div>
@@ -116,88 +236,160 @@
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
+    <section id="gallery" class="gallery section-padding">
         <div class="container">
-            <h2>Before & After Results</h2>
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Our Work</span>
+                <h2 class="section-title">Before & After <span class="highlight">Results</span></h2>
+                <p class="section-description">See the dramatic transformations we achieve with professional pressure washing.</p>
+            </div>
+            
             <div class="gallery-grid">
-                <div class="gallery-item">
-                    <div class="placeholder-image">
-                        <p>Driveway Before/After</p>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-home"></i>
+                        <p>House Exterior<br>Before/After</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <div class="placeholder-image">
-                        <p>House Exterior Before/After</p>
+                
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-car"></i>
+                        <p>Driveway Cleaning<br>Before/After</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <div class="placeholder-image">
-                        <p>Deck Cleaning Before/After</p>
+                
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-tree"></i>
+                        <p>Deck Restoration<br>Before/After</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <div class="placeholder-image">
-                        <p>Sidewalk Before/After</p>
+                
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-walking"></i>
+                        <p>Sidewalk Cleaning<br>Before/After</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <div class="placeholder-image">
-                        <p>Commercial Building Before/After</p>
+                
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-building"></i>
+                        <p>Commercial Building<br>Before/After</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <div class="placeholder-image">
-                        <p>Fence Cleaning Before/After</p>
+                
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-border-all"></i>
+                        <p>Fence Cleaning<br>Before/After</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <!-- CTA Section -->
+    <section class="cta section-padding bg-primary">
         <div class="container">
-            <h2>Get Your Free Quote Today</h2>
-            <div class="contact-content">
+            <div class="cta-content" data-aos="fade-up">
+                <h2>Ready to Transform Your Property?</h2>
+                <p>Contact us today for a free, no-obligation quote and see the difference professional pressure washing can make!</p>
+                <a href="#contact" class="btn btn-light btn-lg btn-pulse">Get Free Quote Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section-padding">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Get In Touch</span>
+                <h2 class="section-title">Get Your Free <span class="highlight">Quote</span> Today</h2>
+                <p class="section-description">Ready to transform your property? Fill out the form below and we'll get back to you within 24 hours.</p>
+            </div>
+            
+            <div class="contact-content" data-aos="fade-up" data-aos-delay="200">
                 <div class="contact-info">
                     <h3>Ready to Transform Your Property?</h3>
                     <p>Contact us today for a free, no-obligation quote. We'll assess your property and provide you with a detailed estimate for our professional pressure washing services.</p>
+                    
                     <div class="contact-details">
                         <div class="contact-item">
-                            <strong>Service Areas:</strong>
-                            <p>Seattle and surrounding areas</p>
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <strong>Service Areas:</strong>
+                                <p>Seattle and surrounding areas</p>
+                            </div>
                         </div>
+                        
                         <div class="contact-item">
-                            <strong>Response Time:</strong>
-                            <p>We respond to all inquiries within 24 hours</p>
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <strong>Response Time:</strong>
+                                <p>We respond to all inquiries within 24 hours</p>
+                            </div>
                         </div>
+                        
                         <div class="contact-item">
-                            <strong>Free Estimates:</strong>
-                            <p>All quotes are completely free with no obligation</p>
+                            <div class="contact-icon">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <div>
+                                <strong>Free Estimates:</strong>
+                                <p>All quotes are completely free with no obligation</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <strong>Email:</strong>
+                                <p>jackodseattle@gmail.com</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+                
                 <div class="contact-form-container">
-                    <form id="contactForm" class="contact-form">
+                    <!-- FormSubmit.co form - no server-side code needed -->
+                    <form class="contact-form" action="https://formsubmit.co/jackodseattle@gmail.com" method="POST">
+                        <!-- Hidden fields for FormSubmit configuration -->
+                        <input type="hidden" name="_subject" value="New Pressure Washing Inquiry!">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="https://pwashing.com/?thankyou=true">
+                        
                         <div class="form-group">
                             <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required>
+                            <input type="text" id="name" name="name" class="form-control" required>
                         </div>
+                        
                         <div class="form-group">
                             <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email" class="form-control" required>
                         </div>
+                        
                         <div class="form-group">
                             <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" required>
+                            <input type="tel" id="phone" name="phone" class="form-control" required>
                         </div>
+                        
                         <div class="form-group">
                             <label for="address">Property Address *</label>
-                            <input type="text" id="address" name="address" required>
+                            <input type="text" id="address" name="address" class="form-control" placeholder="Street address, city, state" required>
                         </div>
+                        
                         <div class="form-group">
                             <label for="service_type">Service Needed *</label>
-                            <select id="service_type" name="service_type" required>
+                            <select id="service_type" name="service_type" class="form-control" required>
                                 <option value="">Select a service</option>
                                 <option value="house-washing">House Washing</option>
                                 <option value="driveway-cleaning">Driveway Cleaning</option>
@@ -208,24 +400,14 @@
                                 <option value="other">Other (specify in message)</option>
                             </select>
                         </div>
+                        
                         <div class="form-group">
                             <label for="message">Additional Details</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Please describe your project, any specific areas of concern, or questions you have..."></textarea>
+                            <textarea id="message" name="message" class="form-control" rows="4" placeholder="Please describe your project, any specific areas of concern, or questions you have..."></textarea>
                         </div>
-                        <button type="submit" class="btn-primary">Get Free Quote</button>
+                        
+                        <button type="submit" class="btn btn-primary btn-block">Get Free Quote</button>
                     </form>
-                    <div id="successMessage" class="success-message" style="display: none;">
-                        <div class="success-content">
-                            <h3>✓ Message Sent Successfully!</h3>
-                            <p>Thank you for your interest in our pressure washing services. We'll contact you within 24 hours to discuss your project and provide a free quote.</p>
-                        </div>
-                    </div>
-                    <div id="errorMessage" class="error-message" style="display: none;">
-                        <div class="error-content">
-                            <h3>⚠ Message Not Sent</h3>
-                            <p>There was an error sending your message. Please try again or call us directly.</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -237,75 +419,242 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>PWashing</h3>
-                    <p>Professional pressure washing services for residential and commercial properties.</p>
+                    <p>Professional pressure washing services for residential and commercial properties in Seattle and surrounding areas.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-yelp"></i></a>
+                    </div>
                 </div>
+                
                 <div class="footer-section">
                     <h4>Services</h4>
                     <ul>
-                        <li>House Washing</li>
-                        <li>Driveway Cleaning</li>
-                        <li>Deck & Patio</li>
-                        <li>Commercial Properties</li>
+                        <li><a href="#services">House Washing</a></li>
+                        <li><a href="#services">Driveway Cleaning</a></li>
+                        <li><a href="#services">Deck & Patio</a></li>
+                        <li><a href="#services">Commercial Properties</a></li>
+                        <li><a href="#services">Sidewalk Cleaning</a></li>
+                        <li><a href="#services">Specialized Cleaning</a></li>
                     </ul>
                 </div>
+                
                 <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>Email: jackodseattle@gmail.com</p>
-                    <p>Serving Seattle and surrounding areas</p>
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> jackodseattle@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Serving Seattle and surrounding areas</p>
+                        <p><i class="fas fa-clock"></i> Mon-Sat: 8AM-6PM</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2025 PWashing. All rights reserved.</p>
+                <p>&copy; 2025 PWashing. All rights reserved. Professional pressure washing services in Seattle.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        document.getElementById('contactForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                address: document.getElementById('address').value,
-                service_type: document.getElementById('service_type').value,
-                message: document.getElementById('message').value
-            };
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                mirror: false
+            });
 
-            try {
-                const response = await fetch('/submit-contact', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formData)
-                });
+            // Preloader
+            const preloader = document.getElementById('preloader');
+            window.addEventListener('load', function() {
+                preloader.style.opacity = '0';
+                setTimeout(function() {
+                    preloader.style.display = 'none';
+                }, 500);
+            });
 
-                const result = await response.json();
-                
-                if (result.success) {
-                    document.getElementById('contactForm').style.display = 'none';
-                    document.getElementById('successMessage').style.display = 'block';
-                    document.getElementById('errorMessage').style.display = 'none';
+            // Sticky Header
+            const header = document.querySelector('.header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.classList.add('sticky');
                 } else {
-                    document.getElementById('errorMessage').style.display = 'block';
-                    document.getElementById('successMessage').style.display = 'none';
+                    header.classList.remove('sticky');
                 }
-            } catch (error) {
-                document.getElementById('errorMessage').style.display = 'block';
-                document.getElementById('successMessage').style.display = 'none';
-            }
-        });
+            });
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            // Mobile Navigation
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+            
+            // Close mobile menu when clicking a nav link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+
+            // Active Navigation Link
+            const sections = document.querySelectorAll('section[id]');
+            
+            function scrollActive() {
+                const scrollY = window.pageYOffset;
+                
+                sections.forEach(current => {
+                    const sectionHeight = current.offsetHeight;
+                    const sectionTop = current.offsetTop - 100;
+                    const sectionId = current.getAttribute('id');
+                    
+                    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                        document.querySelector('.nav-link[href*=' + sectionId + ']').classList.add('active');
+                    } else {
+                        document.querySelector('.nav-link[href*=' + sectionId + ']').classList.remove('active');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', scrollActive);
+
+            // Counter Animation
+            const counters = document.querySelectorAll('.stat-number');
+            let started = false;
+
+            function startCounter() {
+                if (!started) {
+                    counters.forEach(counter => {
+                        const target = +counter.dataset.count;
+                        let count = 0;
+                        const increment = target / 50;
+                        
+                        function updateCount() {
+                            if (count < target) {
+                                count += increment;
+                                counter.innerHTML = Math.ceil(count);
+                                setTimeout(updateCount, 30);
+                            } else {
+                                counter.innerHTML = target;
+                            }
+                        }
+                        
+                        updateCount();
+                    });
+                    
+                    started = true;
+                }
+            }
+
+            window.addEventListener('load', startCounter);
+            window.addEventListener('scroll', startCounter);
+
+            // Back to Top Button
+            const backToTop = document.querySelector('.back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 500) {
+                    backToTop.classList.add('active');
+                } else {
+                    backToTop.classList.remove('active');
+                }
+            });
+            
+            backToTop.addEventListener('click', function(e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                window.scrollTo({
+                    top: 0,
                     behavior: 'smooth'
                 });
             });
+
+            // Add particle effects for hero section
+            const heroParticles = document.querySelector('.hero-particles');
+            
+            if (heroParticles) {
+                for (let i = 0; i < 30; i++) {
+                    const particle = document.createElement('span');
+                    particle.className = 'particle';
+                    
+                    const size = Math.random() * 6 + 2;
+                    particle.style.width = size + 'px';
+                    particle.style.height = size + 'px';
+                    particle.style.left = Math.random() * 100 + '%';
+                    particle.style.top = Math.random() * 100 + '%';
+                    particle.style.animationDelay = Math.random() * 5 + 's';
+                    particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                    
+                    heroParticles.appendChild(particle);
+                }
+            }
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const target = document.querySelector(this.getAttribute('href'));
+                    
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Check for URL parameters to display thank you message
+            function checkURLParameters() {
+                const urlParams = new URLSearchParams(window.location.search);
+                
+                if (urlParams.has('thankyou') && urlParams.get('thankyou') === 'true') {
+                    const contactSection = document.getElementById('contact');
+                    if (contactSection) {
+                        const successMessage = document.createElement('div');
+                        successMessage.className = 'success-message';
+                        successMessage.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Your message has been sent. We\'ll get back to you within 24 hours with your free quote.';
+                        
+                        const formContainer = contactSection.querySelector('.contact-form-container');
+                        if (formContainer) {
+                            formContainer.prepend(successMessage);
+                            
+                            setTimeout(() => {
+                                successMessage.remove();
+                            }, 8000);
+                        }
+                        
+                        // Remove the parameter from URL without refreshing
+                        const newURL = window.location.protocol + "//" + window.location.host + window.location.pathname;
+                        window.history.replaceState({path: newURL}, '', newURL);
+                    }
+                }
+            }
+            
+            checkURLParameters();
         });
     </script>
 </body>
