@@ -3188,126 +3188,201 @@
         }
 
         function generateBotResponse(message) {
-            // Comprehensive chatbot responses with typo tolerance
-            const responses = {
+            // Normalize the message for better matching
+            const normalizedMessage = message.toLowerCase().trim();
+            
+            // Enhanced typo-tolerant keyword matching
+            const keywords = {
                 // Greetings
-                'hello': "Hello! Welcome to PWashing Seattle. How can I help you with your pressure washing needs today?",
-                'hi': "Hi there! I'm here to help with any questions about our pressure washing services in Seattle. What can I do for you?",
-                'hey': "Hey! Thanks for reaching out. What pressure washing questions can I answer for you?",
+                greetings: ['hello', 'hi', 'hey', 'good morning', 'good afternoon', 'good evening', 'sup', 'whats up', 'yo'],
                 
                 // Services
-                'services': "We offer comprehensive pressure washing services in Seattle including: House washing, driveway cleaning, deck & patio cleaning, sidewalk cleaning, commercial property cleaning, and specialized cleaning. We also offer recurring service plans with discounts!",
-                'house': "Our house washing service is perfect for Seattle homes! We safely remove moss, mildew, dirt, and grime from all types of siding. We use gentle, eco-friendly techniques that protect your home's exterior while delivering amazing results.",
-                'driveway': "Driveway cleaning is one of our most popular services! We can remove oil stains, dirt, moss, and that persistent Seattle moisture buildup from both concrete and asphalt driveways. The results are truly transformative!",
-                'deck': "Deck and patio cleaning is essential in Seattle's climate! We clean and prepare outdoor spaces affected by our wet weather, removing moss, algae, and built-up dirt. Perfect for getting ready for those beautiful Seattle summers!",
-                'commercial': "We provide professional commercial pressure washing for Seattle businesses, storefronts, and commercial buildings. Regular cleaning helps maintain your professional image in Seattle's competitive market.",
-                'sidewalk': "Sidewalk cleaning is important for safety! We remove slippery moss, algae, and dirt that's common in Seattle's damp climate, keeping your walkways safe and attractive.",
+                services: ['service', 'services', 'what do you do', 'what can you do', 'offerings', 'work'],
+                house: ['house', 'home', 'exterior', 'siding', 'building', 'hous', 'hose', 'houe'],
+                driveway: ['driveway', 'drive way', 'concrete', 'pavement', 'driveway cleaning', 'drivway', 'driveway'],
+                deck: ['deck', 'patio', 'outdoor', 'wood', 'composite', 'backyard', 'porch', 'balcony'],
+                commercial: ['commercial', 'business', 'office', 'store', 'storefront', 'company', 'comercial'],
+                sidewalk: ['sidewalk', 'walkway', 'pathway', 'side walk', 'walk way', 'sidwalk'],
+                recurring: ['recurring', 'regular', 'maintenance', 'schedule', 'repeat', 'ongoing', 'reoccuring'],
                 
                 // Pricing
-                'price': "Our pricing varies based on the size and scope of your project. We offer free, no-obligation quotes for all Seattle properties. Contact us at (206) 300-6614 or jackodseattle@gmail.com for your personalized estimate!",
-                'cost': "Costs depend on your specific needs and property size. We provide completely free estimates with no obligation. Every Seattle property is unique, so we tailor our quotes accordingly. Reach out for your free quote!",
-                'quote': "I'd be happy to help you get a free quote! You can fill out our contact form, call us at (206) 300-6614, or email jackodseattle@gmail.com. We respond to all Seattle inquiries within 24 hours.",
-                'estimate': "Free estimates are our specialty! We provide detailed, no-obligation quotes for all our Seattle pressure washing services. Contact us today and we'll get back to you within 24 hours.",
+                pricing: ['price', 'cost', 'how much', 'pricing', 'expensive', 'cheap', 'fee', 'rate', 'charge', 'pric', 'cst'],
+                quote: ['quote', 'estimate', 'estimation', 'free quote', 'quot', 'estimat'],
                 
-                // Areas/Neighborhoods
-                'areas': "We serve all of Seattle including Capitol Hill, Ballard, Queen Anne, Fremont, Wallingford, Green Lake, Magnolia, West Seattle, and all surrounding neighborhoods. If you're in the greater Seattle area, we can help!",
-                'capitol hill': "Yes! We provide excellent pressure washing services throughout Capitol Hill. We're familiar with the historic homes and modern condos in the area and adjust our techniques accordingly.",
-                'ballard': "Absolutely! We serve the Ballard area extensively. We understand the maritime district's unique cleaning needs and provide specialized care for waterfront properties.",
-                'queen anne': "We love working in Queen Anne! Whether you're in Lower or Upper Queen Anne, we provide upscale residential pressure washing services tailored to the neighborhood's beautiful homes.",
-                'fremont': "Fremont is one of our favorite neighborhoods! We enjoy helping the artistic community maintain their unique homes with our professional pressure washing services.",
-                'wallingford': "Wallingford families love our service! We provide family-friendly, safe pressure washing that's perfect for the neighborhood's residential character.",
-                'green lake': "Green Lake properties get special attention from us! We understand the unique needs of lakeside properties and provide appropriate cleaning services.",
-                'magnolia': "Magnolia's luxury homes deserve the best! We provide premium pressure washing services that match the high standards of this beautiful neighborhood.",
-                'west seattle': "West Seattle and beachside properties are our specialty! We understand the salt air and moisture challenges and provide appropriate cleaning solutions.",
+                // Areas
+                areas: ['area', 'areas', 'location', 'locations', 'where', 'serve', 'neighborhood', 'neighbourhoods'],
+                capitolhill: ['capitol hill', 'capital hill', 'capitol', 'capiol hill'],
+                ballard: ['ballard', 'balard', 'ballrd'],
+                queenanne: ['queen anne', 'queen ann', 'quenn anne'],
+                fremont: ['fremont', 'frmont', 'fremnt'],
+                wallingford: ['wallingford', 'walingford'],
+                greenlake: ['green lake', 'greenlake', 'gren lake'],
+                magnolia: ['magnolia', 'magnlia'],
+                westseattle: ['west seattle', 'westseattle', 'west seatle'],
                 
                 // Scheduling
-                'schedule': "Scheduling is easy! Contact us at (206) 300-6614, email jackodseattle@gmail.com, or fill out our contact form. We typically respond within 24 hours and can often schedule within a few days.",
-                'appointment': "To set up an appointment, just give us a call at (206) 300-6614 or send us an email. We're flexible with timing and work around your schedule.",
-                'when': "We work Monday through Saturday, 8AM-6PM. We're flexible and can often accommodate special timing requests for our Seattle customers.",
-                
-                // Weather/Climate
-                'weather': "Seattle's climate is exactly why pressure washing is so important here! Our wet weather creates perfect conditions for moss, mildew, and algae growth. We specialize in dealing with these Pacific Northwest challenges.",
-                'moss': "Moss removal is one of our specialties! Seattle's damp climate makes moss a common problem on homes, driveways, and walkways. We safely remove moss without damaging your surfaces.",
-                'rain': "We work rain or shine! While heavy rain might delay outdoor work, light Seattle drizzle doesn't stop us. We'll communicate clearly about any weather-related scheduling adjustments.",
-                
-                // Methods/Equipment
-                'equipment': "We use professional-grade pressure washing equipment that's appropriate for Seattle's diverse architecture. We adjust pressure settings based on surface type - gentle for wood siding, stronger for concrete.",
-                'safe': "Safety is our top priority! We use surface-appropriate techniques and eco-friendly cleaning solutions. Our methods are safe for your family, pets, and landscape.",
-                'eco': "We're committed to eco-friendly practices! We prefer water-only cleaning when possible and use biodegradable soaps only when necessary. This protects Seattle's beautiful environment and Puget Sound.",
-                
-                // Recurring services
-                'recurring': "Recurring services are very popular in Seattle! We offer weekly, monthly, quarterly, and annual plans with discounts ranging from 5-15%. It's a great way to maintain your property year-round.",
-                'maintenance': "Regular maintenance is smart in Seattle's climate! Our recurring plans help prevent moss and mildew buildup, saving you money in the long run. Plus, you get automatic discounts!",
+                scheduling: ['schedule', 'book', 'appointment', 'when', 'available', 'time', 'schedul', 'apointment'],
                 
                 // Contact
-                'contact': "You can reach us several ways: Call (206) 300-6614, email jackodseattle@gmail.com, or fill out our contact form. We respond to all inquiries within 24 hours!",
-                'phone': "Our phone number is (206) 300-6614. We're available Monday through Saturday, 8AM-6PM for calls and respond quickly to messages.",
-                'email': "Our email is jackodseattle@gmail.com. We check email regularly and respond within 24 hours to all Seattle inquiries.",
+                contact: ['contact', 'phone', 'call', 'email', 'reach', 'get in touch', 'contac', 'phon'],
                 
-                // Referrals
-                'referral': "We love referrals! When you refer a Seattle neighbor to us, you both get 20% off your next service. It's our way of saying thanks for spreading the word about quality pressure washing!",
-                'discount': "We offer several discounts: 20% for referrals, 5-15% for recurring service plans, and seasonal promotions. Ask about current deals when you contact us!",
+                // Weather/Climate
+                weather: ['weather', 'rain', 'wet', 'climate', 'season', 'wether'],
+                moss: ['moss', 'mold', 'mildew', 'algae', 'green', 'slippery', 'mos'],
                 
-                // Problem-specific
-                'stain': "Stains are our specialty! Whether it's oil stains on driveways, rust stains, or organic stains from Seattle's wet climate, we have the experience and equipment to tackle them effectively.",
-                'mold': "Mold and mildew are common in Seattle's climate. We safely remove these using appropriate techniques and eco-friendly solutions that won't harm your property or landscape.",
-                'algae': "Algae buildup is very common here! We specialize in removing algae from driveways, sidewalks, and building exteriors. Our treatments help prevent quick regrowth too.",
+                // Equipment/Methods
+                equipment: ['equipment', 'pressure washer', 'machine', 'tools', 'how do you', 'method', 'equipmnt'],
+                safe: ['safe', 'safety', 'damage', 'harm', 'protect', 'gentle', 'saf'],
+                eco: ['eco', 'environmentally', 'green', 'chemicals', 'soap', 'detergent', 'eco-friendly'],
                 
-                // General questions
-                'why': "Why choose PWashing? We're Seattle pressure washing specialists who understand our unique climate challenges. We're reliable, eco-friendly, properly equipped, and offer competitive pricing with great customer service!",
-                'experience': "We have extensive experience with Seattle's specific cleaning challenges - from persistent moss to rain-soaked surfaces. We know what works in the Pacific Northwest!",
-                'guarantee': "We stand behind our work! If you're not completely satisfied with our Seattle pressure washing service, we'll make it right. Your satisfaction is our guarantee.",
+                // Problems
+                stains: ['stain', 'stains', 'oil', 'dirt', 'grime', 'spots', 'marks', 'stain'],
                 
-                // Typo variations and common misspellings
-                'pres sure': "I think you're asking about pressure washing! We provide comprehensive pressure washing services throughout Seattle. What specific service interests you?",
-                'washing': "Yes, we do pressure washing! We serve all of Seattle including Capitol Hill, Ballard, Queen Anne, and surrounding areas. What can we clean for you?",
-                'cleen': "We'd love to clean your property! Our pressure washing services cover houses, driveways, decks, sidewalks, and commercial properties throughout Seattle.",
-                'ballrd': "I think you mean Ballard! Yes, we absolutely serve the Ballard area with comprehensive pressure washing services.",
-                'seatle': "I believe you're asking about Seattle! Yes, we serve all of Seattle and surrounding areas with professional pressure washing services.",
-                'how much': "Pricing depends on your specific project. We offer free, no-obligation quotes for all Seattle properties. Contact us at (206) 300-6614 for your personalized estimate!",
-                'free': "Yes! We provide completely free, no-obligation estimates for all our Seattle pressure washing services. We'll assess your property and provide a detailed quote.",
-                
-                // Default responses for unmatched queries
-                'default': "That's a great question! For detailed information about our Seattle pressure washing services, I'd recommend calling us at (206) 300-6614 or emailing jackodseattle@gmail.com. We're happy to discuss your specific needs!"
+                // General
+                why: ['why', 'why choose', 'benefits', 'advantage', 'better'],
+                experience: ['experience', 'how long', 'years', 'expertise', 'experiance'],
+                guarantee: ['guarantee', 'warranty', 'satisfaction', 'promise', 'guarante']
             };
 
-            // Check for keyword matches with typo tolerance
-            for (let keyword in responses) {
-                if (message.includes(keyword) || 
-                    message.includes(keyword.replace(/\s/g, '')) || // Remove spaces
-                    similarString(message, keyword) ||
-                    message.includes(keyword.substring(0, keyword.length - 1))) { // Partial match
-                    return responses[keyword];
-                }
+            // Function to check if message contains any keyword with typo tolerance
+            function containsKeyword(keywordArray, message) {
+                return keywordArray.some(keyword => {
+                    // Exact match
+                    if (message.includes(keyword)) return true;
+                    
+                    // Typo tolerance using edit distance
+                    const words = message.split(' ');
+                    return words.some(word => {
+                        if (word.length >= 3 && keyword.length >= 3) {
+                            const distance = levenshteinDistance(word, keyword);
+                            const similarity = 1 - (distance / Math.max(word.length, keyword.length));
+                            return similarity >= 0.75; // 75% similarity threshold
+                        }
+                        return false;
+                    });
+                });
             }
 
-            // Special check for multiple keywords
-            if (message.includes('schedule') || message.includes('book') || message.includes('appointment')) {
-                return responses['schedule'];
-            }
-            if (message.includes('how much') || message.includes('cost') || message.includes('price')) {
-                return responses['price'];
-            }
-            if (message.includes('area') || message.includes('location') || message.includes('serve')) {
-                return responses['areas'];
+            // Easter egg for clean alternative
+            if (normalizedMessage.includes('easter egg') || normalizedMessage.includes('surprise')) {
+                return "🥚 Easter egg found! Here's a fun fact: Did you know that pressure washing can increase your home's value by up to 10%? That's some serious curb appeal magic! ✨";
             }
 
-            return responses['default'];
+            // Enhanced response logic
+            if (containsKeyword(keywords.greetings, normalizedMessage)) {
+                const greetingResponses = [
+                    "Hello! Welcome to PWashing Seattle! 👋 How can I help you with your pressure washing needs today?",
+                    "Hi there! I'm here to help with any questions about our Seattle pressure washing services. What can I do for you?",
+                    "Hey! Thanks for reaching out to PWashing. What pressure washing questions can I answer for you today?"
+                ];
+                return greetingResponses[Math.floor(Math.random() * greetingResponses.length)];
+            }
+
+            if (containsKeyword(keywords.services, normalizedMessage)) {
+                return "We offer comprehensive pressure washing services throughout Seattle! 🏠\n\n• House washing (safe for all siding types)\n• Driveway & concrete cleaning\n• Deck & patio restoration\n• Sidewalk cleaning\n• Commercial property cleaning\n• Recurring maintenance plans (save 5-15%!)\n\nWhat specific service interests you most?";
+            }
+
+            if (containsKeyword(keywords.house, normalizedMessage)) {
+                return "Our house washing service is perfect for Seattle homes! 🏡 We safely remove:\n\n• Moss & mildew (common in our climate)\n• Dirt & grime buildup\n• Algae stains\n• General weathering\n\nWe use gentle, surface-safe techniques that protect your siding while delivering amazing results. Works great on vinyl, wood, stucco, and composite materials!";
+            }
+
+            if (containsKeyword(keywords.driveway, normalizedMessage)) {
+                return "Driveway cleaning is one of our most popular services! 🚗 We tackle:\n\n• Oil & grease stains\n• Tire marks\n• Moss & algae (very common in Seattle!)\n• General dirt buildup\n• Rust stains\n\nWorks on concrete, asphalt, and paver driveways. The transformation is usually dramatic - you'll be amazed at the difference!";
+            }
+
+            if (containsKeyword(keywords.deck, normalizedMessage)) {
+                return "Deck & patio cleaning is essential in Seattle's climate! 🌲 Perfect for:\n\n• Preparing for staining/sealing\n• Removing moss & algae\n• Cleaning composite decking\n• Patio furniture cleaning\n• Getting ready for summer entertaining\n\nWe adjust pressure based on material - gentle for wood, appropriate for composite and concrete surfaces.";
+            }
+
+            if (containsKeyword(keywords.commercial, normalizedMessage)) {
+                return "We love helping Seattle businesses look their best! 🏢 Our commercial services include:\n\n• Storefront cleaning\n• Parking lot maintenance\n• Building exterior washing\n• Sidewalk & entrance cleaning\n• Regular maintenance contracts\n\nWe work around your business hours and offer recurring plans with great discounts. Professional appearance = more customers!";
+            }
+
+            if (containsKeyword(keywords.sidewalk, normalizedMessage)) {
+                return "Sidewalk cleaning is super important for safety in Seattle! 🚶‍♂️ We remove:\n\n• Slippery moss & algae\n• Accumulated dirt & grime\n• Stains & discoloration\n• Chewing gum\n• General buildup\n\nClean sidewalks aren't just prettier - they're safer for everyone walking on them, especially during our wet months!";
+            }
+
+            if (containsKeyword(keywords.pricing, normalizedMessage) || containsKeyword(keywords.quote, normalizedMessage)) {
+                return "Great question about pricing! 💰 Every Seattle property is unique, so we provide FREE, no-obligation quotes that consider:\n\n• Property size & complexity\n• Services needed\n• Surface types\n• Current condition\n\n📞 Call: (206) 300-6614\n📧 Email: jackodseattle@gmail.com\n\nWe respond within 24 hours and often can provide same-day quotes!";
+            }
+
+            if (containsKeyword(keywords.areas, normalizedMessage)) {
+                return "We proudly serve ALL of Seattle! 🗺️ Including:\n\n• Capitol Hill • Ballard\n• Queen Anne • Fremont\n• Wallingford • Green Lake\n• Magnolia • West Seattle\n• And ALL surrounding neighborhoods!\n\nIf you're in the greater Seattle area, we've got you covered. Each neighborhood has unique needs and we know them all!";
+            }
+
+            // Specific neighborhood responses
+            if (containsKeyword(keywords.capitolhill, normalizedMessage)) {
+                return "Yes! We absolutely serve Capitol Hill! 🏘️ We're very familiar with the area's mix of historic homes and modern buildings. We adjust our pressure washing techniques for different architectural styles and always protect those beautiful older surfaces.";
+            }
+
+            if (containsKeyword(keywords.ballard, normalizedMessage)) {
+                return "Ballard is one of our favorite areas to work! ⚓ We serve the entire Ballard area extensively, from the waterfront properties to the residential streets. We understand the maritime environment's effect on buildings and adjust our cleaning accordingly.";
+            }
+
+            if (containsKeyword(keywords.queenanne, normalizedMessage)) {
+                return "Queen Anne - absolutely! 👑 Whether you're in Lower Queen Anne or Upper Queen Anne, we provide excellent pressure washing services. We're experienced with the area's diverse property types and always deliver quality results.";
+            }
+
+            if (containsKeyword(keywords.scheduling, normalizedMessage)) {
+                return "Scheduling is super easy! 📅 Here's how:\n\n1. Call us: (206) 300-6614\n2. Email: jackodseattle@gmail.com\n3. Fill out our contact form\n\nWe typically respond within 24 hours and can often schedule within a few days. We work Monday-Saturday, 8AM-6PM, and we're flexible with timing!";
+            }
+
+            if (containsKeyword(keywords.contact, normalizedMessage)) {
+                return "Here's how to reach us! 📞\n\n📱 Phone: (206) 300-6614\n📧 Email: jackodseattle@gmail.com\n🌐 Website: Fill out our contact form\n\n⏰ Available: Monday-Saturday, 8AM-6PM\n⚡ Response time: Within 24 hours\n\nWe're always happy to answer questions or provide free quotes!";
+            }
+
+            if (containsKeyword(keywords.weather, normalizedMessage)) {
+                return "Seattle's weather is exactly WHY pressure washing is so important here! ☔ Our climate creates perfect conditions for:\n\n• Moss growth (everywhere!)\n• Mildew & algae\n• Moisture staining\n• Dirt accumulation\n\nWe specialize in these Pacific Northwest challenges. Light rain doesn't stop us - we'll just communicate about heavy weather delays!";
+            }
+
+            if (containsKeyword(keywords.moss, normalizedMessage)) {
+                return "Moss removal is our SPECIALTY! 🌿 In Seattle, moss grows on everything:\n\n• Roofs & gutters\n• Driveways & walkways\n• House siding\n• Decks & patios\n\nWe safely remove moss without damaging surfaces using the right pressure and techniques for each material. Prevention tips available too!";
+            }
+
+            if (containsKeyword(keywords.equipment, normalizedMessage) || containsKeyword(keywords.safe, normalizedMessage)) {
+                return "We use professional-grade equipment designed for safety! 🛡️\n\n• Variable pressure settings\n• Surface-specific nozzles\n• Hot & cold water systems\n• Eco-friendly cleaning solutions\n\nWe adjust everything based on what we're cleaning - gentle for wood siding, stronger for concrete. Your property's safety is our priority!";
+            }
+
+            if (containsKeyword(keywords.eco, normalizedMessage)) {
+                return "We're committed to protecting Seattle's beautiful environment! 🌱\n\n• Water-only cleaning preferred\n• Biodegradable soaps when needed\n• No harsh chemicals\n• Protecting Puget Sound\n• Safe for pets & plants\n\nEco-friendly doesn't mean less effective - we get amazing results while being environmentally responsible!";
+            }
+
+            if (containsKeyword(keywords.stains, normalizedMessage)) {
+                return "Stain removal is what we do best! 💪 We tackle:\n\n• Oil & grease stains\n• Rust stains\n• Organic stains (moss, algae)\n• Tire marks\n• Food & beverage stains\n• Oxidation stains\n\nMost stains that seem permanent can actually be removed with the right techniques and equipment!";
+            }
+
+            if (containsKeyword(keywords.recurring, normalizedMessage)) {
+                return "Recurring services are VERY popular in Seattle! 🔄 Benefits:\n\n• Save 5-15% with automatic discounts\n• Prevent moss/mildew buildup\n• Maintain property value\n• No hassle scheduling\n• Priority booking\n\nOptions: Weekly, Monthly, Quarterly, or Annual plans. Most Seattle homes do great with quarterly service!";
+            }
+
+            if (containsKeyword(keywords.why, normalizedMessage)) {
+                return "Why choose PWashing Seattle? Here's what makes us special! ⭐\n\n• Seattle climate specialists\n• Eco-friendly methods\n• Professional equipment\n• Reliable & punctual\n• Free estimates\n• Satisfaction guaranteed\n• Local expertise\n• Competitive pricing\n\nWe understand Seattle's unique challenges and deliver results that last!";
+            }
+
+            if (containsKeyword(keywords.experience, normalizedMessage)) {
+                return "We have extensive experience with Seattle's specific cleaning challenges! 🏆\n\n• Pacific Northwest climate expertise\n• All surface types & materials\n• Historic & modern properties\n• Residential & commercial\n• Problem-solving specialists\n\nWe've seen it all and know what works in our unique environment!";
+            }
+
+            if (containsKeyword(keywords.guarantee, normalizedMessage)) {
+                return "Absolutely! We stand behind our work with a satisfaction guarantee! ✅\n\n• If you're not completely happy, we'll make it right\n• Professional results or we return\n• Clear communication throughout\n• No surprises or hidden fees\n\nYour satisfaction is our reputation - we want you to love the results and refer your neighbors!";
+            }
+
+            // Handle questions about referrals
+            if (normalizedMessage.includes('referral') || normalizedMessage.includes('refer') || normalizedMessage.includes('discount')) {
+                return "Our referral program is awesome! 🎉\n\n• Refer a Seattle neighbor → You BOTH get 20% off!\n• Easy process - just have them mention your name\n• Automatic discount applied\n• No limit on referrals\n\nIt's our way of saying thanks for spreading the word about quality pressure washing!";
+            }
+
+            // Catch-all for unmatched queries
+            const catchAllResponses = [
+                "That's a great question! For detailed information about that specific topic, I'd recommend calling us at (206) 300-6614 or emailing jackodseattle@gmail.com. We're happy to discuss your specific needs in detail! 😊",
+                "I want to make sure I give you the most accurate information! Our team can better address that question directly. Call (206) 300-6614 or email jackodseattle@gmail.com - we respond within 24 hours! 📞",
+                "Great question! While I can help with general info, our pressure washing experts can give you detailed answers about that. Reach out at (206) 300-6614 or jackodseattle@gmail.com for personalized help! 💪"
+            ];
+
+            return catchAllResponses[Math.floor(Math.random() * catchAllResponses.length)];
         }
 
-        // Simple string similarity check for typo tolerance
-        function similarString(str1, str2) {
-            const threshold = 0.7;
-            const longer = str1.length > str2.length ? str1 : str2;
-            const shorter = str1.length > str2.length ? str2 : str1;
-            
-            if (longer.length === 0) return 1.0;
-            
-            const distance = levenshteinDistance(longer, shorter);
-            return (longer.length - distance) / longer.length >= threshold;
-        }
-
-        // Levenshtein distance for typo tolerance
+        // Enhanced Levenshtein distance function for better typo tolerance
         function levenshteinDistance(str1, str2) {
             const matrix = [];
             
@@ -3325,9 +3400,9 @@
                         matrix[i][j] = matrix[i - 1][j - 1];
                     } else {
                         matrix[i][j] = Math.min(
-                            matrix[i - 1][j - 1] + 1,
-                            matrix[i][j - 1] + 1,
-                            matrix[i - 1][j] + 1
+                            matrix[i - 1][j - 1] + 1, // substitution
+                            matrix[i][j - 1] + 1,     // insertion
+                            matrix[i - 1][j] + 1      // deletion
                         );
                     }
                 }
