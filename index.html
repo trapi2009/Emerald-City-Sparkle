@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PWashing | Professional Pressure Washing Services</title>
-    <meta name="description" content="Professional pressure washing services for driveways, sidewalks, decks, houses, and commercial properties. Quality, reliability, and professional results guaranteed.">
+    <title>PWashing | Professional Pressure Washing Services in Seattle</title>
+    <meta name="description" content="Professional pressure washing services for Capitol Hill, Ballard, Queen Anne, Fremont, and all Seattle neighborhoods. Quality, reliability, and professional results guaranteed.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -657,6 +657,80 @@
         }
 
         /*--------------------------------------------------------------
+        # Seattle Neighborhoods Section
+        --------------------------------------------------------------*/
+        .neighborhoods {
+            background: linear-gradient(135deg, var(--accent-light) 0%, var(--secondary-light) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .neighborhoods::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background-image: radial-gradient(circle, rgba(16, 185, 129, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+            animation: float-bg 30s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes float-bg {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            100% {
+                transform: translate(40px, 40px) rotate(360deg);
+            }
+        }
+
+        .neighborhoods-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .neighborhoods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .neighborhood-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: var(--radius-xl);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-normal);
+            border: 2px solid rgba(16, 185, 129, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .neighborhood-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            background-color: var(--light-color);
+            border-color: var(--accent-color);
+        }
+
+        .neighborhood-card h4 {
+            font-size: 1.8rem;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        .neighborhood-card p {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+
+        /*--------------------------------------------------------------
         # Section Headers
         --------------------------------------------------------------*/
         .section-header {
@@ -1001,15 +1075,6 @@
             background-size: 40px 40px;
             animation: float-bg 30s linear infinite;
             z-index: 0;
-        }
-
-        @keyframes float-bg {
-            0% {
-                transform: translate(0, 0) rotate(0deg);
-            }
-            100% {
-                transform: translate(40px, 40px) rotate(360deg);
-            }
         }
 
         .recurring-content {
@@ -1514,6 +1579,224 @@
         }
 
         /*--------------------------------------------------------------
+        # Chatbot Styles
+        --------------------------------------------------------------*/
+        .chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 9998;
+            font-family: var(--font-family);
+        }
+
+        .chatbot-button {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border: none;
+            border-radius: 50%;
+            color: var(--light-color);
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition-normal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse-chat 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse-chat {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);
+            }
+        }
+
+        .chatbot-button:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .chatbot-window {
+            position: absolute;
+            bottom: 80px;
+            left: 0;
+            width: 350px;
+            height: 500px;
+            background: var(--light-color);
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-xl);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid var(--grey-dark);
+            backdrop-filter: blur(10px);
+        }
+
+        .chatbot-header {
+            background: var(--gradient-primary);
+            color: var(--light-color);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .chatbot-header h4 {
+            margin: 0;
+            font-size: 1.6rem;
+            font-weight: var(--font-weight-semibold);
+        }
+
+        .chatbot-close {
+            background: none;
+            border: none;
+            color: var(--light-color);
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: var(--transition-normal);
+        }
+
+        .chatbot-close:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: 1.5rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background: linear-gradient(to bottom, var(--light-color), var(--grey-color));
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius-lg);
+            font-size: 1.4rem;
+            line-height: 1.4;
+            animation: slideInMessage 0.3s ease;
+        }
+
+        @keyframes slideInMessage {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message.bot {
+            background: var(--primary-light);
+            color: var(--dark-color);
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+        }
+
+        .message.user {
+            background: var(--gradient-primary);
+            color: var(--light-color);
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+        }
+
+        .chatbot-input-container {
+            padding: 1.5rem;
+            border-top: 1px solid var(--grey-dark);
+            background: var(--light-color);
+            display: flex;
+            gap: 1rem;
+        }
+
+        .chatbot-input {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid var(--grey-dark);
+            border-radius: var(--radius-lg);
+            font-size: 1.4rem;
+            font-family: inherit;
+            transition: var(--transition-normal);
+        }
+
+        .chatbot-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px var(--primary-light);
+        }
+
+        .chatbot-send {
+            padding: 1rem 1.5rem;
+            background: var(--gradient-primary);
+            color: var(--light-color);
+            border: none;
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            font-size: 1.4rem;
+            transition: var(--transition-normal);
+        }
+
+        .chatbot-send:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 1.5rem;
+            background: var(--primary-light);
+            border-radius: var(--radius-lg);
+            align-self: flex-start;
+            max-width: 80%;
+        }
+
+        .typing-dots {
+            display: flex;
+            gap: 3px;
+        }
+
+        .typing-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+
+        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+        .typing-dot:nth-child(3) { animation-delay: 0s; }
+
+        @keyframes typing {
+            0%, 80%, 100% {
+                transform: scale(0.8);
+                opacity: 0.5;
+            }
+            40% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /*--------------------------------------------------------------
         # Footer
         --------------------------------------------------------------*/
         .footer {
@@ -1709,6 +1992,11 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 3rem;
             }
+
+            .neighborhoods-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1.5rem;
+            }
         }
 
         /* Mobile */
@@ -1853,6 +2141,17 @@
             .discount-highlight {
                 font-size: 3.5rem;
             }
+
+            .neighborhoods-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .chatbot-window {
+                width: 300px;
+                height: 450px;
+                bottom: 70px;
+            }
         }
 
         /* Small Mobile */
@@ -1924,6 +2223,27 @@
 
             .referral-content h3 {
                 font-size: 2.8rem;
+            }
+
+            .neighborhoods-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .chatbot-window {
+                width: 280px;
+                height: 400px;
+            }
+
+            .chatbot-container {
+                bottom: 15px;
+                left: 15px;
+            }
+
+            .chatbot-button {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
             }
         }
 
@@ -2035,6 +2355,7 @@
                 <div class="nav-container">
                     <ul class="nav-menu">
                         <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                        <li class="nav-item"><a href="#neighborhoods" class="nav-link">Areas</a></li>
                         <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
                         <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
                         <li class="nav-item"><a href="#gallery" class="nav-link">Our Work</a></li>
@@ -2059,9 +2380,9 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text" data-aos="fade-up" data-aos-delay="200">
-                    <div class="badge"><i class="fas fa-spray-can"></i> Professional Pressure Washing</div>
+                    <div class="badge"><i class="fas fa-spray-can"></i> Professional Pressure Washing in Seattle</div>
                     <h1 class="hero-title">Transform Your Property with <span class="highlight">Professional</span> Pressure Washing</h1>
-                    <p class="hero-description">Quality, reliability, and professional results for driveways, sidewalks, decks, houses, and commercial properties. See the difference pressure washing can make!</p>
+                    <p class="hero-description">Quality, reliability, and professional results for Capitol Hill, Ballard, Queen Anne, Fremont, and all Seattle neighborhoods. See the difference pressure washing can make!</p>
                     
                     <div class="hero-cta">
                         <a href="#contact" class="btn btn-primary btn-lg btn-pulse">Get Free Quote</a>
@@ -2070,12 +2391,12 @@
                     
                     <div class="hero-stats">
                         <div class="stat">
-                            <span class="stat-number" data-count="14">0</span>
-                            <span class="stat-text">Jobs Completed</span>
+                            <span class="stat-number" data-count="50">0</span>
+                            <span class="stat-text">Seattle Homes Cleaned</span>
                         </div>
                         <div class="stat">
                             <span class="stat-number" data-count="100">0</span><span>%</span>
-                            <span class="stat-text">Client Focused</span>
+                            <span class="stat-text">Client Satisfaction</span>
                         </div>
                         <div class="stat">
                             <span class="stat-number" data-count="5">0</span>
@@ -2088,7 +2409,7 @@
                     <div class="floating-image">
                         <div class="hero-placeholder">
                             <i class="fas fa-home fa-3x"></i>
-                            <p>Professional Pressure Washing in Action</p>
+                            <p>Professional Pressure Washing in Seattle</p>
                         </div>
                     </div>
                 </div>
@@ -2102,13 +2423,60 @@
         </div>
     </section>
 
+    <!-- Seattle Neighborhoods Section -->
+    <section id="neighborhoods" class="neighborhoods section-padding">
+        <div class="container">
+            <div class="neighborhoods-content" data-aos="fade-up">
+                <div class="section-header">
+                    <span class="section-subtitle">Service Areas</span>
+                    <h2 class="section-title">Proudly Serving <span class="highlight">Seattle</span> Neighborhoods</h2>
+                    <p class="section-description">We provide professional pressure washing services throughout Seattle and surrounding areas. From historic Capitol Hill to waterfront Ballard, we know each neighborhood's unique cleaning needs.</p>
+                </div>
+                
+                <div class="neighborhoods-grid">
+                    <div class="neighborhood-card" data-aos="fade-up" data-aos-delay="100">
+                        <h4>Capitol Hill</h4>
+                    </div>
+                    
+                    <div class="neighborhood-card" data-aos="fade-up" data-aos-delay="150">
+                        <h4>Ballard</h4>
+                    </div>
+                    
+                    <div class="neighborhood-card" data-aos="fade-up" data-aos-delay="200">
+                        <h4>Queen Anne</h4>
+                    </div>
+                    
+                    <div class="neighborhood-card" data-aos="fade-up" data-aos-delay="250">
+                        <h4>Fremont</h4>
+                    </div>
+                    
+                    <div class="neighborhood-card" data-aos="fade-up" data-aos-delay="300">
+                        <h4>Wallingford</h4>
+                    </div>
+                    
+                    <div class="neighborhood-card" data-aos="fade-up" data-aos-delay="350">
+                        <h4>Green Lake</h4>
+                    </div>
+                    
+                    <div class="neighborhood-card" data-aos="fade-up" data-aos-delay="400">
+                        <h4>Magnolia</h4>
+                    </div>
+                    
+                    <div class="neighborhood-card" data-aos="fade-up" data-aos-delay="450">
+                        <h4>West Seattle</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Services Section -->
     <section id="services" class="services section-padding">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-subtitle">Our Services</span>
                 <h2 class="section-title">Professional <span class="highlight">Cleaning</span> Solutions</h2>
-                <p class="section-description">We provide comprehensive pressure washing services for residential and commercial properties.</p>
+                <p class="section-description">We provide comprehensive pressure washing services for residential and commercial properties throughout Seattle.</p>
             </div>
             
             <div class="services-grid">
@@ -2117,7 +2485,7 @@
                         <i class="fas fa-home"></i>
                     </div>
                     <h3>House Washing</h3>
-                    <p>Complete exterior cleaning for residential properties. Remove dirt, mold, and mildew safely and effectively with our professional techniques.</p>
+                    <p>Complete exterior cleaning for Seattle homes. Perfect for removing Pacific Northwest moss, mildew, and dirt from your siding safely and effectively.</p>
                 </div>
                 
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
@@ -2125,7 +2493,7 @@
                         <i class="fas fa-road"></i>
                     </div>
                     <h3>Driveway Cleaning</h3>
-                    <p>Restore your driveway to like-new condition. Remove oil stains, dirt, and grime from concrete and asphalt surfaces.</p>
+                    <p>Restore your driveway to like-new condition. Remove oil stains, Seattle's constant moisture buildup, and dirt from concrete and asphalt surfaces.</p>
                 </div>
                 
                 <div class="service-card" data-aos="fade-up" data-aos-delay="300">
@@ -2133,7 +2501,7 @@
                         <i class="fas fa-tree"></i>
                     </div>
                     <h3>Deck & Patio</h3>
-                    <p>Revitalize your outdoor living spaces. Clean and prepare decks, patios, and outdoor furniture for the season ahead.</p>
+                    <p>Revitalize your outdoor living spaces for Seattle's beautiful summers. Clean and prepare decks, patios, and outdoor furniture affected by our wet climate.</p>
                 </div>
                 
                 <div class="service-card" data-aos="fade-up" data-aos-delay="400">
@@ -2141,7 +2509,7 @@
                         <i class="fas fa-walking"></i>
                     </div>
                     <h3>Sidewalk Cleaning</h3>
-                    <p>Keep walkways safe and attractive. Remove slippery moss, algae, and accumulated dirt for improved curb appeal.</p>
+                    <p>Keep walkways safe and attractive. Remove slippery moss, algae, and accumulated dirt that's common in Seattle's damp climate.</p>
                 </div>
                 
                 <div class="service-card" data-aos="fade-up" data-aos-delay="500">
@@ -2149,7 +2517,7 @@
                         <i class="fas fa-building"></i>
                     </div>
                     <h3>Commercial Properties</h3>
-                    <p>Professional cleaning for businesses, storefronts, and commercial buildings. Maintain your professional image.</p>
+                    <p>Professional cleaning for Seattle businesses, storefronts, and commercial buildings. Maintain your professional image in the competitive Seattle market.</p>
                 </div>
                 
                 <div class="service-card" data-aos="fade-up" data-aos-delay="600">
@@ -2157,7 +2525,7 @@
                         <i class="fas fa-tools"></i>
                     </div>
                     <h3>Specialized Cleaning</h3>
-                    <p>Fences, outdoor furniture, equipment, and more. Custom solutions for all your pressure washing needs.</p>
+                    <p>Fences, outdoor furniture, equipment, and more. Custom solutions for all your Seattle property's pressure washing needs.</p>
                 </div>
             </div>
         </div>
@@ -2179,8 +2547,8 @@
                                 <i class="fas fa-certificate"></i>
                             </div>
                             <div class="feature-content">
-                                <h3>Professional Results</h3>
-                                <p>Years of experience delivering exceptional cleaning results that transform your property and exceed expectations.</p>
+                                <h3>Seattle Climate Expertise</h3>
+                                <p>Years of experience dealing with Seattle's unique climate challenges - from persistent moss to rain-soaked surfaces. We know what works in the Pacific Northwest.</p>
                             </div>
                         </div>
                         
@@ -2190,7 +2558,7 @@
                             </div>
                             <div class="feature-content">
                                 <h3>Reliable & Punctual</h3>
-                                <p>We show up on time, every time. Dependable service you can count on with clear communication throughout the entire process.</p>
+                                <p>We show up on time, every time - rain or shine. Dependable service you can count on with clear communication throughout the entire process.</p>
                             </div>
                         </div>
                         
@@ -2200,7 +2568,7 @@
                             </div>
                             <div class="feature-content">
                                 <h3>Eco-Friendly Approach</h3>
-                                <p>Water-only cleaning is our preferred method! We use biodegradable soaps only when necessary, protecting your landscape and the environment.</p>
+                                <p>Water-only cleaning is our preferred method! We use biodegradable soaps only when necessary, protecting Seattle's beautiful landscape and Puget Sound.</p>
                             </div>
                         </div>
                         
@@ -2210,7 +2578,7 @@
                             </div>
                             <div class="feature-content">
                                 <h3>Surface-Safe Techniques</h3>
-                                <p>Gentle care for delicate surfaces like wood, stucco, and painted areas. We adjust pressure and techniques to protect your property.</p>
+                                <p>Gentle care for Seattle's diverse architecture - from historic wood homes in Capitol Hill to modern stucco in Ballard. We adjust pressure and techniques to protect your property.</p>
                             </div>
                         </div>
                     </div>
@@ -2223,7 +2591,7 @@
                 <div class="about-image" data-aos="fade-left" data-aos-delay="300">
                     <div class="image-placeholder">
                         <i class="fas fa-spray-can fa-4x"></i>
-                        <p>Professional Equipment & Team</p>
+                        <p>Professional Equipment & Seattle Expertise</p>
                     </div>
                 </div>
             </div>
@@ -2235,8 +2603,8 @@
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-subtitle">Quality Work</span>
-                <h2 class="section-title">Professional <span class="highlight">Results</span></h2>
-                <p class="section-description">We deliver exceptional pressure washing results that transform your property.</p>
+                <h2 class="section-title">Professional <span class="highlight">Results</span> Across Seattle</h2>
+                <p class="section-description">We deliver exceptional pressure washing results that transform properties from Queen Anne to West Seattle.</p>
             </div>
             
             <div class="results-showcase">
@@ -2244,8 +2612,8 @@
                     <div class="result-icon">
                         <i class="fas fa-home"></i>
                     </div>
-                    <h3>Residential Cleaning</h3>
-                    <p>Complete house washing, driveways, walkways, and patios. We use gentle, eco-friendly techniques perfect for your home.</p>
+                    <h3>Seattle Residential</h3>
+                    <p>Complete house washing, driveways, walkways, and patios throughout Capitol Hill, Ballard, Queen Anne, and surrounding neighborhoods.</p>
                 </div>
                 
                 <div class="result-card" data-aos="fade-up" data-aos-delay="200">
@@ -2253,15 +2621,15 @@
                         <i class="fas fa-city"></i>
                     </div>
                     <h3>Commercial Services</h3>
-                    <p>Professional cleaning for businesses and commercial properties. Maintain your professional image with regular cleaning.</p>
+                    <p>Professional cleaning for Seattle businesses from downtown to neighborhood commercial districts. Maintain your professional image year-round.</p>
                 </div>
                 
                 <div class="result-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="result-icon">
                         <i class="fas fa-hand-holding-water"></i>
                     </div>
-                    <h3>Specialized Care</h3>
-                    <p>Delicate surfaces like wood decks, stucco, and painted areas require special attention. We adjust our approach for each surface type.</p>
+                    <h3>Climate-Specific Care</h3>
+                    <p>Specialized techniques for Seattle's wet climate challenges - moss removal, mildew treatment, and moisture-related staining on all surface types.</p>
                 </div>
             </div>
         </div>
@@ -2273,14 +2641,14 @@
             <div class="recurring-content" data-aos="fade-up">
                 <div class="recurring-info">
                     <h3>Recurring Service Plans</h3>
-                    <p>Save time and money with our convenient recurring service plans! Perfect for both residential and commercial properties that want to maintain their clean appearance year-round.</p>
+                    <p>Save time and money with our convenient recurring service plans! Perfect for Seattle properties that need regular maintenance due to our unique climate. Both residential and commercial properties benefit from scheduled cleaning.</p>
                     
                     <div class="service-types">
                         <div class="service-type" data-aos="fade-right" data-aos-delay="100">
                             <i class="fas fa-home"></i>
                             <div class="service-type-content">
                                 <h4>Residential Plans</h4>
-                                <p>House washing, driveways, patios, and walkways</p>
+                                <p>House washing, driveways, patios, and walkways for all Seattle neighborhoods</p>
                             </div>
                         </div>
                         
@@ -2288,7 +2656,7 @@
                             <i class="fas fa-building"></i>
                             <div class="service-type-content">
                                 <h4>Commercial Plans</h4>
-                                <p>Storefronts, parking lots, and building exteriors</p>
+                                <p>Storefronts, parking lots, and building exteriors throughout greater Seattle</p>
                             </div>
                         </div>
                     </div>
@@ -2301,7 +2669,7 @@
                         </div>
                         <h4>Weekly/Monthly</h4>
                         <div class="discount">Save 15%</div>
-                        <p>Perfect for high-traffic commercial properties</p>
+                        <p>Perfect for high-traffic commercial properties in downtown Seattle</p>
                     </div>
                     
                     <div class="frequency-card">
@@ -2310,7 +2678,7 @@
                         </div>
                         <h4>Quarterly</h4>
                         <div class="discount">Save 10%</div>
-                        <p>Ideal for residential properties and seasonal maintenance</p>
+                        <p>Ideal for residential properties dealing with Seattle's seasonal weather</p>
                     </div>
                     
                     <div class="frequency-card">
@@ -2319,7 +2687,7 @@
                         </div>
                         <h4>Annually</h4>
                         <div class="discount">Save 5%</div>
-                        <p>Great for spring cleaning and property maintenance</p>
+                        <p>Great for spring cleaning after Seattle's long, wet winters</p>
                     </div>
                     
                     <div class="frequency-card">
@@ -2328,7 +2696,7 @@
                         </div>
                         <h4>Custom Plans</h4>
                         <div class="discount">Let's Talk</div>
-                        <p>Tailored schedules for your specific needs</p>
+                        <p>Tailored schedules for your specific Seattle property needs</p>
                     </div>
                 </div>
             </div>
@@ -2342,9 +2710,9 @@
                 <div class="referral-icon">
                     <i class="fas fa-users"></i>
                 </div>
-                <h3>Refer a Friend & Save!</h3>
+                <h3>Refer a Seattle Neighbor & Save!</h3>
                 <span class="discount-highlight">20% OFF</span>
-                <p>Love our service? Share the clean! When you refer a friend or neighbor to PWashing, you'll both receive 20% off your next service. It's our way of saying thank you for spreading the word about professional pressure washing!</p>
+                <p>Love our service? Share the clean throughout your Seattle neighborhood! When you refer a friend or neighbor to PWashing, you'll both receive 20% off your next service. It's our way of saying thank you for spreading the word about professional pressure washing in Seattle!</p>
                 <p><strong>How it works:</strong> Simply have your friend mention your name when they book their service, and we'll automatically apply the discount to both accounts.</p>
             </div>
         </div>
@@ -2354,8 +2722,8 @@
     <section class="cta section-padding bg-primary">
         <div class="container">
             <div class="cta-content" data-aos="fade-up">
-                <h2>Ready to Transform Your Property?</h2>
-                <p>Contact us today for a free, no-obligation quote and see the difference professional pressure washing can make!</p>
+                <h2>Ready to Transform Your Seattle Property?</h2>
+                <p>Contact us today for a free, no-obligation quote and see the difference professional pressure washing can make for your Capitol Hill, Ballard, Queen Anne, or any Seattle neighborhood property!</p>
                 <a href="#contact" class="btn btn-light btn-lg btn-pulse">Get Free Quote Today</a>
             </div>
         </div>
@@ -2367,12 +2735,12 @@
             <div class="section-header" data-aos="fade-up">
                 <span class="section-subtitle">Get In Touch</span>
                 <h2 class="section-title">Get Your Free <span class="highlight">Quote</span> Today</h2>
-                <p class="section-description">Ready to transform your property? Fill out the form below and we'll get back to you within 24 hours.</p>
+                <p class="section-description">Ready to transform your Seattle property? Fill out the form below and we'll get back to you within 24 hours with a detailed estimate.</p>
             </div>
             
             <div class="contact-content" data-aos="fade-up" data-aos-delay="200">
                 <div class="contact-info">
-                    <h3>Ready to Transform Your Property?</h3>
+                    <h3>Ready to Transform Your Seattle Property?</h3>
                     <p>Contact us today for a free, no-obligation quote. We'll assess your property and provide you with a detailed estimate for our professional pressure washing services.</p>
                     
                     <div class="contact-details">
@@ -2382,7 +2750,7 @@
                             </div>
                             <div>
                                 <strong>Service Areas:</strong>
-                                <p>Seattle and surrounding areas</p>
+                                <p>Capitol Hill, Ballard, Queen Anne, Fremont, Wallingford, Green Lake, Magnolia, West Seattle & all surrounding areas</p>
                             </div>
                         </div>
                         
@@ -2392,7 +2760,7 @@
                             </div>
                             <div>
                                 <strong>Response Time:</strong>
-                                <p>We respond to all inquiries within 24 hours</p>
+                                <p>We respond to all Seattle inquiries within 24 hours</p>
                             </div>
                         </div>
                         
@@ -2412,7 +2780,7 @@
                             </div>
                             <div>
                                 <strong>Email:</strong>
-                                <p>pwashing@gmail.com</p>
+                                <p>jackodseattle@gmail.com</p>
                             </div>
                         </div>
                     </div>
@@ -2428,10 +2796,6 @@
                             <p><strong>Having trouble with the form?</strong> You can also reach us directly:</p>
                             <div class="contact-alternatives">
                                 <div class="contact-method">
-                                    <i class="fas fa-mobile-alt"></i>
-                                    <a href="tel:2063006614">(206) 300-6614</a>
-                                </div>
-                                <div class="contact-method">
                                     <i class="fas fa-envelope"></i>
                                     <a href="mailto:jackodseattle@gmail.com">jackodseattle@gmail.com</a>
                                 </div>
@@ -2440,9 +2804,9 @@
                     </div>
                     
                     <!-- FormSubmit.co - Simplified setup -->
-                    <form id="contactForm" class="contact-form" action="https://formsubmit.co/pwashing@gmail.com" method="POST" target="_blank">
+                    <form id="contactForm" class="contact-form" action="https://formsubmit.co/jackodseattle@gmail.com" method="POST" target="_blank">
                         <!-- Simplified FormSubmit configuration -->
-                        <input type="hidden" name="_subject" value="New Pressure Washing Inquiry">
+                        <input type="hidden" name="_subject" value="New Pressure Washing Inquiry from Seattle">
                         <input type="hidden" name="_next" value="https://pwashing.com/thank-you.html">
                         
                         <div class="form-group">
@@ -2462,7 +2826,7 @@
                         
                         <div class="form-group">
                             <label for="address">Property Address *</label>
-                            <input type="text" id="address" name="address" class="form-control" placeholder="Street address, city, state" required>
+                            <input type="text" id="address" name="address" class="form-control" placeholder="Street address, Seattle neighborhood" required>
                         </div>
                         
                         <div class="form-group">
@@ -2482,7 +2846,7 @@
                         
                         <div class="form-group">
                             <label for="message">Additional Details</label>
-                            <textarea id="message" name="message" class="form-control" rows="4" placeholder="Please describe your project, any specific areas of concern, questions about recurring services, or mention if you're a referral..."></textarea>
+                            <textarea id="message" name="message" class="form-control" rows="4" placeholder="Please describe your project, any specific areas of concern, questions about recurring services, or mention if you're a referral from a Seattle neighbor..."></textarea>
                         </div>
                         
                         <button type="submit" class="btn btn-primary btn-block">Get Free Quote</button>
@@ -2502,8 +2866,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>PWashing</h3>
-                    <p>Professional pressure washing services for residential and commercial properties in Seattle and surrounding areas. Recurring services available with discounts!</p>
+                    <h3>PWashing Seattle</h3>
+                    <p>Professional pressure washing services for residential and commercial properties throughout Seattle and surrounding areas. Serving Capitol Hill, Ballard, Queen Anne, Fremont, and beyond!</p>
                     <div class="social-links">
                         <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
@@ -2525,29 +2889,30 @@
                 </div>
                 
                 <div class="footer-section">
+                    <h4>Seattle Areas</h4>
+                    <ul>
+                        <li><a href="#neighborhoods">Capitol Hill</a></li>
+                        <li><a href="#neighborhoods">Ballard</a></li>
+                        <li><a href="#neighborhoods">Queen Anne</a></li>
+                        <li><a href="#neighborhoods">Fremont</a></li>
+                        <li><a href="#neighborhoods">Wallingford</a></li>
+                        <li><a href="#neighborhoods">All Seattle Areas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
                     <h4>Contact Info</h4>
                     <div class="contact-info">
                         <p><i class="fas fa-envelope"></i> jackodseattle@gmail.com</p>
                         <p><i class="fas fa-phone"></i> (206) 300-6614</p>
-                        <p><i class="fas fa-map-marker-alt"></i> Serving Seattle and surrounding areas</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Serving all Seattle neighborhoods</p>
                         <p><i class="fas fa-clock"></i> Mon-Sat: 8AM-6PM</p>
                     </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#gallery">Our Work</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 PWashing. All rights reserved. Professional pressure washing services in Seattle. 20% referral discount available!</p>
+                <p>&copy; 2025 PWashing Seattle. Professional pressure washing services throughout Capitol Hill, Ballard, Queen Anne, Fremont, and all Seattle areas. 20% referral discount available!</p>
             </div>
         </div>
     </footer>
@@ -2556,6 +2921,28 @@
     <a href="#" class="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </a>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+        <button class="chatbot-button" onclick="toggleChatbot()">
+            <i class="fas fa-comments"></i>
+        </button>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <h4>PWashing Assistant</h4>
+                <button class="chatbot-close" onclick="toggleChatbot()">×</button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot">
+                    Hi! I'm here to help with any questions about our pressure washing services in Seattle. What can I help you with today?
+                </div>
+            </div>
+            <div class="chatbot-input-container">
+                <input type="text" class="chatbot-input" id="chatbotInput" placeholder="Ask about our services..." onkeypress="handleChatKeypress(event)">
+                <button class="chatbot-send" onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
@@ -2626,7 +3013,7 @@
             
             window.addEventListener('scroll', scrollActive);
 
-            // Counter Animation - Start immediately on page load
+            // Counter Animation
             const counters = document.querySelectorAll('.stat-number');
             let started = false;
 
@@ -2635,13 +3022,13 @@
                     counters.forEach(counter => {
                         const target = +counter.dataset.count;
                         let count = 0;
-                        const increment = target / 60; // Slower animation
+                        const increment = target / 60;
                         
                         function updateCount() {
                             if (count < target) {
                                 count += increment;
                                 counter.innerHTML = Math.ceil(count);
-                                setTimeout(updateCount, 50); // Slower timing
+                                setTimeout(updateCount, 50);
                             } else {
                                 counter.innerHTML = target;
                             }
@@ -2654,7 +3041,6 @@
                 }
             }
 
-            // Start counter animation immediately when page loads
             setTimeout(startCounter, 1000);
 
             // Form submission handling
@@ -2669,27 +3055,19 @@
                     const submitButton = contactForm.querySelector('button[type="submit"]');
                     const originalButtonText = submitButton.textContent;
                     
-                    // Show loading state
                     submitButton.textContent = 'Sending...';
                     submitButton.disabled = true;
                     
-                    // Submit the form using fetch
-                    fetch('https://formsubmit.co/pwashing@gmail.com', {
+                    fetch('https://formsubmit.co/jackodseattle@gmail.com', {
                         method: 'POST',
                         body: formData
                     })
                     .then(response => {
-                        // Hide form and show success message
                         contactForm.style.display = 'none';
                         successMessage.style.display = 'flex';
-                        
-                        // Reset form
                         contactForm.reset();
-                        
-                        // Scroll to success message
                         successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
                         
-                        // Remove success message after 8 seconds
                         setTimeout(() => {
                             successMessage.style.display = 'none';
                             contactForm.style.display = 'block';
@@ -2698,8 +3076,6 @@
                     .catch(error => {
                         console.error('Error:', error);
                         alert('There was an error sending your message. Please try again or call us directly.');
-                        
-                        // Reset button
                         submitButton.textContent = originalButtonText;
                         submitButton.disabled = false;
                     });
@@ -2760,36 +3136,209 @@
                     }
                 });
             });
+        });
 
-            // Check for URL parameters to display thank you message
-            function checkURLParameters() {
-                const urlParams = new URLSearchParams(window.location.search);
+        // Chatbot Functionality
+        function toggleChatbot() {
+            const chatbotWindow = document.getElementById('chatbotWindow');
+            chatbotWindow.style.display = chatbotWindow.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function handleChatKeypress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chatbotInput');
+            const messages = document.getElementById('chatbotMessages');
+            const userMessage = input.value.trim();
+
+            if (!userMessage) return;
+
+            // Add user message
+            const userDiv = document.createElement('div');
+            userDiv.className = 'message user';
+            userDiv.textContent = userMessage;
+            messages.appendChild(userDiv);
+
+            // Clear input
+            input.value = '';
+
+            // Show typing indicator
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'typing-indicator';
+            typingDiv.innerHTML = '<span>PWashing Assistant is typing</span><div class="typing-dots"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div>';
+            messages.appendChild(typingDiv);
+
+            // Scroll to bottom
+            messages.scrollTop = messages.scrollHeight;
+
+            // Generate bot response
+            setTimeout(() => {
+                messages.removeChild(typingDiv);
+                const botResponse = generateBotResponse(userMessage.toLowerCase());
+                const botDiv = document.createElement('div');
+                botDiv.className = 'message bot';
+                botDiv.textContent = botResponse;
+                messages.appendChild(botDiv);
+                messages.scrollTop = messages.scrollHeight;
+            }, 1500);
+        }
+
+        function generateBotResponse(message) {
+            // Comprehensive chatbot responses with typo tolerance
+            const responses = {
+                // Greetings
+                'hello': "Hello! Welcome to PWashing Seattle. How can I help you with your pressure washing needs today?",
+                'hi': "Hi there! I'm here to help with any questions about our pressure washing services in Seattle. What can I do for you?",
+                'hey': "Hey! Thanks for reaching out. What pressure washing questions can I answer for you?",
                 
-                if (urlParams.has('thankyou') && urlParams.get('thankyou') === 'true') {
-                    const contactSection = document.getElementById('contact');
-                    if (contactSection) {
-                        const successMessage = document.createElement('div');
-                        successMessage.className = 'success-message';
-                        successMessage.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Your message has been sent. We\'ll get back to you within 24 hours with your free quote.';
-                        
-                        const formContainer = contactSection.querySelector('.contact-form-container');
-                        if (formContainer) {
-                            formContainer.prepend(successMessage);
-                            
-                            setTimeout(() => {
-                                successMessage.remove();
-                            }, 8000);
-                        }
-                        
-                        // Remove the parameter from URL without refreshing
-                        const newURL = window.location.protocol + "//" + window.location.host + window.location.pathname;
-                        window.history.replaceState({path: newURL}, '', newURL);
+                // Services
+                'services': "We offer comprehensive pressure washing services in Seattle including: House washing, driveway cleaning, deck & patio cleaning, sidewalk cleaning, commercial property cleaning, and specialized cleaning. We also offer recurring service plans with discounts!",
+                'house': "Our house washing service is perfect for Seattle homes! We safely remove moss, mildew, dirt, and grime from all types of siding. We use gentle, eco-friendly techniques that protect your home's exterior while delivering amazing results.",
+                'driveway': "Driveway cleaning is one of our most popular services! We can remove oil stains, dirt, moss, and that persistent Seattle moisture buildup from both concrete and asphalt driveways. The results are truly transformative!",
+                'deck': "Deck and patio cleaning is essential in Seattle's climate! We clean and prepare outdoor spaces affected by our wet weather, removing moss, algae, and built-up dirt. Perfect for getting ready for those beautiful Seattle summers!",
+                'commercial': "We provide professional commercial pressure washing for Seattle businesses, storefronts, and commercial buildings. Regular cleaning helps maintain your professional image in Seattle's competitive market.",
+                'sidewalk': "Sidewalk cleaning is important for safety! We remove slippery moss, algae, and dirt that's common in Seattle's damp climate, keeping your walkways safe and attractive.",
+                
+                // Pricing
+                'price': "Our pricing varies based on the size and scope of your project. We offer free, no-obligation quotes for all Seattle properties. Contact us at (206) 300-6614 or jackodseattle@gmail.com for your personalized estimate!",
+                'cost': "Costs depend on your specific needs and property size. We provide completely free estimates with no obligation. Every Seattle property is unique, so we tailor our quotes accordingly. Reach out for your free quote!",
+                'quote': "I'd be happy to help you get a free quote! You can fill out our contact form, call us at (206) 300-6614, or email jackodseattle@gmail.com. We respond to all Seattle inquiries within 24 hours.",
+                'estimate': "Free estimates are our specialty! We provide detailed, no-obligation quotes for all our Seattle pressure washing services. Contact us today and we'll get back to you within 24 hours.",
+                
+                // Areas/Neighborhoods
+                'areas': "We serve all of Seattle including Capitol Hill, Ballard, Queen Anne, Fremont, Wallingford, Green Lake, Magnolia, West Seattle, and all surrounding neighborhoods. If you're in the greater Seattle area, we can help!",
+                'capitol hill': "Yes! We provide excellent pressure washing services throughout Capitol Hill. We're familiar with the historic homes and modern condos in the area and adjust our techniques accordingly.",
+                'ballard': "Absolutely! We serve the Ballard area extensively. We understand the maritime district's unique cleaning needs and provide specialized care for waterfront properties.",
+                'queen anne': "We love working in Queen Anne! Whether you're in Lower or Upper Queen Anne, we provide upscale residential pressure washing services tailored to the neighborhood's beautiful homes.",
+                'fremont': "Fremont is one of our favorite neighborhoods! We enjoy helping the artistic community maintain their unique homes with our professional pressure washing services.",
+                'wallingford': "Wallingford families love our service! We provide family-friendly, safe pressure washing that's perfect for the neighborhood's residential character.",
+                'green lake': "Green Lake properties get special attention from us! We understand the unique needs of lakeside properties and provide appropriate cleaning services.",
+                'magnolia': "Magnolia's luxury homes deserve the best! We provide premium pressure washing services that match the high standards of this beautiful neighborhood.",
+                'west seattle': "West Seattle and beachside properties are our specialty! We understand the salt air and moisture challenges and provide appropriate cleaning solutions.",
+                
+                // Scheduling
+                'schedule': "Scheduling is easy! Contact us at (206) 300-6614, email jackodseattle@gmail.com, or fill out our contact form. We typically respond within 24 hours and can often schedule within a few days.",
+                'appointment': "To set up an appointment, just give us a call at (206) 300-6614 or send us an email. We're flexible with timing and work around your schedule.",
+                'when': "We work Monday through Saturday, 8AM-6PM. We're flexible and can often accommodate special timing requests for our Seattle customers.",
+                
+                // Weather/Climate
+                'weather': "Seattle's climate is exactly why pressure washing is so important here! Our wet weather creates perfect conditions for moss, mildew, and algae growth. We specialize in dealing with these Pacific Northwest challenges.",
+                'moss': "Moss removal is one of our specialties! Seattle's damp climate makes moss a common problem on homes, driveways, and walkways. We safely remove moss without damaging your surfaces.",
+                'rain': "We work rain or shine! While heavy rain might delay outdoor work, light Seattle drizzle doesn't stop us. We'll communicate clearly about any weather-related scheduling adjustments.",
+                
+                // Methods/Equipment
+                'equipment': "We use professional-grade pressure washing equipment that's appropriate for Seattle's diverse architecture. We adjust pressure settings based on surface type - gentle for wood siding, stronger for concrete.",
+                'safe': "Safety is our top priority! We use surface-appropriate techniques and eco-friendly cleaning solutions. Our methods are safe for your family, pets, and landscape.",
+                'eco': "We're committed to eco-friendly practices! We prefer water-only cleaning when possible and use biodegradable soaps only when necessary. This protects Seattle's beautiful environment and Puget Sound.",
+                
+                // Recurring services
+                'recurring': "Recurring services are very popular in Seattle! We offer weekly, monthly, quarterly, and annual plans with discounts ranging from 5-15%. It's a great way to maintain your property year-round.",
+                'maintenance': "Regular maintenance is smart in Seattle's climate! Our recurring plans help prevent moss and mildew buildup, saving you money in the long run. Plus, you get automatic discounts!",
+                
+                // Contact
+                'contact': "You can reach us several ways: Call (206) 300-6614, email jackodseattle@gmail.com, or fill out our contact form. We respond to all inquiries within 24 hours!",
+                'phone': "Our phone number is (206) 300-6614. We're available Monday through Saturday, 8AM-6PM for calls and respond quickly to messages.",
+                'email': "Our email is jackodseattle@gmail.com. We check email regularly and respond within 24 hours to all Seattle inquiries.",
+                
+                // Referrals
+                'referral': "We love referrals! When you refer a Seattle neighbor to us, you both get 20% off your next service. It's our way of saying thanks for spreading the word about quality pressure washing!",
+                'discount': "We offer several discounts: 20% for referrals, 5-15% for recurring service plans, and seasonal promotions. Ask about current deals when you contact us!",
+                
+                // Problem-specific
+                'stain': "Stains are our specialty! Whether it's oil stains on driveways, rust stains, or organic stains from Seattle's wet climate, we have the experience and equipment to tackle them effectively.",
+                'mold': "Mold and mildew are common in Seattle's climate. We safely remove these using appropriate techniques and eco-friendly solutions that won't harm your property or landscape.",
+                'algae': "Algae buildup is very common here! We specialize in removing algae from driveways, sidewalks, and building exteriors. Our treatments help prevent quick regrowth too.",
+                
+                // General questions
+                'why': "Why choose PWashing? We're Seattle pressure washing specialists who understand our unique climate challenges. We're reliable, eco-friendly, properly equipped, and offer competitive pricing with great customer service!",
+                'experience': "We have extensive experience with Seattle's specific cleaning challenges - from persistent moss to rain-soaked surfaces. We know what works in the Pacific Northwest!",
+                'guarantee': "We stand behind our work! If you're not completely satisfied with our Seattle pressure washing service, we'll make it right. Your satisfaction is our guarantee.",
+                
+                // Typo variations and common misspellings
+                'pres sure': "I think you're asking about pressure washing! We provide comprehensive pressure washing services throughout Seattle. What specific service interests you?",
+                'washing': "Yes, we do pressure washing! We serve all of Seattle including Capitol Hill, Ballard, Queen Anne, and surrounding areas. What can we clean for you?",
+                'cleen': "We'd love to clean your property! Our pressure washing services cover houses, driveways, decks, sidewalks, and commercial properties throughout Seattle.",
+                'ballrd': "I think you mean Ballard! Yes, we absolutely serve the Ballard area with comprehensive pressure washing services.",
+                'seatle': "I believe you're asking about Seattle! Yes, we serve all of Seattle and surrounding areas with professional pressure washing services.",
+                'how much': "Pricing depends on your specific project. We offer free, no-obligation quotes for all Seattle properties. Contact us at (206) 300-6614 for your personalized estimate!",
+                'free': "Yes! We provide completely free, no-obligation estimates for all our Seattle pressure washing services. We'll assess your property and provide a detailed quote.",
+                
+                // Default responses for unmatched queries
+                'default': "That's a great question! For detailed information about our Seattle pressure washing services, I'd recommend calling us at (206) 300-6614 or emailing jackodseattle@gmail.com. We're happy to discuss your specific needs!"
+            };
+
+            // Check for keyword matches with typo tolerance
+            for (let keyword in responses) {
+                if (message.includes(keyword) || 
+                    message.includes(keyword.replace(/\s/g, '')) || // Remove spaces
+                    similarString(message, keyword) ||
+                    message.includes(keyword.substring(0, keyword.length - 1))) { // Partial match
+                    return responses[keyword];
+                }
+            }
+
+            // Special check for multiple keywords
+            if (message.includes('schedule') || message.includes('book') || message.includes('appointment')) {
+                return responses['schedule'];
+            }
+            if (message.includes('how much') || message.includes('cost') || message.includes('price')) {
+                return responses['price'];
+            }
+            if (message.includes('area') || message.includes('location') || message.includes('serve')) {
+                return responses['areas'];
+            }
+
+            return responses['default'];
+        }
+
+        // Simple string similarity check for typo tolerance
+        function similarString(str1, str2) {
+            const threshold = 0.7;
+            const longer = str1.length > str2.length ? str1 : str2;
+            const shorter = str1.length > str2.length ? str2 : str1;
+            
+            if (longer.length === 0) return 1.0;
+            
+            const distance = levenshteinDistance(longer, shorter);
+            return (longer.length - distance) / longer.length >= threshold;
+        }
+
+        // Levenshtein distance for typo tolerance
+        function levenshteinDistance(str1, str2) {
+            const matrix = [];
+            
+            for (let i = 0; i <= str2.length; i++) {
+                matrix[i] = [i];
+            }
+            
+            for (let j = 0; j <= str1.length; j++) {
+                matrix[0][j] = j;
+            }
+            
+            for (let i = 1; i <= str2.length; i++) {
+                for (let j = 1; j <= str1.length; j++) {
+                    if (str2.charAt(i - 1) === str1.charAt(j - 1)) {
+                        matrix[i][j] = matrix[i - 1][j - 1];
+                    } else {
+                        matrix[i][j] = Math.min(
+                            matrix[i - 1][j - 1] + 1,
+                            matrix[i][j - 1] + 1,
+                            matrix[i - 1][j] + 1
+                        );
                     }
                 }
             }
             
-            checkURLParameters();
-        });
+            return matrix[str2.length][str1.length];
+        }
     </script>
 </body>
-</html>
+</html>-method">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <a href="tel:2063006614">(206) 300-6614</a>
+                                </div>
+                                <div class="contact
