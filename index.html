@@ -2854,7 +2854,7 @@
                     
                     <div id="successMessage" class="success-message" style="display: none;">
                         <i class="fas fa-check-circle"></i>
-                        Thank you! Your message has been sent successfully. We'll contact you within 24 hours with your free quote.
+                        **There was an error sending your message. Please email me directly at jackodseattle@gmail.com!**
                     </div>
                 </div>
             </div>
@@ -3075,7 +3075,7 @@
                     })
                     .catch(error => {
                         console.error('Error:', error);
-                        alert('There was an error sending your message. Please try again or call us directly.');
+                        alert('There was an error sending your message. Please try again or email us directly.');
                         submitButton.textContent = originalButtonText;
                         submitButton.disabled = false;
                     });
