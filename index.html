@@ -672,44 +672,57 @@
 
             setTimeout(startCounter, 1000);
 
-            // Form submission handling
-            const contactForm = document.getElementById('contactForm');
-            const successMessage = document.getElementById('successMessage');
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.textContent;
             
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    const formData = new FormData(contactForm);
-                    const submitButton = contactForm.querySelector('button[type="submit"]');
-                    const originalButtonText = submitButton.textContent;
-                    
-                    submitButton.textContent = 'Sending...';
-                    submitButton.disabled = true;
-                    
-                    fetch('https://formsubmit.co/jackodseattle@gmail.com', {
-                        method: 'POST',
-                        body: formData
-                    })
-                    .then(response => {
-                        contactForm.style.display = 'none';
-                        successMessage.style.display = 'flex';
-                        contactForm.reset();
-                        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        
-                        setTimeout(() => {
-                            successMessage.style.display = 'none';
-                            contactForm.style.display = 'block';
-                        }, 8000);
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        alert('There was an error sending your message. Please try again or email us directly.');
-                        submitButton.textContent = originalButtonText;
-                        submitButton.disabled = false;
-                    });
-                });
+            // Show loading state
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+            
+            // Let Netlify handle the form submission
+            // After submission, Netlify will either:
+            // 1. Redirect to a success page (if you set one up)
+            // 2. Reload the page with a success parameter
+            
+            // Check if we're on the success page/state
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('success') === 'true' || document.referrer.includes('pwashing.com')) {
+                setTimeout(function() {
+                    contactForm.style.display = 'none';
+                    successMessage.style.display = 'flex';
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 500);
             }
+            
+            // Reset button after 3 seconds if still visible
+            setTimeout(function() {
+                if (submitButton.disabled) {
+                    submitButton.textContent = originalButtonText;
+                    submitButton.disabled = false;
+                }
+            }, 3000);
+        });
+    }
+    
+    // Check for success parameter on page load
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === 'true') {
+        if (contactForm) contactForm.style.display = 'none';
+        if (successMessage) {
+            successMessage.style.display = 'flex';
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }
+});
+</script>
 
             // Back to Top Button
             const backToTop = document.querySelector('.back-to-top');
