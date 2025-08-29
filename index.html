@@ -434,137 +434,61 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact section-padding">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-subtitle">Get In Touch</span>
-                <h2 class="section-title">Get Your Free <span class="highlight">Quote</span> Today</h2>
-                <p class="section-description">Ready to transform your Seattle property? Fill out the form below and we'll get back to you within 24 hours with a detailed estimate.</p>
-            </div>
-            
-            <div class="contact-content" data-aos="fade-up" data-aos-delay="200">
-                <div class="contact-info">
-                    <h3>Ready to Transform Your Seattle Property?</h3>
-                    <p>Contact us today for a free, no-obligation quote. We'll assess your property and provide you with a detailed estimate for our professional pressure washing services.</p>
-                    
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <strong>Service Areas:</strong>
-                                <p>Capitol Hill, Ballard, Queen Anne, Fremont, Wallingford, Green Lake, Magnolia, West Seattle & all surrounding areas</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div>
-                                <strong>Response Time:</strong>
-                                <p>We respond to all Seattle inquiries within 24 hours</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-calculator"></i>
-                            </div>
-                            <div>
-                                <strong>Free Estimates:</strong>
-                                <p>All quotes are completely free with no obligation</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <strong>Email:</strong>
-                                <p>jackodseattle@gmail.com</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="contact-form-container">
-                    <!-- Notice about form and alternative contact methods -->
-                    <div class="form-notice">
-                        <div class="notice-icon">
-                            <i class="fas fa-info-circle"></i>
-                        </div>
-                        <div class="notice-content">
-                            <p><strong>Having trouble with the form?</strong> You can also reach us directly:</p>
-                            <div class="contact-alternatives">
-                                <div class="contact-method">
-                                    <i class="fas fa-envelope"></i>
-                                    <a href="mailto:jackodseattle@gmail.com">jackodseattle@gmail.com</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- FormSubmit.co - Simplified setup -->
-                    <form id="contactForm" class="contact-form" action="https://formsubmit.co/jackodseattle@gmail.com" method="POST" target="_blank">
-                        <!-- Simplified FormSubmit configuration -->
-                        <input type="hidden" name="_subject" value="New Pressure Washing Inquiry from Seattle">
-                        <input type="hidden" name="_next" value="https://pwashing.com/thank-you.html">
-                        
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="address">Property Address *</label>
-                            <input type="text" id="address" name="address" class="form-control" placeholder="Street address, Seattle neighborhood" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="service_type">Service Needed *</label>
-                            <select id="service_type" name="service_type" class="form-control" required>
-                                <option value="">Select a service</option>
-                                <option value="house-washing">House Washing</option>
-                                <option value="driveway-cleaning">Driveway Cleaning</option>
-                                <option value="deck-patio">Deck & Patio Cleaning</option>
-                                <option value="sidewalk-cleaning">Sidewalk Cleaning</option>
-                                <option value="commercial">Commercial Property</option>
-                                <option value="recurring-service">Recurring Service Plan</option>
-                                <option value="multiple">Multiple Services</option>
-                                <option value="other">Other (specify in message)</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Additional Details</label>
-                            <textarea id="message" name="message" class="form-control" rows="4" placeholder="Please describe your project, any specific areas of concern, questions about recurring services, or mention if you're a referral from a Seattle neighbor..."></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary btn-block">Get Free Quote</button>
-                    </form>
-                    
-                    <div id="successMessage" class="success-message" style="display: none;">
-                        <i class="fas fa-check-circle"></i>
-                        **There was an error sending your message. Please email me directly at jackodseattle@gmail.com!**
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
+<!-- Contact Form - Netlify Forms Enabled -->
+<form id="contactForm" name="pwashing-contact" method="POST" netlify netlify-honeypot="bot-field" class="contact-form">
+    <!-- Hidden fields for Netlify -->
+    <input type="hidden" name="bot-field" />
+    <input type="hidden" name="form-name" value="pwashing-contact" />
+    
+    <div class="form-group">
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" name="name" class="form-control" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" class="form-control" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" name="phone" class="form-control" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="address">Property Address *</label>
+        <input type="text" id="address" name="address" class="form-control" placeholder="Street address, Seattle neighborhood" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="service_type">Service Needed *</label>
+        <select id="service_type" name="service_type" class="form-control" required>
+            <option value="">Select a service</option>
+            <option value="house-washing">House Washing</option>
+            <option value="driveway-cleaning">Driveway Cleaning</option>
+            <option value="deck-patio">Deck & Patio Cleaning</option>
+            <option value="sidewalk-cleaning">Sidewalk Cleaning</option>
+            <option value="commercial">Commercial Property</option>
+            <option value="recurring-service">Recurring Service Plan</option>
+            <option value="multiple">Multiple Services</option>
+            <option value="other">Other (specify in message)</option>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label for="message">Additional Details</label>
+        <textarea id="message" name="message" class="form-control" rows="4" placeholder="Please describe your project, any specific areas of concern, questions about recurring services, or mention if you're a referral from a Seattle neighbor..."></textarea>
+    </div>
+    
+    <button type="submit" class="btn btn-primary btn-block">Get Free Quote</button>
+</form>
+
+<!-- Success Message -->
+<div id="successMessage" class="success-message" style="display: none;">
+    <i class="fas fa-check-circle"></i>
+    <strong>Thank you!</strong> Your message has been sent successfully. We'll contact you within 24 hours with your free quote!
+</div>
 
     <!-- Footer -->
     <footer class="footer">
