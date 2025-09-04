@@ -138,8 +138,8 @@
                     <i class="fas fa-map-marked-alt"></i>
                 </div>
                 <div class="note-content">
-                    <h5>Expanding Our Service Area</h5>
-                    <p>While we currently focus on Ballard and Queen Anne, we're actively expanding to serve more Seattle neighborhoods. <strong>Contact us if you're outside these areas</strong> - we may still be able to help!</p>
+                    <h5>Expanding My Service Area</h5>
+                    <p>While I currently focus on Ballard and Queen Anne, I'm actively expanding to serve more Seattle neighborhoods. <strong>Contact me if you're outside these areas</strong> - I may still be able to help!</p>
                 </div>
             </div>
         </div>
@@ -152,7 +152,7 @@
     <section id="services" class="services section-padding">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <span class="section-subtitle">Our Services</span>
+                <span class="section-subtitle">My Services</span>
                 <h2 class="section-title">Professional <span class="highlight">Cleaning</span> Solutions</h2>
                 <p class="section-description">I provide comprehensive pressure washing services for residential and commercial properties throughout Seattle.</p>
             </div>
@@ -215,7 +215,7 @@
             <div class="section-header" data-aos="fade-up">
                 <span class="section-subtitle">Transformation Results</span>
                 <h2 class="section-title">Before & <span class="highlight">After</span> Gallery</h2>
-                <p class="section-description">See the incredible transformations we've achieved for Seattle properties. These results speak for themselves!</p>
+                <p class="section-description">See the incredible transformations I've achieved for Seattle properties. These results speak for themselves!</p>
             </div>
             
             <div class="comparison-grid">
@@ -311,7 +311,7 @@
                             </div>
                             <div class="feature-content">
                                 <h3>Eco-Friendly Approach</h3>
-                                <p>Water-only cleaning is our preferred method! We use biodegradable soaps only when necessary, protecting Seattle's beautiful landscape and Puget Sound.</p>
+                                <p>Water-only cleaning is my preferred method! We use biodegradable soaps only when necessary, protecting Seattle's beautiful landscape and Puget Sound.</p>
                             </div>
                         </div>
                         
@@ -347,7 +347,7 @@
             <div class="recurring-content" data-aos="fade-up">
                 <div class="recurring-info">
                     <h3>Recurring Service Plans</h3>
-                    <p>Save time and money with our convenient recurring service plans! Perfect for Seattle properties that need regular maintenance due to our unique climate. Both residential and commercial properties benefit from scheduled cleaning.</p>
+                    <p>Save time and money with my convenient recurring service plans! Perfect for Seattle properties that need regular maintenance due to my unique climate. Both residential and commercial properties benefit from scheduled cleaning.</p>
                     
                     <div class="service-types">
                         <div class="service-type" data-aos="fade-right" data-aos-delay="100">
@@ -418,7 +418,7 @@
                 </div>
                 <h3>Refer a Seattle Neighbor & Save!</h3>
                 <span class="discount-highlight">20% OFF</span>
-                <p>Love our service? Share the clean throughout your Seattle neighborhood! When you refer a friend or neighbor to PWashing, I'll refund you 20% of what you paid and your referral will get 20% off their job. It's our way of saying thank you for spreading the word about professional pressure washing in Seattle!</p>
+                <p>Love my service? Share the clean throughout your Seattle neighborhood! When you refer a friend or neighbor to PWashing, I'll refund you 20% of what you paid and your referral will get 20% off their job. It's our way of saying thank you for spreading the word about professional pressure washing in Seattle!</p>
                 <p><strong>How it works:</strong> Simply have your friend mention your name when they book their service, and we'll automatically apply the discount to both accounts.</p>
             </div>
         </div>
@@ -644,11 +644,11 @@
             </div>
             <div class="chatbot-messages" id="chatbotMessages">
                 <div class="message bot">
-                    Hi! I'm here to help with any questions about our pressure washing services in Seattle. What can I help you with today?
+                    Hi! I'm here to help with any questions about my pressure washing services in Seattle. What can I help you with today?
                 </div>
             </div>
             <div class="chatbot-input-container">
-                <input type="text" class="chatbot-input" id="chatbotInput" placeholder="Ask about our services..." onkeypress="handleChatKeypress(event)">
+                <input type="text" class="chatbot-input" id="chatbotInput" placeholder="Ask about my services..." onkeypress="handleChatKeypress(event)">
                 <button class="chatbot-send" onclick="sendMessage()">Send</button>
             </div>
         </div>
@@ -982,7 +982,7 @@
             if (containsKeyword(keywords.greetings, normalizedMessage)) {
                 const greetingResponses = [
                     "Hello! Welcome to PWashing Seattle! 👋 How can I help you with your pressure washing needs today?",
-                    "Hi there! I'm here to help with any questions about our Seattle pressure washing services. What can I do for you?",
+                    "Hi there! I'm here to help with any questions about my Seattle pressure washing services. What can I do for you?",
                     "Hey! Thanks for reaching out to PWashing. What pressure washing questions can I answer for you today?"
                 ];
                 return greetingResponses[Math.floor(Math.random() * greetingResponses.length)];
@@ -993,11 +993,11 @@
             }
 
             if (containsKeyword(keywords.house, normalizedMessage)) {
-                return "Our house washing service is perfect for Seattle homes! 🏡 We safely remove:\n\n• Moss & mildew (common in our climate)\n• Dirt & grime buildup\n• Algae stains\n• General weathering\n\nWe use gentle, surface-safe techniques that protect your siding while delivering amazing results. Works great on vinyl, wood, stucco, and composite materials!";
+                return "My house washing service is perfect for Seattle homes! 🏡 We safely remove:\n\n• Moss & mildew (common in our climate)\n• Dirt & grime buildup\n• Algae stains\n• General weathering\n\nWe use gentle, surface-safe techniques that protect your siding while delivering amazing results. Works great on vinyl, wood, stucco, and composite materials!";
             }
 
             if (containsKeyword(keywords.driveway, normalizedMessage)) {
-                return "Driveway cleaning is one of our most popular services! 🚗 We tackle:\n\n• Oil & grease stains\n• Tire marks\n• Moss & algae (very common in Seattle!)\n• General dirt buildup\n• Rust stains\n\nWorks on concrete, asphalt, and paver driveways. The transformation is usually dramatic - you'll be amazed at the difference!";
+                return "Driveway cleaning is one of my most popular services! 🚗 We tackle:\n\n• Oil & grease stains\n• Tire marks\n• Moss & algae (very common in Seattle!)\n• General dirt buildup\n• Rust stains\n\nWorks on concrete, asphalt, and paver driveways. The transformation is usually dramatic - you'll be amazed at the difference!";
             }
 
             if (containsKeyword(keywords.deck, normalizedMessage)) {
@@ -1005,11 +1005,11 @@
             }
 
             if (containsKeyword(keywords.commercial, normalizedMessage)) {
-                return "We love helping Seattle businesses look their best! 🏢 Our commercial services include:\n\n• Storefront cleaning\n• Parking lot maintenance\n• Building exterior washing\n• Sidewalk & entrance cleaning\n• Regular maintenance contracts\n\nWe work around your business hours and offer recurring plans with great discounts. Professional appearance = more customers!";
+                return "We love helping Seattle businesses look their best! 🏢 My commercial services include:\n\n• Storefront cleaning\n• Parking lot maintenance\n• Building exterior washing\n• Sidewalk & entrance cleaning\n• Regular maintenance contracts\n\nWe work around your business hours and offer recurring plans with great discounts. Professional appearance = more customers!";
             }
 
             if (containsKeyword(keywords.sidewalk, normalizedMessage)) {
-                return "Sidewalk cleaning is super important for safety in Seattle! 🚶‍♂️ We remove:\n\n• Slippery moss & algae\n• Accumulated dirt & grime\n• Stains & discoloration\n• Chewing gum\n• General buildup\n\nClean sidewalks aren't just prettier - they're safer for everyone walking on them, especially during our wet months!";
+                return "Sidewalk cleaning is super important for safety in Seattle! 🚶‍♂️ We remove:\n\n• Slippery moss & algae\n• Accumulated dirt & grime\n• Stains & discoloration\n• Chewing gum\n• General buildup\n\nClean sidewalks aren't just prettier - they're safer for everyone walking on them, especially during the wet months!";
             }
 
             if (containsKeyword(keywords.pricing, normalizedMessage) || containsKeyword(keywords.quote, normalizedMessage)) {
@@ -1022,11 +1022,11 @@
 
             // Specific neighborhood responses
             if (containsKeyword(keywords.capitolhill, normalizedMessage)) {
-                return "Yes! We absolutely serve Capitol Hill! 🏘️ We're very familiar with the area's mix of historic homes and modern buildings. We adjust our pressure washing techniques for different architectural styles and always protect those beautiful older surfaces.";
+                return "Yes! We absolutely serve Capitol Hill! 🏘️ We're very familiar with the area's mix of historic homes and modern buildings. We adjust my pressure washing techniques for different architectural styles and always protect those beautiful older surfaces.";
             }
 
             if (containsKeyword(keywords.ballard, normalizedMessage)) {
-                return "Ballard is one of our favorite areas to work! ⚓ We serve the entire Ballard area extensively, from the waterfront properties to the residential streets. We understand the maritime environment's effect on buildings and adjust our cleaning accordingly.";
+                return "Ballard is one of my favorite areas to work! ⚓ We serve the entire Ballard area extensively, from the waterfront properties to the residential streets. We understand the maritime environment's effect on buildings and adjust my cleaning accordingly.";
             }
 
             if (containsKeyword(keywords.queenanne, normalizedMessage)) {
@@ -1034,23 +1034,23 @@
             }
 
             if (containsKeyword(keywords.scheduling, normalizedMessage)) {
-                return "Scheduling is super easy! 📅 Here's how:\n\n1. Call us: (206) 300-6614\n2. Email: jackodseattle@gmail.com\n3. Fill out our contact form\n\nWe typically respond within 24 hours and can often schedule within a few days. We work Monday-Saturday, 8AM-6PM, and we're flexible with timing!";
+                return "Scheduling is super easy! 📅 Here's how:\n\n1. Call us: (206) 300-6614\n2. Email: jackodseattle@gmail.com\n3. Fill out my contact form\n\nWe typically respond within 24 hours and can often schedule within a few days. We work Monday-Saturday, 8AM-6PM, and we're flexible with timing!";
             }
 
             if (containsKeyword(keywords.contact, normalizedMessage)) {
-                return "Here's how to reach us! 📞\n\n📱 Phone: (206) 300-6614\n📧 Email: jackodseattle@gmail.com\n🌐 Website: Fill out our contact form\n\n⏰ Available: Monday-Saturday, 8AM-6PM\n⚡ Response time: Within 24 hours\n\nWe're always happy to answer questions or provide free quotes!";
+                return "Here's how to reach us! 📞\n\n📱 Phone: (206) 300-6614\n📧 Email: jackodseattle@gmail.com\n🌐 Website: Fill out my contact form\n\n⏰ Available: Monday-Saturday, 8AM-6PM\n⚡ Response time: Within 24 hours\n\nWe're always happy to answer questions or provide free quotes!";
             }
 
             if (containsKeyword(keywords.weather, normalizedMessage)) {
-                return "Seattle's weather is exactly WHY pressure washing is so important here! ☔ Our climate creates perfect conditions for:\n\n• Moss growth (everywhere!)\n• Mildew & algae\n• Moisture staining\n• Dirt accumulation\n\nWe specialize in these Pacific Northwest challenges. Light rain doesn't stop us - we'll just communicate about heavy weather delays!";
+                return "Seattle's weather is exactly WHY pressure washing is so important here! ☔ My climate creates perfect conditions for:\n\n• Moss growth (everywhere!)\n• Mildew & algae\n• Moisture staining\n• Dirt accumulation\n\nWe specialize in these Pacific Northwest challenges. Light rain doesn't stop us - we'll just communicate about heavy weather delays!";
             }
 
             if (containsKeyword(keywords.moss, normalizedMessage)) {
-                return "Moss removal is our SPECIALTY! 🌿 In Seattle, moss grows on everything:\n\n• Roofs & gutters\n• Driveways & walkways\n• House siding\n• Decks & patios\n\nWe safely remove moss without damaging surfaces using the right pressure and techniques for each material. Prevention tips available too!";
+                return "Moss removal is my SPECIALTY! 🌿 In Seattle, moss grows on everything:\n\n• Roofs & gutters\n• Driveways & walkways\n• House siding\n• Decks & patios\n\nWe safely remove moss without damaging surfaces using the right pressure and techniques for each material. Prevention tips available too!";
             }
 
             if (containsKeyword(keywords.equipment, normalizedMessage) || containsKeyword(keywords.safe, normalizedMessage)) {
-                return "We use professional-grade equipment designed for safety! 🛡️\n\n• Variable pressure settings\n• Surface-specific nozzles\n• Hot & cold water systems\n• Eco-friendly cleaning solutions\n\nWe adjust everything based on what we're cleaning - gentle for wood siding, stronger for concrete. Your property's safety is our priority!";
+                return "We use professional-grade equipment designed for safety! 🛡️\n\n• Variable pressure settings\n• Surface-specific nozzles\n• Hot & cold water systems\n• Eco-friendly cleaning solutions\n\nWe adjust everything based on what we're cleaning - gentle for wood siding, stronger for concrete. Your property's safety is my priority!";
             }
 
             if (containsKeyword(keywords.eco, normalizedMessage)) {
@@ -1074,18 +1074,18 @@
             }
 
             if (containsKeyword(keywords.guarantee, normalizedMessage)) {
-                return "Absolutely! We stand behind our work with a satisfaction guarantee! ✅\n\n• If you're not completely happy, we'll make it right\n• Professional results or we return\n• Clear communication throughout\n• No surprises or hidden fees\n\nYour satisfaction is our reputation - we want you to love the results and refer your neighbors!";
+                return "Absolutely! We stand behind my work with a satisfaction guarantee! ✅\n\n• If you're not completely happy, we'll make it right\n• Professional results or we return\n• Clear communication throughout\n• No surprises or hidden fees\n\nYour satisfaction is my reputation - we want you to love the results and refer your neighbors!";
             }
 
             // Handle questions about referrals
             if (normalizedMessage.includes('referral') || normalizedMessage.includes('refer') || normalizedMessage.includes('discount')) {
-                return "Our referral program is awesome! 🎉\n\n• Refer a Seattle neighbor → You BOTH get 20% off!\n• Easy process - just have them mention your name\n• Automatic discount applied\n• No limit on referrals\n\nIt's our way of saying thanks for spreading the word about quality pressure washing!";
+                return "My referral program is awesome! 🎉\n\n• Refer a Seattle neighbor → You BOTH get 20% off!\n• Easy process - just have them mention your name\n• Automatic discount applied\n• No limit on referrals\n\nIt's my way of saying thanks for spreading the word about quality pressure washing!";
             }
 
             // Catch-all for unmatched queries
             const catchAllResponses = [
-                "That's a great question! For detailed information about that specific topic, I'd recommend calling us at (206) 300-6614 or emailing jackodseattle@gmail.com. We're happy to discuss your specific needs in detail! 😊",
-                "I want to make sure I give you the most accurate information! Our team can better address that question directly. Call (206) 300-6614 or email jackodseattle@gmail.com - we respond within 24 hours! 📞",
+                "That's a great question! For detailed information about that specific topic, I'd recommend calling us at (206) 300-6614 or emailing jackodseattle@gmail.com. We're happy to discuss y specific needs in detail! 😊",
+                "I want to make sure I give you the most accurate information! My team can better address that question directly. Call (206) 300-6614 or email jackodseattle@gmail.com - we respond within 24 hours! 📞",
                 "Great question! While I can help with general info, our pressure washing experts can give you detailed answers about that. Reach out at (206) 300-6614 or jackodseattle@gmail.com for personalized help! 💪"
             ];
 
