@@ -298,7 +298,7 @@ ul, ol {
     font-size: 1.1rem;
     font-weight: var(--font-weight-medium);
     color: var(--text-muted);
-    margin-top: -0.2rem;
+    margin-top: 0.3rem;
     letter-spacing: 0.5px;
 }
 
