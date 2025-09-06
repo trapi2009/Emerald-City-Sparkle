@@ -431,7 +431,7 @@
         <div class="container">
             <div class="cta-content" data-aos="fade-up">
                 <h2>Ready to Transform Your Seattle Property?</h2>
-                <p>Contact us today for a free, no-obligation quote and see the difference professional pressure washing can make for your Capitol Hill, Ballard, Queen Anne, or any Seattle neighborhood property!</p>
+                <p>Contact me today for a free, no-obligation quote and see the difference professional pressure washing can make for your Capitol Hill, Ballard, Queen Anne, or any Seattle neighborhood property!</p>
                 <a href="#contact" class="btn btn-light btn-lg btn-pulse">Get Free Quote Today</a>
             </div>
         </div>
@@ -555,7 +555,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="message">Tell us about your project *</label>
+                        <label for="message">Tell me about your project *</label>
                         <textarea id="message" name="message" class="form-control" required placeholder="Describe what you need cleaned, current condition, any special requirements, or questions you have..."></textarea>
                     </div>
 
@@ -787,7 +787,7 @@
                     })
                     .catch(error => {
                         console.error('Error:', error);
-                        alert('There was an error sending your message. Please try again or email us directly.');
+                        alert('There was an error sending your message. Please try again or email me directly.');
                         submitButton.textContent = originalButtonText;
                         submitButton.disabled = false;
                     });
@@ -1036,15 +1036,15 @@
             }
 
             if (containsKeyword(keywords.scheduling, normalizedMessage)) {
-                return "Scheduling is super easy! 📅 Here's how:\n\n1. Call us: (206) 300-6614\n2. Email: jackodseattle@gmail.com\n3. Fill out my contact form\n\nWe typically respond within 24 hours and can often schedule within a few days. We work Monday-Saturday, 8AM-6PM, and we're flexible with timing!";
+                return "Scheduling is super easy! 📅 Here's how:\n\n1. Call me: (206) 300-6614\n2. Email: jackodseattle@gmail.com\n3. Fill out my contact form\n\nWe typically respond within 24 hours and can often schedule within a few days. We work Monday-Saturday, 8AM-6PM, and we're flexible with timing!";
             }
 
             if (containsKeyword(keywords.contact, normalizedMessage)) {
-                return "Here's how to reach us! 📞\n\n📱 Phone: (206) 300-6614\n📧 Email: jackodseattle@gmail.com\n🌐 Website: Fill out my contact form\n\n⏰ Available: Monday-Saturday, 8AM-6PM\n⚡ Response time: Within 24 hours\n\nWe're always happy to answer questions or provide free quotes!";
+                return "Here's how to reach me! 📞\n\n📱 Phone: (206) 300-6614\n📧 Email: jackodseattle@gmail.com\n🌐 Website: Fill out my contact form\n\n⏰ Available: Monday-Saturday, 8AM-6PM\n⚡ Response time: Within 24 hours\n\nWe're always happy to answer questions or provide free quotes!";
             }
 
             if (containsKeyword(keywords.weather, normalizedMessage)) {
-                return "Seattle's weather is exactly WHY pressure washing is so important here! ☔ My climate creates perfect conditions for:\n\n• Moss growth (everywhere!)\n• Mildew & algae\n• Moisture staining\n• Dirt accumulation\n\nWe specialize in these Pacific Northwest challenges. Light rain doesn't stop us - we'll just communicate about heavy weather delays!";
+                return "Seattle's weather is exactly WHY pressure washing is so important here! ☔ My climate creates perfect conditions for:\n\n• Moss growth (everywhere!)\n• Mildew & algae\n• Moisture staining\n• Dirt accumulation\n\nWe specialize in these Pacific Northwest challenges. Light rain doesn't stop me - I'll just communicate about heavy weather delays!";
             }
 
             if (containsKeyword(keywords.moss, normalizedMessage)) {
@@ -1068,7 +1068,7 @@
             }
 
             if (containsKeyword(keywords.why, normalizedMessage)) {
-                return "Why choose Seattle Pressure Washing? Here's what makes us special! ⭐\n\n• Seattle climate specialists\n• Eco-friendly methods\n• Professional equipment\n• Reliable & punctual\n• Free estimates\n• Satisfaction guaranteed\n• Local expertise\n• Competitive pricing\n\nWe understand Seattle's unique challenges and deliver results that last!";
+                return "Why choose Seattle Pressure Washing? Here's what makes me special! ⭐\n\n• Seattle climate specialists\n• Eco-friendly methods\n• Professional equipment\n• Reliable & punctual\n• Free estimates\n• Satisfaction guaranteed\n• Local expertise\n• Competitive pricing\n\nWe understand Seattle's unique challenges and deliver results that last!";
             }
 
             if (containsKeyword(keywords.experience, normalizedMessage)) {
@@ -1086,7 +1086,7 @@
 
             // Catch-all for unmatched queries
             const catchAllResponses = [
-                "That's a great question! For detailed information about that specific topic, I'd recommend calling us at (206) 300-6614 or emailing jackodseattle@gmail.com. We're happy to discuss your specific needs in detail! 😊",
+                "That's a great question! For detailed information about that specific topic, I'd recommend calling me at (206) 300-6614 or emailing jackodseattle@gmail.com. We're happy to discuss your specific needs in detail! 😊",
                 "I want to make sure I give you the most accurate information! My team can better address that question directly. Call (206) 300-6614 or email jackodseattle@gmail.com - we respond within 24 hours! 📞",
                 "Great question! While I can help with general info, our pressure washing experts can give you detailed answers about that. Reach out at (206) 300-6614 or jackodseattle@gmail.com for personalized help! 💪"
             ];
