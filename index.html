@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seattle Pressure Washing | Professional Pressure Washing Services</title>
-    <meta name="description" content="Professional pressure washing services for Ballard and Queen Anne! Quality, reliability, and professional results guaranteed.">
+    <title>Emerald City Sparkle | Professional Window Cleaning & Pressure Washing Services</title>
+    <meta name="description" content="Professional window cleaning and pressure washing services for Ballard and Queen Anne! Crystal clear windows and spotless surfaces guaranteed.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,9 +17,1149 @@
     <!-- AOS Animation Library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     
-    <!-- Link to external CSS file -->
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /*--------------------------------------------------------------
+        # Base Styles & Variables
+        --------------------------------------------------------------*/
+        :root {
+            /* Primary Color Palette - Emerald and Dark Blue Theme */
+            --primary-color: #059669; /* Emerald Green */
+            --primary-dark: #047857; /* Darker Emerald */
+            --primary-light: #d1fae5; /* Light Emerald */
+            --secondary-color: #1e40af; /* Darker Blue */
+            --secondary-dark: #1e3a8a; /* Even Darker Blue */
+            --secondary-light: #dbeafe; /* Light Blue */
+            --accent-color: #10b981; /* Bright Emerald */
+            --accent-dark: #059669; /* Emerald */
+            --accent-light: #a7f3d0; /* Very Light Emerald */
+            
+            /* Neutral Colors */
+            --dark-color: #1f2937;
+            --light-color: #ffffff;
+            --grey-color: #f9fafb;
+            --grey-dark: #e5e7eb;
+            --text-color: #374151;
+            --text-muted: #6b7280;
+            --text-light: #9ca3af;
+            
+            /* Status Colors */
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --error-color: #ef4444;
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            --gradient-secondary: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            --gradient-dark: linear-gradient(135deg, var(--dark-color), #374151);
+            
+            /* Typography */
+            --font-family: 'Poppins', sans-serif;
+            --font-weight-light: 300;
+            --font-weight-normal: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+            
+            /* Spacing */
+            --section-padding: 5rem 0;
+            --container-padding: 0 2rem;
+            
+            /* Transitions & Animations */
+            --transition-fast: all 0.2s ease;
+            --transition-normal: all 0.3s ease;
+            --transition-slow: all 0.5s ease;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.2);
+            
+            /* Border Radius */
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --radius-2xl: 1.5rem;
+        }
+
+        /* CSS Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 62.5%; /* 1rem = 10px */
+        }
+
+        body {
+            font-family: var(--font-family);
+            font-size: 1.6rem;
+            line-height: 1.6;
+            color: var(--text-color);
+            overflow-x: hidden;
+            background-color: var(--light-color);
+            font-weight: var(--font-weight-normal);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-family);
+            font-weight: var(--font-weight-bold);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--dark-color);
+        }
+
+        h1 { font-size: 4.8rem; }
+        h2 { font-size: 3.6rem; }
+        h3 { font-size: 2.8rem; }
+        h4 { font-size: 2.4rem; }
+        h5 { font-size: 2rem; }
+        h6 { font-size: 1.8rem; }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition-normal);
+        }
+
+        a:hover {
+            color: var(--primary-dark);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--container-padding);
+        }
+
+        .section-padding {
+            padding: var(--section-padding);
+        }
+
+        .bg-light {
+            background-color: var(--grey-color);
+        }
+
+        .bg-primary {
+            background: var(--gradient-primary);
+            color: var(--light-color);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .highlight {
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+            z-index: -1;
+        }
+
+        /*--------------------------------------------------------------
+        # Preloader
+        --------------------------------------------------------------*/
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--light-color);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: var(--transition-slow);
+        }
+
+        .loader {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .loader .circle {
+            width: 1.2rem;
+            height: 1.2rem;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            animation: bounce 1.4s infinite ease-in-out both;
+        }
+
+        .loader .circle:nth-child(1) { animation-delay: -0.32s; }
+        .loader .circle:nth-child(2) { animation-delay: -0.16s; }
+        .loader .circle:nth-child(3) { animation-delay: 0s; }
+
+        @keyframes bounce {
+            0%, 80%, 100% {
+                transform: scale(0);
+            }
+            40% {
+                transform: scale(1);
+            }
+        }
+
+        /*--------------------------------------------------------------
+        # Header
+        --------------------------------------------------------------*/
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-normal);
+        }
+
+        .header.sticky {
+            box-shadow: var(--shadow-md);
+            background-color: rgba(255, 255, 255, 0.98);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 0;
+            transition: var(--transition-normal);
+        }
+
+        .sticky .navbar {
+            padding: 1.5rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .logo-image {
+            width: 5rem;
+            height: 5rem;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: var(--transition-normal);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .logo:hover .logo-image {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-md);
+        }
+
+        .logo-text-container {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .logo-text {
+            font-size: 2.4rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--dark-color);
+        }
+
+        .logo-text .highlight {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo-subtitle {
+            font-size: 1.1rem;
+            font-weight: var(--font-weight-medium);
+            color: var(--text-muted);
+            margin-top: 0.3rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .nav-link {
+            color: var(--text-color);
+            font-weight: var(--font-weight-medium);
+            font-size: 1.6rem;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: var(--transition-normal);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: var(--transition-normal);
+        }
+
+        .nav-link.active::after,
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link.active,
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: var(--dark-color);
+            transition: var(--transition-normal);
+            border-radius: 2px;
+        }
+
+        /*--------------------------------------------------------------
+        # Buttons
+        --------------------------------------------------------------*/
+        .btn {
+            display: inline-block;
+            font-size: 1.6rem;
+            font-weight: var(--font-weight-semibold);
+            padding: 1.2rem 2.4rem;
+            border-radius: var(--radius-xl);
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: var(--transition-normal);
+            text-align: center;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: var(--transition-slow);
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: var(--light-color);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            color: var(--light-color);
+        }
+
+        .btn-outline-primary {
+            background-color: transparent;
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn-outline-primary:hover {
+            background: var(--gradient-primary);
+            color: var(--light-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-light {
+            background-color: var(--light-color);
+            color: var(--primary-color);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-light:hover {
+            background-color: var(--grey-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            color: var(--primary-color);
+        }
+
+        .btn-sm {
+            padding: 0.8rem 1.6rem;
+            font-size: 1.4rem;
+        }
+
+        .btn-lg {
+            padding: 1.6rem 3.2rem;
+            font-size: 1.8rem;
+        }
+
+        .btn-block {
+            width: 100%;
+            display: block;
+        }
+
+        .btn-pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.7);
+            }
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(5, 150, 105, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(5, 150, 105, 0);
+            }
+        }
+
+        /*--------------------------------------------------------------
+        # Hero Section
+        --------------------------------------------------------------*/
+        .hero {
+            padding-top: 12rem;
+            padding-bottom: 8rem;
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-light) 50%, var(--accent-light) 100%);
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            opacity: 0.1;
+            pointer-events: none;
+            animation: float-particle linear infinite;
+        }
+
+        @keyframes float-particle {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            z-index: 2;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            font-weight: var(--font-weight-semibold);
+            padding: 0.8rem 1.6rem;
+            border-radius: var(--radius-xl);
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-title {
+            font-size: 5.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+        }
+
+        .hero-description {
+            font-size: 1.9rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2.5rem;
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-md);
+            backdrop-filter: blur(10px);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3.2rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--primary-color);
+            display: block;
+        }
+
+        .stat-text {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            font-weight: var(--font-weight-medium);
+            margin-top: 0.5rem;
+        }
+
+        .hero-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .floating-image {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .hero-placeholder, .image-placeholder, .gallery-placeholder {
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px dashed var(--primary-color);
+            border-radius: var(--radius-xl);
+            padding: 4rem 2rem;
+            text-align: center;
+            color: var(--primary-color);
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+            transition: var(--transition-normal);
+        }
+
+        .hero-placeholder:hover, .image-placeholder:hover, .gallery-placeholder:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-light);
+        }
+
+        .hero-placeholder p, .image-placeholder p, .gallery-placeholder p {
+            margin: 1rem 0 0 0;
+            font-weight: var(--font-weight-semibold);
+            font-size: 1.6rem;
+        }
+
+        .hero-wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            z-index: 1;
+        }
+
+        .hero-wave svg {
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 8rem;
+        }
+
+        /*--------------------------------------------------------------
+        # Section Headers
+        --------------------------------------------------------------*/
+        .section-header {
+            text-align: center;
+            max-width: 80rem;
+            margin: 0 auto 5rem;
+        }
+
+        .section-subtitle {
+            display: inline-block;
+            font-size: 1.4rem;
+            font-weight: var(--font-weight-semibold);
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .section-subtitle::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4rem;
+            height: 0.2rem;
+            background: var(--gradient-primary);
+            border-radius: 1px;
+        }
+
+        .section-title {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-description {
+            font-size: 1.8rem;
+            color: var(--text-muted);
+            max-width: 70rem;
+            margin: 0 auto;
+        }
+
+        /*--------------------------------------------------------------
+        # Services Section
+        --------------------------------------------------------------*/
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .service-card {
+            background-color: var(--light-color);
+            border-radius: var(--radius-2xl);
+            padding: 3rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-normal);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--grey-dark);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: var(--transition-normal);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary-light);
+        }
+
+        .service-icon {
+            width: 8rem;
+            height: 8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-primary);
+            color: var(--light-color);
+            font-size: 3rem;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            transition: var(--transition-normal);
+            box-shadow: var(--shadow-md);
+        }
+
+        .service-card:hover .service-icon {
+            transform: rotateY(360deg) scale(1.1);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-card h3 {
+            font-size: 2.4rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-color);
+        }
+
+        .service-card p {
+            font-size: 1.6rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /*--------------------------------------------------------------
+        # Footer
+        --------------------------------------------------------------*/
+        .footer {
+            background: var(--gradient-dark);
+            color: rgba(255, 255, 255, 0.8);
+            position: relative;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 4rem;
+            padding: 5rem 0 3rem;
+        }
+
+        .footer-section h3,
+        .footer-section h4 {
+            color: var(--light-color);
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .footer-section p {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section ul {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .footer-section ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.5rem;
+            transition: var(--transition-normal);
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 4rem;
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--light-color);
+            font-size: 1.6rem;
+            border-radius: 50%;
+            transition: var(--transition-normal);
+            backdrop-filter: blur(10px);
+        }
+
+        .social-link:hover {
+            background: var(--gradient-primary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            color: var(--light-color);
+        }
+
+        .contact-info i {
+            color: var(--primary-color);
+            margin-right: 1rem;
+            width: 1.5rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /*--------------------------------------------------------------
+        # Back to Top Button
+        --------------------------------------------------------------*/
+        .back-to-top {
+            position: fixed;
+            bottom: 3rem;
+            right: 3rem;
+            width: 5rem;
+            height: 5rem;
+            background: var(--gradient-primary);
+            color: var(--light-color);
+            font-size: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-normal);
+            z-index: 999;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+            color: var(--light-color);
+        }
+
+        /*--------------------------------------------------------------
+        # Responsive Design
+        --------------------------------------------------------------*/
+
+        /* Large Desktop */
+        @media (max-width: 1400px) {
+            html {
+                font-size: 60%;
+            }
+        }
+
+        /* Desktop */
+        @media (max-width: 1200px) {
+            html {
+                font-size: 58%;
+            }
+        }
+
+        /* Tablet */
+        @media (max-width: 992px) {
+            html {
+                font-size: 55%;
+            }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+                text-align: center;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            html {
+                font-size: 52%;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 8rem;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 8rem);
+                background-color: var(--light-color);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 5rem;
+                transition: var(--transition-normal);
+                z-index: 999;
+                box-shadow: var(--shadow-lg);
+                gap: 2rem;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .hamburger {
+                display: flex;
+                z-index: 1000;
+            }
+            
+            .hamburger.active .bar:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active .bar:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+            
+            .header-cta {
+                display: none;
+            }
+            
+            .hero {
+                padding-top: 10rem;
+                padding-bottom: 6rem;
+                min-height: auto;
+            }
+            
+            .hero-title {
+                font-size: 4rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 576px) {
+            html {
+                font-size: 50%;
+            }
+            
+            .hero-title {
+                font-size: 3.2rem;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 2rem;
+            }
+            
+            .logo-text {
+                font-size: 2rem;
+            }
+            
+            .logo-subtitle {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 3rem;
+            }
+            
+            .service-icon {
+                width: 6rem;
+                height: 6rem;
+                font-size: 2.4rem;
+            }
+        }
+
+        /*--------------------------------------------------------------
+        # Additional Animations
+        --------------------------------------------------------------*/
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .animate-fade-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .animate-fade-down {
+            animation: fadeInDown 0.8s ease-out forwards;
+        }
+
+        .animate-fade-left {
+            animation: fadeInLeft 0.8s ease-out forwards;
+        }
+
+        .animate-fade-right {
+            animation: fadeInRight 0.8s ease-out forwards;
+        }
+
+        .animate-zoom-in {
+            animation: zoomIn 0.8s ease-out forwards;
+        }
+
+        /*--------------------------------------------------------------
+        # Print Styles
+        --------------------------------------------------------------*/
+        @media print {
+            * {
+                color: #000 !important;
+                background: transparent !important;
+                box-shadow: none !important;
+                text-shadow: none !important;
+            }
+            
+            .header,
+            .footer,
+            .back-to-top,
+            .nav-menu,
+            .hamburger {
+                display: none !important;
+            }
+            
+            .hero {
+                padding-top: 2rem !important;
+            }
+            
+            a {
+                text-decoration: underline;
+            }
+        }
+    </style>
 </head>
+
 <body>
     <!-- Preloader -->
     <div id="preloader">
@@ -31,1097 +1171,740 @@
     </div>
 
     <!-- Header -->
-    <header class="header">
+    <header class="header" id="header">
         <div class="container">
             <nav class="navbar">
+                <!-- Logo with Image Placeholder -->
                 <a href="#home" class="logo">
                     <div class="logo-container">
-                        <img src="images/logo.png" alt="Seattle Pressure Washing Logo" class="logo-image">
+                        <img src="images/logo.png" alt="Emerald City Sparkle Logo" class="logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="image-placeholder" style="display: none; width: 5rem; height: 5rem; border-radius: 50%; margin: 0; padding: 0.5rem; min-height: auto;">
+                            <i class="fas fa-image" style="font-size: 2rem;"></i>
+                        </div>
                         <div class="logo-text-container">
-                            <span class="logo-text">Seattle <span class="highlight">Pressure Washing</span></span>
-                            <span class="logo-subtitle">seattlepressurewashing.biz</span>
+                            <span class="logo-text">
+                                <span class="highlight">Emerald City</span> Sparkle
+                            </span>
+                            <span class="logo-subtitle">Window & Pressure Washing</span>
                         </div>
                     </div>
                 </a>
-                
+
                 <div class="nav-container">
-                    <ul class="nav-menu">
-                        <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
-                        <li class="nav-item"><a href="#neighborhoods" class="nav-link">Areas</a></li>
-                        <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
-                        <li class="nav-item"><a href="#before-after" class="nav-link">Results</a></li>
-                        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                    <!-- Navigation Menu -->
+                    <ul class="nav-menu" id="nav-menu">
+                        <li><a href="#home" class="nav-link active">Home</a></li>
+                        <li><a href="#services" class="nav-link">Services</a></li>
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
                     </ul>
-                    
-                    <a href="#contact" class="btn btn-sm btn-primary header-cta">Get Free Quote</a>
-                </div>
-                
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
+
+                    <!-- Call-to-Action Button -->
+                    <a href="tel:+1234567890" class="btn btn-primary header-cta">
+                        <i class="fas fa-phone"></i>
+                        Call Now
+                    </a>
+
+                    <!-- Mobile Menu Toggle -->
+                    <div class="hamburger" id="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
                 </div>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-particles"></div>
+    <section class="hero" id="home">
+        <!-- Animated Background Particles -->
+        <div class="hero-particles" id="particles"></div>
+        
         <div class="container">
             <div class="hero-content">
-                <div class="hero-text" data-aos="fade-up" data-aos-delay="200">
-                    <div class="badge"><i class="fas fa-spray-can"></i> Professional Pressure Washing in Seattle</div>
-                    <h1 class="hero-title">Transform Your Property with <span class="highlight">Professional</span> Pressure Washing</h1>
-                    <p class="hero-description">Quality, reliability, and professional results for Ballard and Queen Anne! See the difference pressure washing can make!</p>
-                    
-                    <div class="hero-cta">
-                        <a href="#contact" class="btn btn-primary btn-lg btn-pulse">Get Free Quote</a>
-                        <a href="#before-after" class="btn btn-outline-primary">See My Work</a>
+                <div class="hero-text">
+                    <div class="badge" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-star"></i>
+                        Seattle's Premier Cleaning Service
                     </div>
                     
-                    <div class="hero-stats">
+                    <h1 class="hero-title" data-aos="fade-up" data-aos-delay="300">
+                        Crystal Clear <span class="highlight">Windows</span> & 
+                        Spotless <span class="highlight">Surfaces</span>
+                    </h1>
+                    
+                    <p class="hero-description" data-aos="fade-up" data-aos-delay="400">
+                        Professional window cleaning and pressure washing services for Ballard, Queen Anne, and surrounding neighborhoods. We make your property sparkle with exceptional results, every time.
+                    </p>
+                    
+                    <div class="hero-cta" data-aos="fade-up" data-aos-delay="500">
+                        <a href="tel:+1234567890" class="btn btn-primary btn-lg btn-pulse">
+                            <i class="fas fa-phone"></i>
+                            Get Free Estimate
+                        </a>
+                        <a href="#services" class="btn btn-outline-primary btn-lg">
+                            <i class="fas fa-eye"></i>
+                            View Services
+                        </a>
+                    </div>
+                    
+                    <div class="hero-stats" data-aos="fade-up" data-aos-delay="600">
                         <div class="stat">
-                            <span class="stat-number" data-count="10">0</span>
-                            <span class="stat-text">Seattle Homes Cleaned</span>
+                            <span class="stat-number">500+</span>
+                            <span class="stat-text">Happy Customers</span>
                         </div>
                         <div class="stat">
-                            <span class="stat-number" data-count="100">0</span><span>%</span>
-                            <span class="stat-text">Client Focused</span>
+                            <span class="stat-number">5★</span>
+                            <span class="stat-text">Average Rating</span>
                         </div>
                         <div class="stat">
-                            <span class="stat-number" data-count="5">0</span>
-                            <span class="stat-text">Star Service</span>
+                            <span class="stat-number">100%</span>
+                            <span class="stat-text">Satisfaction</span>
                         </div>
                     </div>
                 </div>
                 
-                <div class="hero-image" data-aos="fade-left" data-aos-delay="400">
+                <div class="hero-image" data-aos="fade-left" data-aos-delay="700">
                     <div class="floating-image">
-                        <div class="hero-placeholder">
-                            <i class="fas fa-home fa-3x"></i>
-                            <p>Professional Pressure Washing in Seattle</p>
+                        <img src="images/hero-cleaning.jpg" alt="Professional Window and Pressure Washing" style="width: 100%; max-width: 500px; border-radius: 2rem; box-shadow: var(--shadow-xl);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="hero-placeholder" style="display: none;">
+                            <i class="fas fa-image" style="font-size: 4rem;"></i>
+                            <p>Hero Image<br><small>images/hero-cleaning.jpg</small></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         
+        <!-- Wave Shape Divider -->
         <div class="hero-wave">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#ffffff" fill-opacity="1" d="M0,288L48,272C96,256,192,224,288,213.3C384,203,480,213,576,224C672,235,768,245,864,240C960,235,1056,213,1152,202.7C1248,192,1344,192,1392,192L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="white"></path>
             </svg>
         </div>
     </section>
 
-<!-- Seattle Neighborhoods Section -->
-<section id="neighborhoods" class="neighborhoods section-padding">
-    <div class="container">
-        <div class="neighborhoods-content" data-aos="fade-up">
-            <div class="section-header">
-                <span class="section-subtitle">Service Areas</span>
-                <h2 class="section-title">Proudly Serving <span class="highlight">Seattle</span> Neighborhoods</h2>
-                <p class="section-description">I provide professional pressure washing services throughout Seattle. I mainly focus Ballard and Queen Anne homes. I know each beautiful neighborhood's unique cleaning needs.</p>
-            </div>
-            
-            <div class="neighborhoods-grid">
-                <div class="neighborhood-card" data-aos="fade-up" data-aos-delay="100">
-                    <h4>Ballard</h4>
-                </div>
-                
-                <div class="neighborhood-card" data-aos="fade-up" data-aos-delay="200">
-                    <h4>Queen Anne</h4>
-                </div>
-            </div>
-            
-            <div class="service-area-note" data-aos="fade-up" data-aos-delay="300">
-                <div class="note-icon">
-                    <i class="fas fa-map-marked-alt"></i>
-                </div>
-                <div class="note-content">
-                    <h5>Expanding My Service Area</h5>
-                    <p>While I currently focus on Ballard and Queen Anne, I'm actively expanding to serve more Seattle neighborhoods. <strong>Contact me if you're outside these areas</strong> - I may still be able to help!</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
     <!-- Services Section -->
-    <section id="services" class="services section-padding">
+    <section class="services section-padding" id="services">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <span class="section-subtitle">My Services</span>
-                <h2 class="section-title">Professional <span class="highlight">Cleaning</span> Solutions</h2>
-                <p class="section-description">I provide comprehensive pressure washing services for residential and commercial properties throughout Seattle.</p>
+                <span class="section-subtitle">Our Services</span>
+                <h2 class="section-title">Professional Cleaning Solutions</h2>
+                <p class="section-description">
+                    From sparkling windows to pristine driveways, we provide comprehensive cleaning services that enhance your property's appearance and value.
+                </p>
             </div>
             
             <div class="services-grid">
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <!-- Window Cleaning Service -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-window-restore"></i>
+                    </div>
+                    <h3>Professional Window Cleaning</h3>
+                    <p>Crystal clear windows inside and out. We clean residential and commercial windows, leaving them streak-free and spotless. Our eco-friendly solutions ensure your windows shine while protecting the environment.</p>
+                </div>
+                
+                <!-- Pressure Washing Service -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-spray-can"></i>
+                    </div>
+                    <h3>Pressure Washing Services</h3>
+                    <p>Remove dirt, grime, and mildew from driveways, sidewalks, decks, and building exteriors. Our high-powered equipment and expert techniques restore surfaces to their original beauty.</p>
+                </div>
+                
+                <!-- Gutter Cleaning Service -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="service-icon">
                         <i class="fas fa-home"></i>
                     </div>
-                    <h3>House Washing</h3>
-                    <p>Complete exterior cleaning for Seattle homes. Perfect for removing Pacific Northwest moss, mildew, and dirt from your siding safely and effectively.</p>
+                    <h3>Gutter Cleaning & Maintenance</h3>
+                    <p>Keep your gutters flowing freely with our thorough cleaning and inspection service. We remove debris, check for damage, and ensure proper water drainage to protect your property.</p>
                 </div>
                 
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-icon">
-                        <i class="fas fa-road"></i>
-                    </div>
-                    <h3>Driveway Cleaning</h3>
-                    <p>Restore your driveway to like-new condition. Remove oil stains, Seattle's constant moisture buildup, and dirt from concrete and asphalt surfaces.</p>
-                </div>
-                
-                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-icon">
-                        <i class="fas fa-tree"></i>
-                    </div>
-                    <h3>Deck & Patio</h3>
-                    <p>Revitalize your outdoor living spaces for Seattle's beautiful summers. Clean and prepare decks, patios, and outdoor furniture affected by our wet climate.</p>
-                </div>
-                
-                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-icon">
-                        <i class="fas fa-walking"></i>
-                    </div>
-                    <h3>Sidewalk Cleaning</h3>
-                    <p>Keep walkways safe and attractive. Remove slippery moss, algae, and accumulated dirt that's common in Seattle's damp climate.</p>
-                </div>
-                
+                <!-- Solar Panel Cleaning -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon">
+                        <i class="fas fa-solar-panel"></i>
+                    </div>
+                    <h3>Solar Panel Cleaning</h3>
+                    <p>Maximize your solar panel efficiency with our specialized cleaning service. We safely remove dust, debris, and buildup that can reduce your panels' energy production.</p>
+                </div>
+                
+                <!-- Commercial Services -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
                     <div class="service-icon">
                         <i class="fas fa-building"></i>
                     </div>
-                    <h3>Commercial Properties</h3>
-                    <p>Professional cleaning for Seattle businesses, storefronts, and commercial buildings. Maintain your professional image in the competitive Seattle market.</p>
+                    <h3>Commercial Cleaning</h3>
+                    <p>Professional window and pressure washing services for businesses, restaurants, and office buildings. Regular maintenance packages available to keep your commercial property looking its best.</p>
                 </div>
                 
-                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                <!-- Emergency Services -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="700">
                     <div class="service-icon">
-                        <i class="fas fa-tools"></i>
+                        <i class="fas fa-clock"></i>
                     </div>
-                    <h3>Specialized Cleaning</h3>
-                    <p>Fences, outdoor furniture, equipment, and more. Custom solutions for all your Seattle property's pressure washing needs.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Before & After Section -->
-    <section id="before-after" class="before-after section-padding bg-light">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-subtitle">Transformation Results</span>
-                <h2 class="section-title">Before & <span class="highlight">After</span> Gallery</h2>
-                <p class="section-description">See the incredible transformations I've achieved for Seattle properties. These results speak for themselves!</p>
-            </div>
-            
-            <div class="comparison-grid">
-                <div class="comparison-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="comparison-images">
-                        <div class="before-image">
-                            <img src="images/house-before.jpg" alt="House washing before" />
-                            <div class="image-label before">BEFORE</div>
-                        </div>
-                        <div class="after-image">
-                            <img src="images/house-after.jpg" alt="House washing after" />
-                            <div class="image-label after">AFTER</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="comparison-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="comparison-images">
-                        <div class="before-image">
-                            <img src="images/driveway-before.jpg" alt="Driveway cleaning before" />
-                            <div class="image-label before">BEFORE</div>
-                        </div>
-                        <div class="after-image">
-                            <img src="images/driveway-after.jpg" alt="Driveway cleaning after" />
-                            <div class="image-label after">AFTER</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="comparison-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="comparison-images">
-                        <div class="before-image">
-                            <img src="images/deck-before.jpg" alt="Deck and patio cleaning before" />
-                            <div class="image-label before">BEFORE</div>
-                        </div>
-                        <div class="after-image">
-                            <img src="images/deck-after.jpg" alt="Deck and patio cleaning after" />
-                            <div class="image-label after">AFTER</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="comparison-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="comparison-images">
-                        <div class="before-image">
-                            <img src="images/commercial-before.jpg" alt="Commercial cleaning before" />
-                            <div class="image-label before">BEFORE</div>
-                        </div>
-                        <div class="after-image">
-                            <img src="images/commercial-after.jpg" alt="Commercial cleaning after" />
-                            <div class="image-label after">AFTER</div>
-                        </div>
-                    </div>
+                    <h3>Emergency & Same-Day Service</h3>
+                    <p>Need cleaning services urgently? We offer same-day and emergency cleaning for special events, property showings, or urgent situations. Quality service when you need it most.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about section-padding">
+    <section class="about section-padding bg-light" id="about">
         <div class="container">
-            <div class="about-content" data-aos="fade-up">
-                <div class="about-text">
-                    <div class="section-header">
-                        <span class="section-subtitle">Why Choose Us</span>
-                        <h2 class="section-title">Professional <span class="highlight">Results</span> Every Time</h2>
-                    </div>
-                    
-                    <div class="features">
-                        <div class="feature" data-aos="fade-right" data-aos-delay="100">
-                            <div class="feature-icon">
-                                <i class="fas fa-certificate"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h3>Seattle Climate Expertise</h3>
-                                <p>Years of experience dealing with Seattle's unique climate challenges - from persistent moss to rain-soaked surfaces. We know what works in the Pacific Northwest.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature" data-aos="fade-right" data-aos-delay="200">
-                            <div class="feature-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h3>Reliable & Punctual</h3>
-                                <p>We show up on time, every time - rain or shine. Dependable service you can count on with clear communication throughout the entire process.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature" data-aos="fade-right" data-aos-delay="300">
-                            <div class="feature-icon">
-                                <i class="fas fa-leaf"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h3>Eco-Friendly Approach</h3>
-                                <p>Water-only cleaning is my preferred method! We use biodegradable soaps only when necessary, protecting Seattle's beautiful landscape and Puget Sound.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature" data-aos="fade-right" data-aos-delay="400">
-                            <div class="feature-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h3>Surface-Safe Techniques</h3>
-                                <p>Gentle care for Seattle's diverse architecture - from historic wood homes in Capitol Hill to modern stucco in Ballard. We adjust pressure and techniques to protect your property.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="cta-section" data-aos="fade-up" data-aos-delay="500">
-                        <a href="#contact" class="btn btn-primary btn-lg">Get Your Free Quote</a>
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">About Us</span>
+                <h2 class="section-title">Why Choose Emerald City Sparkle?</h2>
+                <p class="section-description">
+                    With years of experience serving Seattle neighborhoods, we combine professional expertise with friendly, reliable service to deliver exceptional results every time.
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div data-aos="fade-right">
+                    <img src="images/about-team.jpg" alt="Professional Cleaning Team" style="width: 100%; border-radius: 2rem; box-shadow: var(--shadow-lg);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="image-placeholder" style="display: none;">
+                        <i class="fas fa-image" style="font-size: 4rem;"></i>
+                        <p>Team Photo<br><small>images/about-team.jpg</small></p>
                     </div>
                 </div>
                 
-                <div class="about-image" data-aos="fade-left" data-aos-delay="300">
-                    <div class="image-placeholder">
-                        <i class="fas fa-spray-can fa-4x"></i>
-                        <p>Professional Equipment & Seattle Expertise</p>
+                <div data-aos="fade-left">
+                    <h3 style="font-size: 2.8rem; margin-bottom: 2rem; color: var(--dark-color);">Serving Seattle with Pride</h3>
+                    <p style="font-size: 1.7rem; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.6;">
+                        Founded in Seattle, Emerald City Sparkle has been making properties shine across Ballard, Queen Anne, and surrounding neighborhoods. We're not just another cleaning service – we're your neighbors, committed to enhancing our community one window and surface at a time.
+                    </p>
+                    <p style="font-size: 1.7rem; color: var(--text-muted); margin-bottom: 3rem; line-height: 1.6;">
+                        Our team of experienced professionals uses the latest equipment and eco-friendly cleaning solutions to deliver results that exceed expectations. From residential homes to commercial properties, we treat every job with the same attention to detail and commitment to excellence.
+                    </p>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+                        <div style="text-align: center; padding: 2rem; background: white; border-radius: 1rem; box-shadow: var(--shadow-sm);">
+                            <i class="fas fa-award" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+                            <h4 style="font-size: 1.8rem; margin-bottom: 1rem;">Licensed & Insured</h4>
+                            <p style="font-size: 1.4rem; color: var(--text-muted); margin: 0;">Fully licensed and insured for your peace of mind</p>
+                        </div>
+                        <div style="text-align: center; padding: 2rem; background: white; border-radius: 1rem; box-shadow: var(--shadow-sm);">
+                            <i class="fas fa-leaf" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+                            <h4 style="font-size: 1.8rem; margin-bottom: 1rem;">Eco-Friendly</h4>
+                            <p style="font-size: 1.4rem; color: var(--text-muted); margin: 0;">Safe, biodegradable cleaning solutions</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Recurring Services Section -->
-    <section class="recurring-services section-padding">
+    <!-- Contact Section -->
+    <section class="contact section-padding bg-primary" id="contact">
         <div class="container">
-            <div class="recurring-content" data-aos="fade-up">
-                <div class="recurring-info">
-                    <h3>Recurring Service Plans</h3>
-                    <p>Save time and money with my convenient recurring service plans! Perfect for Seattle properties that need regular maintenance due to my unique climate. Both residential and commercial properties benefit from scheduled cleaning.</p>
-                    
-                    <div class="service-types">
-                        <div class="service-type" data-aos="fade-right" data-aos-delay="100">
-                            <i class="fas fa-home"></i>
-                            <div class="service-type-content">
-                                <h4>Residential Plans</h4>
-                                <p>House washing, driveways, patios, and walkways for all Seattle neighborhoods</p>
-                            </div>
-                        </div>
-                        
-                        <div class="service-type" data-aos="fade-right" data-aos-delay="200">
-                            <i class="fas fa-building"></i>
-                            <div class="service-type-content">
-                                <h4>Commercial Plans</h4>
-                                <p>Storefronts, parking lots, and building exteriors throughout greater Seattle</p>
-                            </div>
-                        </div>
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle" style="color: rgba(255,255,255,0.8);">Get In Touch</span>
+                <h2 class="section-title" style="color: white;">Ready for Sparkling Clean Results?</h2>
+                <p class="section-description" style="color: rgba(255,255,255,0.9);">
+                    Contact us today for your free estimate. We serve Ballard, Queen Anne, and surrounding Seattle neighborhoods with professional window cleaning and pressure washing services.
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; text-align: center;">
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div style="background: rgba(255,255,255,0.1); padding: 3rem; border-radius: 2rem; backdrop-filter: blur(10px);">
+                        <i class="fas fa-phone" style="font-size: 4rem; color: white; margin-bottom: 2rem;"></i>
+                        <h3 style="color: white; font-size: 2.4rem; margin-bottom: 1rem;">Call Us</h3>
+                        <p style="color: rgba(255,255,255,0.9); font-size: 1.8rem; margin-bottom: 2rem;">(206) 555-WASH</p>
+                        <a href="tel:+12065559274" class="btn btn-light">Call Now</a>
                     </div>
                 </div>
                 
-                <div class="frequency-options" data-aos="fade-left" data-aos-delay="300">
-                    <div class="frequency-card">
-                        <div class="frequency-icon">
-                            <i class="fas fa-calendar-week"></i>
-                        </div>
-                        <h4>Weekly/Monthly</h4>
-                        <div class="discount">Save 15%</div>
-                        <p>Perfect for high-traffic commercial properties in downtown Seattle</p>
-                    </div>
-                    
-                    <div class="frequency-card">
-                        <div class="frequency-icon">
-                            <i class="fas fa-calendar-alt"></i>
-                        </div>
-                        <h4>Quarterly</h4>
-                        <div class="discount">Save 10%</div>
-                        <p>Ideal for residential properties dealing with Seattle's seasonal weather</p>
-                    </div>
-                    
-                    <div class="frequency-card">
-                        <div class="frequency-icon">
-                            <i class="fas fa-calendar"></i>
-                        </div>
-                        <h4>Annually</h4>
-                        <div class="discount">Save 5%</div>
-                        <p>Great for spring cleaning after Seattle's long, wet winters</p>
-                    </div>
-                    
-                    <div class="frequency-card">
-                        <div class="frequency-icon">
-                            <i class="fas fa-handshake"></i>
-                        </div>
-                        <h4>Custom Plans</h4>
-                        <div class="discount">Let's Talk</div>
-                        <p>Tailored schedules for your specific Seattle property needs</p>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <div style="background: rgba(255,255,255,0.1); padding: 3rem; border-radius: 2rem; backdrop-filter: blur(10px);">
+                        <i class="fas fa-envelope" style="font-size: 4rem; color: white; margin-bottom: 2rem;"></i>
+                        <h3 style="color: white; font-size: 2.4rem; margin-bottom: 1rem;">Email Us</h3>
+                        <p style="color: rgba(255,255,255,0.9); font-size: 1.8rem; margin-bottom: 2rem;">hello@emeraldcitysparkle.com</p>
+                        <a href="mailto:hello@emeraldcitysparkle.com" class="btn btn-light">Send Email</a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Referral Section -->
-    <section class="referral-section section-padding">
-        <div class="container">
-            <div class="referral-content" data-aos="fade-up">
-                <div class="referral-icon">
-                    <i class="fas fa-users"></i>
-                </div>
-                <h3>Refer a Seattle Neighbor & Save!</h3>
-                <span class="discount-highlight">20% OFF</span>
-                <p>Love my service? Share the clean throughout your Seattle neighborhood! When you refer a friend or neighbor to Seattle Pressure Washing, I'll refund you 20% of what you paid and your referral will get 20% off their job. It's our way of saying thank you for spreading the word about professional pressure washing in Seattle!</p>
-                <p><strong>How it works:</strong> Simply have your friend mention your name when they book their service, and we'll automatically apply the discount to both accounts.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta section-padding bg-primary">
-        <div class="container">
-            <div class="cta-content" data-aos="fade-up">
-                <h2>Ready to Transform Your Seattle Property?</h2>
-                <p>Contact me today for a free, no-obligation quote and see the difference professional pressure washing can make for your Capitol Hill, Ballard, Queen Anne, or any Seattle neighborhood property!</p>
-                <a href="#contact" class="btn btn-light btn-lg btn-pulse">Get Free Quote Today</a>
-            </div>
-        </div>
-    </section>
-
-<!-- Contact Section -->
-<section id="contact" class="contact section-padding">
-    <div class="container">
-        <div class="section-header" data-aos="fade-up">
-            <span class="section-subtitle">Get In Touch</span>
-            <h2 class="section-title">Contact <span class="highlight">Seattle Pressure Washing</span></h2>
-            <p class="section-description">Ready to transform your Seattle property? Get your free pressure washing quote!</p>
-        </div>
-        
-        <div class="contact-content" data-aos="fade-up" data-aos-delay="200">
-            <!-- Contact Info Column -->
-            <div class="contact-info">
-                <h3>Get Your Free Quote</h3>
-                <p>Fill out the form and we'll get back to you within 24 hours with a free, no-obligation quote!</p>
                 
-                <!-- Contact Details -->
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <strong>Email:</strong>
-                            <p><a href="mailto:jackodseattle@gmail.com">jackodseattle@gmail.com</a></p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div>
-                            <strong>Phone:</strong>
-                            <p><a href="tel:+12063006614">(206) 300-6614</a></p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <strong>Service Areas:</strong>
-                            <p>Ballard, Queen Anne, Capitol Hill, Fremont, Wallingford, Green Lake, Magnolia, West Seattle & all surrounding Seattle areas</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div>
-                            <strong>Business Hours:</strong>
-                            <p>Monday - Saturday: 8:00 AM - 6:00 PM<br>Sunday: By appointment</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-calculator"></i>
-                        </div>
-                        <div>
-                            <strong>Free Estimates:</strong>
-                            <p>All quotes are completely free with no obligation. We respond within 24 hours!</p>
-                        </div>
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <div style="background: rgba(255,255,255,0.1); padding: 3rem; border-radius: 2rem; backdrop-filter: blur(10px);">
+                        <i class="fas fa-map-marker-alt" style="font-size: 4rem; color: white; margin-bottom: 2rem;"></i>
+                        <h3 style="color: white; font-size: 2.4rem; margin-bottom: 1rem;">Service Area</h3>
+                        <p style="color: rgba(255,255,255,0.9); font-size: 1.8rem; margin-bottom: 2rem;">Seattle & Surrounding Areas</p>
+                        <a href="#services" class="btn btn-light">View Coverage</a>
                     </div>
                 </div>
             </div>
-
-            <!-- Form Column -->
-            <div class="contact-form-container">
-                <form action="https://formspree.io/f/xpwjopwn" method="POST" class="contact-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" class="form-control" required>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="(206) 555-0123">
-                        </div>
-                        <div class="form-group">
-                            <label for="serviceType">Service Type *</label>
-                            <select id="serviceType" name="service_type" class="form-control" required>
-                                <option value="">Select a service...</option>
-                                <option value="House Washing">House Washing</option>
-                                <option value="Driveway Cleaning">Driveway Cleaning</option>
-                                <option value="Deck & Patio">Deck & Patio Cleaning</option>
-                                <option value="Sidewalk Cleaning">Sidewalk Cleaning</option>
-                                <option value="Commercial Property">Commercial Property</option>
-                                <option value="Multiple Services">Multiple Services</option>
-                                <option value="Not Sure">Not Sure - Need Consultation</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="address">Property Address</label>
-                        <input type="text" id="address" name="address" class="form-control" placeholder="Street address, Seattle neighborhood">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="referral">Were you referred by someone? (Optional)</label>
-                        <input type="text" id="referral" name="referred_by" class="form-control" placeholder="Enter the name of who referred you">
-                        <small style="color: var(--text-muted); font-size: 1.3rem; margin-top: 0.5rem; display: block;">
-                            <i class="fas fa-gift" style="color: var(--accent-color);"></i> 
-                            If you were referred, both you and your referrer get 20% off!
-                        </small>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Tell me about your project *</label>
-                        <textarea id="message" name="message" class="form-control" required placeholder="Describe what you need cleaned, current condition, any special requirements, or questions you have..."></textarea>
-                    </div>
-
-                    <!-- Hidden fields for Formspree -->
-                    <input type="hidden" name="_subject" value="New Seattle Pressure Washing Quote Request">
-                    <input type="hidden" name="_next" value="https://seattlepressurewashing.biz/thank-you.html">
-                    <input type="hidden" name="_captcha" value="false">
-
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">
-                        Send My Free Quote Request
-                    </button>
-                </form>
-            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+                <!-- Company Info -->
                 <div class="footer-section">
-                    <h3>Seattle Pressure Washing</h3>
-                    <p>Professional pressure washing services for residential and commercial properties throughout Seattle and surrounding areas. Serving Capitol Hill, Ballard, Queen Anne, Fremont, and beyond!</p>
+                    <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem;">
+                        <img src="images/logo.png" alt="Emerald City Sparkle Logo" style="width: 4rem; height: 4rem; border-radius: 50%; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="image-placeholder" style="display: none; width: 4rem; height: 4rem; border-radius: 50%; margin: 0; padding: 0.5rem; min-height: auto;">
+                            <i class="fas fa-image" style="font-size: 1.5rem;"></i>
+                        </div>
+                        <div>
+                            <h3 style="margin: 0; font-size: 2rem;">Emerald City Sparkle</h3>
+                            <p style="margin: 0; font-size: 1.3rem; color: rgba(255,255,255,0.7);">Window & Pressure Washing</p>
+                        </div>
+                    </div>
+                    <p>Professional window cleaning and pressure washing services for Seattle and surrounding areas. Making your property sparkle since day one.</p>
                     <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-yelp"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-google"></i></a>
                     </div>
                 </div>
                 
+                <!-- Services -->
                 <div class="footer-section">
-                    <h4>Services</h4>
+                    <h4>Our Services</h4>
                     <ul>
-                        <li><a href="#services">House Washing</a></li>
-                        <li><a href="#services">Driveway Cleaning</a></li>
-                        <li><a href="#services">Deck & Patio</a></li>
-                        <li><a href="#services">Commercial Properties</a></li>
-                        <li><a href="#services">Sidewalk Cleaning</a></li>
-                        <li><a href="#services">Recurring Services</a></li>
+                        <li><a href="#services">Window Cleaning</a></li>
+                        <li><a href="#services">Pressure Washing</a></li>
+                        <li><a href="#services">Gutter Cleaning</a></li>
+                        <li><a href="#services">Solar Panel Cleaning</a></li>
+                        <li><a href="#services">Commercial Services</a></li>
+                        <li><a href="#services">Emergency Services</a></li>
                     </ul>
                 </div>
                 
+                <!-- Service Areas -->
                 <div class="footer-section">
-                    <h4>Seattle Areas</h4>
+                    <h4>Service Areas</h4>
                     <ul>
-                        <li><a href="#neighborhoods">Capitol Hill</a></li>
-                        <li><a href="#neighborhoods">Ballard</a></li>
-                        <li><a href="#neighborhoods">Queen Anne</a></li>
-                        <li><a href="#neighborhoods">Fremont</a></li>
-                        <li><a href="#neighborhoods">Wallingford</a></li>
-                        <li><a href="#neighborhoods">All Seattle Areas</a></li>
+                        <li><a href="#">Ballard</a></li>
+                        <li><a href="#">Queen Anne</a></li>
+                        <li><a href="#">Capitol Hill</a></li>
+                        <li><a href="#">Fremont</a></li>
+                        <li><a href="#">Wallingford</a></li>
+                        <li><a href="#">And More...</a></li>
                     </ul>
                 </div>
                 
+                <!-- Contact -->
                 <div class="footer-section">
                     <h4>Contact Info</h4>
                     <div class="contact-info">
-                        <p><i class="fas fa-envelope"></i> jackodseattle@gmail.com</p>
-                        <p><i class="fas fa-phone"></i> (206) 300-6614</p>
-                        <p><i class="fas fa-map-marker-alt"></i> Serving all Seattle neighborhoods</p>
-                        <p><i class="fas fa-clock"></i> Mon-Sat: 8AM-6PM</p>
+                        <p><i class="fas fa-phone"></i> (206) 555-WASH</p>
+                        <p><i class="fas fa-envelope"></i> hello@emeraldcitysparkle.com</p>
+                        <p><i class="fas fa-clock"></i> Mon - Sat: 7AM - 6PM</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Serving Seattle & Surrounding Areas</p>
                     </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 Seattle Pressure Washing. Professional pressure washing services throughout Capitol Hill, Ballard, Queen Anne, Fremont, and all Seattle areas. 20% referral discount available!</p>
+                <p>&copy; 2025 Emerald City Sparkle. All rights reserved. | Licensed & Insured | Eco-Friendly Solutions</p>
             </div>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <a href="#" class="back-to-top">
+    <a href="#home" class="back-to-top" id="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <!-- Chatbot -->
-    <div class="chatbot-container">
-        <button class="chatbot-button" onclick="toggleChatbot()">
-            <i class="fas fa-comments"></i>
-        </button>
-        <div class="chatbot-window" id="chatbotWindow">
-            <div class="chatbot-header">
-                <h4>Seattle Pressure Washing Assistant</h4>
-                <button class="chatbot-close" onclick="toggleChatbot()">×</button>
-            </div>
-            <div class="chatbot-messages" id="chatbotMessages">
-                <div class="message bot">
-                    Hi! I'm here to help with any questions about my pressure washing services in Seattle. What can I help you with today?
-                </div>
-            </div>
-            <div class="chatbot-input-container">
-                <input type="text" class="chatbot-input" id="chatbotInput" placeholder="Ask about my services..." onkeypress="handleChatKeypress(event)">
-                <button class="chatbot-send" onclick="sendMessage()">Send</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scripts -->
+    <!-- JavaScript Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize AOS
-            AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true,
-                mirror: false
-            });
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true,
+            offset: 100
+        });
 
-            // Preloader
+        // Preloader
+        window.addEventListener('load', function() {
             const preloader = document.getElementById('preloader');
-            window.addEventListener('load', function() {
-                preloader.style.opacity = '0';
-                setTimeout(function() {
-                    preloader.style.display = 'none';
-                }, 500);
-            });
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        });
 
-            // Sticky Header
-            const header = document.querySelector('.header');
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 15) {
-                    header.classList.add('sticky');
-                } else {
-                    header.classList.remove('sticky');
-                }
-            });
-
-            // Mobile Navigation
-            const hamburger = document.querySelector('.hamburger');
-            const navMenu = document.querySelector('.nav-menu');
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             
-            hamburger.addEventListener('click', function() {
-                hamburger.classList.toggle('active');
-                navMenu.classList.toggle('active');
-            });
-            
-            // Close mobile menu when clicking a nav link
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.addEventListener('click', () => {
-                    hamburger.classList.remove('active');
-                    navMenu.classList.remove('active');
-                });
-            });
-
-            // Active Navigation Link
-            const sections = document.querySelectorAll('section[id]');
-            
-            function scrollActive() {
-                const scrollY = window.pageYOffset;
-                
-                sections.forEach(current => {
-                    const sectionHeight = current.offsetHeight;
-                    const sectionTop = current.offsetTop - 100;
-                    const sectionId = current.getAttribute('id');
-                    
-                    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                        document.querySelector('.nav-link[href*=' + sectionId + ']').classList.add('active');
-                    } else {
-                        document.querySelector('.nav-link[href*=' + sectionId + ']').classList.remove('active');
-                    }
-                });
+            if (scrollTop > 100) {
+                header.classList.add('sticky');
+            } else {
+                header.classList.remove('sticky');
             }
-            
-            window.addEventListener('scroll', scrollActive);
+        });
 
-            // Counter Animation
-            const counters = document.querySelectorAll('.stat-number');
-            let started = false;
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
 
-            function startCounter() {
-                if (!started) {
-                    counters.forEach(counter => {
-                        const target = +counter.dataset.count;
-                        let count = 0;
-                        const increment = target / 60;
-                        
-                        function updateCount() {
-                            if (count < target) {
-                                count += increment;
-                                counter.innerHTML = Math.ceil(count);
-                                setTimeout(updateCount, 15);
-                            } else {
-                                counter.innerHTML = target;
-                            }
-                        }
-                        
-                        updateCount();
-                    });
-                    
-                    started = true;
-                }
-            }
-
-            setTimeout(startCounter, 1000);
-
-            // Form submission handling
-            const contactForm = document.getElementById('contactForm');
-            const successMessage = document.getElementById('successMessage');
-            
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    const formData = new FormData(contactForm);
-                    const submitButton = contactForm.querySelector('button[type="submit"]');
-                    const originalButtonText = submitButton.textContent;
-                    
-                    submitButton.textContent = 'Sending...';
-                    submitButton.disabled = true;
-                    
-                    fetch('https://formsubmit.co/jackodseattle@gmail.com', {
-                        method: 'POST',
-                        body: formData
-                    })
-                    .then(response => {
-                        contactForm.style.display = 'none';
-                        successMessage.style.display = 'flex';
-                        contactForm.reset();
-                        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        
-                        setTimeout(() => {
-                            successMessage.style.display = 'none';
-                            contactForm.style.display = 'block';
-                        }, 8000);
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        alert('There was an error sending your message. Please try again or email me directly.');
-                        submitButton.textContent = originalButtonText;
-                        submitButton.disabled = false;
-                    });
-                });
-            }
-
-            // Back to Top Button
-            const backToTop = document.querySelector('.back-to-top');
-            
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 500) {
-                    backToTop.classList.add('active');
-                } else {
-                    backToTop.classList.remove('active');
-                }
-            });
-            
-            backToTop.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-
-            // Add particle effects for hero section
-            const heroParticles = document.querySelector('.hero-particles');
-            
-            if (heroParticles) {
-                for (let i = 0; i < 30; i++) {
-                    const particle = document.createElement('span');
-                    particle.className = 'particle';
-                    
-                    const size = Math.random() * 6 + 2;
-                    particle.style.width = size + 'px';
-                    particle.style.height = size + 'px';
-                    particle.style.left = Math.random() * 100 + '%';
-                    particle.style.top = Math.random() * 100 + '%';
-                    particle.style.animationDelay = Math.random() * 5 + 's';
-                    particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
-                    
-                    heroParticles.appendChild(particle);
-                }
-            }
-
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    
-                    const target = document.querySelector(this.getAttribute('href'));
-                    
-                    if (target) {
-                        window.scrollTo({
-                            top: target.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
+        // Close mobile menu when clicking on nav links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
             });
         });
 
-        // Chatbot Functionality
-        function toggleChatbot() {
-            const chatbotWindow = document.getElementById('chatbotWindow');
-            chatbotWindow.style.display = chatbotWindow.style.display === 'flex' ? 'none' : 'flex';
-        }
-
-        function handleChatKeypress(event) {
-            if (event.key === 'Enter') {
-                sendMessage();
-            }
-        }
-
-        function sendMessage() {
-            const input = document.getElementById('chatbotInput');
-            const messages = document.getElementById('chatbotMessages');
-            const userMessage = input.value.trim();
-
-            if (!userMessage) return;
-
-            // Add user message
-            const userDiv = document.createElement('div');
-            userDiv.className = 'message user';
-            userDiv.textContent = userMessage;
-            messages.appendChild(userDiv);
-
-            // Clear input
-            input.value = '';
-
-            // Show typing indicator
-            const typingDiv = document.createElement('div');
-            typingDiv.className = 'typing-indicator';
-            typingDiv.innerHTML = '<span>Seattle Pressure Washing Assistant is typing</span><div class="typing-dots"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div>';
-            messages.appendChild(typingDiv);
-
-            // Scroll to bottom
-            messages.scrollTop = messages.scrollHeight;
-
-            // Generate bot response
-            setTimeout(() => {
-                messages.removeChild(typingDiv);
-                const botResponse = generateBotResponse(userMessage.toLowerCase());
-                const botDiv = document.createElement('div');
-                botDiv.className = 'message bot';
-                botDiv.textContent = botResponse;
-                messages.appendChild(botDiv);
-                messages.scrollTop = messages.scrollHeight;
-            }, 1500);
-        }
-
-        function generateBotResponse(message) {
-            // Normalize the message for better matching
-            const normalizedMessage = message.toLowerCase().trim();
-            
-            // Enhanced typo-tolerant keyword matching
-            const keywords = {
-                // Greetings
-                greetings: ['hello', 'hi', 'hey', 'good morning', 'good afternoon', 'good evening', 'sup', 'whats up', 'yo'],
-                
-                // Services
-                services: ['service', 'services', 'what do you do', 'what can you do', 'offerings', 'work'],
-                house: ['house', 'home', 'exterior', 'siding', 'building', 'hous', 'hose', 'houe'],
-                driveway: ['driveway', 'drive way', 'concrete', 'pavement', 'driveway cleaning', 'drivway', 'driveway'],
-                deck: ['deck', 'patio', 'outdoor', 'wood', 'composite', 'backyard', 'porch', 'balcony'],
-                commercial: ['commercial', 'business', 'office', 'store', 'storefront', 'company', 'comercial'],
-                sidewalk: ['sidewalk', 'walkway', 'pathway', 'side walk', 'walk way', 'sidwalk'],
-                recurring: ['recurring', 'regular', 'maintenance', 'schedule', 'repeat', 'ongoing', 'reoccuring'],
-                
-                // Pricing
-                pricing: ['price', 'cost', 'how much', 'pricing', 'expensive', 'cheap', 'fee', 'rate', 'charge', 'pric', 'cst'],
-                quote: ['quote', 'estimate', 'estimation', 'free quote', 'quot', 'estimat'],
-                
-                // Areas
-                areas: ['area', 'areas', 'location', 'locations', 'where', 'serve', 'neighborhood', 'neighbourhoods'],
-                capitolhill: ['capitol hill', 'capital hill', 'capitol', 'capiol hill'],
-                ballard: ['ballard', 'balard', 'ballrd'],
-                queenanne: ['queen anne', 'queen ann', 'quenn anne'],
-                fremont: ['fremont', 'frmont', 'fremnt'],
-                wallingford: ['wallingford', 'walingford'],
-                greenlake: ['green lake', 'greenlake', 'gren lake'],
-                magnolia: ['magnolia', 'magnlia'],
-                westseattle: ['west seattle', 'westseattle', 'west seatle'],
-                
-                // Scheduling
-                scheduling: ['schedule', 'book', 'appointment', 'when', 'available', 'time', 'schedul', 'apointment'],
-                
-                // Contact
-                contact: ['contact', 'phone', 'call', 'email', 'reach', 'get in touch', 'contac', 'phon'],
-                
-                // Weather/Climate
-                weather: ['weather', 'rain', 'wet', 'climate', 'season', 'wether'],
-                moss: ['moss', 'mold', 'mildew', 'algae', 'green', 'slippery', 'mos'],
-                
-                // Equipment/Methods
-                equipment: ['equipment', 'pressure washer', 'machine', 'tools', 'how do you', 'method', 'equipmnt'],
-                safe: ['safe', 'safety', 'damage', 'harm', 'protect', 'gentle', 'saf'],
-                eco: ['eco', 'environmentally', 'green', 'chemicals', 'soap', 'detergent', 'eco-friendly'],
-                
-                // Problems
-                stains: ['stain', 'stains', 'oil', 'dirt', 'grime', 'spots', 'marks', 'stain'],
-                
-                // General
-                why: ['why', 'why choose', 'benefits', 'advantage', 'better'],
-                experience: ['experience', 'how long', 'years', 'expertise', 'experiance'],
-                guarantee: ['guarantee', 'warranty', 'satisfaction', 'promise', 'guarante']
-            };
-
-            // Function to check if message contains any keyword with typo tolerance
-            function containsKeyword(keywordArray, message) {
-                return keywordArray.some(keyword => {
-                    // Exact match
-                    if (message.includes(keyword)) return true;
-                    
-                    // Typo tolerance using edit distance
-                    const words = message.split(' ');
-                    return words.some(word => {
-                        if (word.length >= 3 && keyword.length >= 3) {
-                            const distance = levenshteinDistance(word, keyword);
-                            const similarity = 1 - (distance / Math.max(word.length, keyword.length));
-                            return similarity >= 0.75; // 75% similarity threshold
-                        }
-                        return false;
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
                     });
-                });
+                }
+            });
+        });
+
+        // Active navigation link highlighting
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollTop >= sectionTop && scrollTop < sectionBottom) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+
+        // Back to top button
+        const backToTop = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
             }
+        });
 
-            // Easter egg for clean alternative
-            if (normalizedMessage.includes('easter egg') || normalizedMessage.includes('surprise')) {
-                return "🥚 Easter egg found! Here's a fun fact: Did you know that pressure washing can increase your home's value by up to 10%? That's some serious curb appeal magic! ✨";
+        // Animated particles in hero section
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 20;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.width = particle.style.height = Math.random() * 10 + 5 + 'px';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (Math.random() * 20 + 10) + 's';
+                particlesContainer.appendChild(particle);
             }
-
-            // Enhanced response logic
-            if (containsKeyword(keywords.greetings, normalizedMessage)) {
-                const greetingResponses = [
-                    "Hello! Welcome to Seattle Pressure Washing! 👋 How can I help you with your pressure washing needs today?",
-                    "Hi there! I'm here to help with any questions about my Seattle pressure washing services. What can I do for you?",
-                    "Hey! Thanks for reaching out to Seattle Pressure Washing. What pressure washing questions can I answer for you today?"
-                ];
-                return greetingResponses[Math.floor(Math.random() * greetingResponses.length)];
-            }
-
-            if (containsKeyword(keywords.services, normalizedMessage)) {
-                return "We offer comprehensive pressure washing services throughout Seattle! 🏠\n\n• House washing (safe for all siding types)\n• Driveway & concrete cleaning\n• Deck & patio restoration\n• Sidewalk cleaning\n• Commercial property cleaning\n• Recurring maintenance plans (save 5-15%!)\n\nWhat specific service interests you most?";
-            }
-
-            if (containsKeyword(keywords.house, normalizedMessage)) {
-                return "My house washing service is perfect for Seattle homes! 🏡 We safely remove:\n\n• Moss & mildew (common in our climate)\n• Dirt & grime buildup\n• Algae stains\n• General weathering\n\nWe use gentle, surface-safe techniques that protect your siding while delivering amazing results. Works great on vinyl, wood, stucco, and composite materials!";
-            }
-
-            if (containsKeyword(keywords.driveway, normalizedMessage)) {
-                return "Driveway cleaning is one of my most popular services! 🚗 We tackle:\n\n• Oil & grease stains\n• Tire marks\n• Moss & algae (very common in Seattle!)\n• General dirt buildup\n• Rust stains\n\nWorks on concrete, asphalt, and paver driveways. The transformation is usually dramatic - you'll be amazed at the difference!";
-            }
-
-            if (containsKeyword(keywords.deck, normalizedMessage)) {
-                return "Deck & patio cleaning is essential in Seattle's climate! 🌲 Perfect for:\n\n• Preparing for staining/sealing\n• Removing moss & algae\n• Cleaning composite decking\n• Patio furniture cleaning\n• Getting ready for summer entertaining\n\nWe adjust pressure based on material - gentle for wood, appropriate for composite and concrete surfaces.";
-            }
-
-            if (containsKeyword(keywords.commercial, normalizedMessage)) {
-                return "We love helping Seattle businesses look their best! 🏢 My commercial services include:\n\n• Storefront cleaning\n• Parking lot maintenance\n• Building exterior washing\n• Sidewalk & entrance cleaning\n• Regular maintenance contracts\n\nWe work around your business hours and offer recurring plans with great discounts. Professional appearance = more customers!";
-            }
-
-            if (containsKeyword(keywords.sidewalk, normalizedMessage)) {
-                return "Sidewalk cleaning is super important for safety in Seattle! 🚶‍♂️ We remove:\n\n• Slippery moss & algae\n• Accumulated dirt & grime\n• Stains & discoloration\n• Chewing gum\n• General buildup\n\nClean sidewalks aren't just prettier - they're safer for everyone walking on them, especially during the wet months!";
-            }
-
-            if (containsKeyword(keywords.pricing, normalizedMessage) || containsKeyword(keywords.quote, normalizedMessage)) {
-                return "Great question about pricing! 💰 Every Seattle property is unique, so I provide FREE, no-obligation quotes that consider:\n\n• Property size & complexity\n• Services needed\n• Surface types\n• Current condition\n\n📞 Call: (206) 300-6614\n📧 Email: jackodseattle@gmail.com\n\nWe respond within 24 hours and often can provide same-day quotes!";
-            }
-
-            if (containsKeyword(keywords.areas, normalizedMessage)) {
-                return "We proudly serve ALL of Seattle! 🗺️ Including:\n\n• Capitol Hill • Ballard\n• Queen Anne • Fremont\n• Wallingford • Green Lake\n• Magnolia • West Seattle\n• And ALL surrounding neighborhoods!\n\nIf you're in the greater Seattle area, we've got you covered. Each neighborhood has unique needs and we know them all!";
-            }
-
-            // Specific neighborhood responses
-            if (containsKeyword(keywords.capitolhill, normalizedMessage)) {
-                return "Yes! We absolutely serve Capitol Hill! 🏘️ We're very familiar with the area's mix of historic homes and modern buildings. We adjust my pressure washing techniques for different architectural styles and always protect those beautiful older surfaces.";
-            }
-
-            if (containsKeyword(keywords.ballard, normalizedMessage)) {
-                return "Ballard is one of my favorite areas to work! ⚓ We serve the entire Ballard area extensively, from the waterfront properties to the residential streets. We understand the maritime environment's effect on buildings and adjust my cleaning accordingly.";
-            }
-
-            if (containsKeyword(keywords.queenanne, normalizedMessage)) {
-                return "Queen Anne - absolutely! 👑 Whether you're in Lower Queen Anne or Upper Queen Anne, I provide excellent pressure washing services. We're experienced with the area's diverse property types and always deliver quality results.";
-            }
-
-            if (containsKeyword(keywords.scheduling, normalizedMessage)) {
-                return "Scheduling is super easy! 📅 Here's how:\n\n1. Call me: (206) 300-6614\n2. Email: jackodseattle@gmail.com\n3. Fill out my contact form\n\nWe typically respond within 24 hours and can often schedule within a few days. We work Monday-Saturday, 8AM-6PM, and we're flexible with timing!";
-            }
-
-            if (containsKeyword(keywords.contact, normalizedMessage)) {
-                return "Here's how to reach me! 📞\n\n📱 Phone: (206) 300-6614\n📧 Email: jackodseattle@gmail.com\n🌐 Website: Fill out my contact form\n\n⏰ Available: Monday-Saturday, 8AM-6PM\n⚡ Response time: Within 24 hours\n\nWe're always happy to answer questions or provide free quotes!";
-            }
-
-            if (containsKeyword(keywords.weather, normalizedMessage)) {
-                return "Seattle's weather is exactly WHY pressure washing is so important here! ☔ My climate creates perfect conditions for:\n\n• Moss growth (everywhere!)\n• Mildew & algae\n• Moisture staining\n• Dirt accumulation\n\nWe specialize in these Pacific Northwest challenges. Light rain doesn't stop me - I'll just communicate about heavy weather delays!";
-            }
-
-            if (containsKeyword(keywords.moss, normalizedMessage)) {
-                return "Moss removal is my SPECIALTY! 🌿 In Seattle, moss grows on everything:\n\n• Roofs & gutters\n• Driveways & walkways\n• House siding\n• Decks & patios\n\nWe safely remove moss without damaging surfaces using the right pressure and techniques for each material. Prevention tips available too!";
-            }
-
-            if (containsKeyword(keywords.equipment, normalizedMessage) || containsKeyword(keywords.safe, normalizedMessage)) {
-                return "We use professional-grade equipment designed for safety! 🛡️\n\n• Variable pressure settings\n• Surface-specific nozzles\n• Hot & cold water systems\n• Eco-friendly cleaning solutions\n\nWe adjust everything based on what we're cleaning - gentle for wood siding, stronger for concrete. Your property's safety is my priority!";
-            }
-
-            if (containsKeyword(keywords.eco, normalizedMessage)) {
-                return "We're committed to protecting Seattle's beautiful environment! 🌱\n\n• Water-only cleaning preferred\n• Biodegradable soaps when needed\n• No harsh chemicals\n• Protecting Puget Sound\n• Safe for pets & plants\n\nEco-friendly doesn't mean less effective - we get amazing results while being environmentally responsible!";
-            }
-
-            if (containsKeyword(keywords.stains, normalizedMessage)) {
-                return "Stain removal is what we do best! 💪 We tackle:\n\n• Oil & grease stains\n• Rust stains\n• Organic stains (moss, algae)\n• Tire marks\n• Food & beverage stains\n• Oxidation stains\n\nMost stains that seem permanent can actually be removed with the right techniques and equipment!";
-            }
-
-            if (containsKeyword(keywords.recurring, normalizedMessage)) {
-                return "Recurring services are VERY popular in Seattle! 🔄 Benefits:\n\n• Save 5-15% with automatic discounts\n• Prevent moss/mildew buildup\n• Maintain property value\n• No hassle scheduling\n• Priority booking\n\nOptions: Weekly, Monthly, Quarterly, or Annual plans. Most Seattle homes do great with quarterly service!";
-            }
-
-            if (containsKeyword(keywords.why, normalizedMessage)) {
-                return "Why choose Seattle Pressure Washing? Here's what makes me special! ⭐\n\n• Seattle climate specialists\n• Eco-friendly methods\n• Professional equipment\n• Reliable & punctual\n• Free estimates\n• Satisfaction guaranteed\n• Local expertise\n• Competitive pricing\n\nWe understand Seattle's unique challenges and deliver results that last!";
-            }
-
-            if (containsKeyword(keywords.experience, normalizedMessage)) {
-                return "We have extensive experience with Seattle's specific cleaning challenges! 🏆\n\n• Pacific Northwest climate expertise\n• All surface types & materials\n• Historic & modern properties\n• Residential & commercial\n• Problem-solving specialists\n\nWe've seen it all and know what works in our unique environment!";
-            }
-
-            if (containsKeyword(keywords.guarantee, normalizedMessage)) {
-                return "Absolutely! We stand behind my work with a satisfaction guarantee! ✅\n\n• If you're not completely happy, we'll make it right\n• Professional results or we return\n• Clear communication throughout\n• No surprises or hidden fees\n\nYour satisfaction is my reputation - we want you to love the results and refer your neighbors!";
-            }
-
-            // Handle questions about referrals
-            if (normalizedMessage.includes('referral') || normalizedMessage.includes('refer') || normalizedMessage.includes('discount')) {
-                return "My referral program is awesome! 🎉\n\n• Refer a Seattle neighbor → You BOTH get 20% off!\n• Easy process - just have them mention your name\n• Automatic discount applied\n• No limit on referrals\n\nIt's my way of saying thanks for spreading the word about quality pressure washing!";
-            }
-
-            // Catch-all for unmatched queries
-            const catchAllResponses = [
-                "That's a great question! For detailed information about that specific topic, I'd recommend calling me at (206) 300-6614 or emailing jackodseattle@gmail.com. We're happy to discuss your specific needs in detail! 😊",
-                "I want to make sure I give you the most accurate information! My team can better address that question directly. Call (206) 300-6614 or email jackodseattle@gmail.com - we respond within 24 hours! 📞",
-                "Great question! While I can help with general info, our pressure washing experts can give you detailed answers about that. Reach out at (206) 300-6614 or jackodseattle@gmail.com for personalized help! 💪"
-            ];
-
-            return catchAllResponses[Math.floor(Math.random() * catchAllResponses.length)];
         }
 
-        // Enhanced Levenshtein distance function for better typo tolerance
-        function levenshteinDistance(str1, str2) {
-            const matrix = [];
-            
-            for (let i = 0; i <= str2.length; i++) {
-                matrix[i] = [i];
-            }
-            
-            for (let j = 0; j <= str1.length; j++) {
-                matrix[0][j] = j;
-            }
-            
-            for (let i = 1; i <= str2.length; i++) {
-                for (let j = 1; j <= str1.length; j++) {
-                    if (str2.charAt(i - 1) === str1.charAt(j - 1)) {
-                        matrix[i][j] = matrix[i - 1][j - 1];
-                    } else {
-                        matrix[i][j] = Math.min(
-                            matrix[i - 1][j - 1] + 1, // substitution
-                            matrix[i][j - 1] + 1,     // insertion
-                            matrix[i - 1][j] + 1      // deletion
-                        );
+        // Initialize particles
+        createParticles();
+
+        // Counter animation for hero stats
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const finalValue = counter.textContent;
+                        const numericValue = parseInt(finalValue.replace(/\D/g, ''));
+                        const suffix = finalValue.replace(/\d/g, '');
+                        
+                        if (numericValue) {
+                            let currentValue = 0;
+                            const increment = numericValue / 50;
+                            const timer = setInterval(() => {
+                                currentValue += increment;
+                                if (currentValue >= numericValue) {
+                                    counter.textContent = numericValue + suffix;
+                                    clearInterval(timer);
+                                } else {
+                                    counter.textContent = Math.floor(currentValue) + suffix;
+                                }
+                            }, 30);
+                        }
+                        observer.unobserve(counter);
                     }
+                });
+            });
+            
+            counters.forEach(counter => observer.observe(counter));
+        }
+
+        // Initialize counter animation
+        animateCounters();
+
+        // Form validation and enhancement (if forms are added later)
+        function setupFormHandling() {
+            const forms = document.querySelectorAll('form');
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // Add form submission logic here
+                    alert('Thank you for your message! We\'ll get back to you soon.');
+                });
+            });
+        }
+
+        // Initialize form handling
+        setupFormHandling();
+
+        // Performance optimization: Lazy loading for images
+        if ('IntersectionObserver' in window) {
+            const images = document.querySelectorAll('img[data-src]');
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            images.forEach(img => imageObserver.observe(img));
+        }
+
+        // Service card hover effects enhancement
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Smooth reveal animations for elements
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('[data-reveal]');
+            
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveals[i].getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('revealed');
+                } else {
+                    reveals[i].classList.remove('revealed');
                 }
             }
-            
-            return matrix[str2.length][str1.length];
         }
+
+        window.addEventListener('scroll', revealOnScroll);
+
+        // Add some interactive feedback for buttons
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                // Create ripple effect
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.cssText = `
+                    width: ${size}px;
+                    height: ${size}px;
+                    left: ${x}px;
+                    top: ${y}px;
+                    position: absolute;
+                    border-radius: 50%;
+                    background: rgba(255, 255, 255, 0.3);
+                    transform: scale(0);
+                    animation: ripple 0.6s linear;
+                    pointer-events: none;
+                `;
+                
+                this.style.position = 'relative';
+                this.style.overflow = 'hidden';
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // Add ripple animation CSS
+        const rippleStyle = document.createElement('style');
+        rippleStyle.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(rippleStyle);
+
+        // Enhanced error handling for images
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('error', function() {
+                console.log('Image failed to load:', this.src);
+                // Additional error handling can be added here
+            });
+        });
+
+        // Accessibility improvements
+        function improveAccessibility() {
+            // Add focus indicators for keyboard navigation
+            const focusableElements = document.querySelectorAll('a, button, [tabindex]');
+            
+            focusableElements.forEach(element => {
+                element.addEventListener('focus', function() {
+                    this.style.outline = '3px solid var(--primary-color)';
+                    this.style.outlineOffset = '2px';
+                });
+                
+                element.addEventListener('blur', function() {
+                    this.style.outline = 'none';
+                });
+            });
+
+            // Add ARIA labels where needed
+            const hamburger = document.getElementById('hamburger');
+            if (hamburger) {
+                hamburger.setAttribute('aria-label', 'Toggle navigation menu');
+                hamburger.setAttribute('role', 'button');
+            }
+
+            const backToTopBtn = document.getElementById('back-to-top');
+            if (backToTopBtn) {
+                backToTopBtn.setAttribute('aria-label', 'Back to top');
+            }
+        }
+
+        // Initialize accessibility improvements
+        improveAccessibility();
+
+        // Optimize performance by debouncing scroll events
+        function debounce(func, wait, immediate) {
+            let timeout;
+            return function executedFunction() {
+                const context = this;
+                const args = arguments;
+                const later = function() {
+                    timeout = null;
+                    if (!immediate) func.apply(context, args);
+                };
+                const callNow = immediate && !timeout;
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+                if (callNow) func.apply(context, args);
+            };
+        }
+
+        // Apply debouncing to scroll events
+        const debouncedScrollHandler = debounce(function() {
+            // Header scroll effect
+            const header = document.getElementById('header');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 100) {
+                header.classList.add('sticky');
+            } else {
+                header.classList.remove('sticky');
+            }
+
+            // Back to top button
+            const backToTop = document.getElementById('back-to-top');
+            if (scrollTop > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+
+            // Active navigation highlighting
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollTop >= sectionTop && scrollTop < sectionBottom) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, 10);
+
+        // Replace individual scroll listeners with debounced version
+        window.addEventListener('scroll', debouncedScrollHandler);
+
+        // Add loading states for interactive elements
+        function addLoadingStates() {
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(button => {
+                if (button.href && (button.href.startsWith('tel:') || button.href.startsWith('mailto:'))) {
+                    button.addEventListener('click', function() {
+                        const originalText = this.innerHTML;
+                        this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Connecting...';
+                        this.disabled = true;
+                        
+                        setTimeout(() => {
+                            this.innerHTML = originalText;
+                            this.disabled = false;
+                        }, 2000);
+                    });
+                }
+            });
+        }
+
+        // Initialize loading states
+        addLoadingStates();
+
+        console.log('Emerald City Sparkle website loaded successfully! 🌟');
+        
+        // Add some fun console styling
+        console.log('%c✨ Welcome to Emerald City Sparkle! ✨', 
+            'color: #059669; font-size: 18px; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);');
+        console.log('%cMaking Seattle sparkle, one window at a time! 🏢🪟', 
+            'color: #1e40af; font-size: 14px; font-style: italic;');
     </script>
 </body>
 </html>
