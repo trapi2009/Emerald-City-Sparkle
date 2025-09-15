@@ -531,16 +531,11 @@
         }
 
         .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
+            text-align: center;
             position: relative;
             z-index: 1;
-        }
-
-        .hero-text {
-            z-index: 2;
+            max-width: 80rem;
+            margin: 0 auto;
         }
 
         .badge {
@@ -576,84 +571,7 @@
             gap: 1.5rem;
             margin-bottom: 4rem;
             flex-wrap: wrap;
-        }
-
-        .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 2.5rem;
-            border-radius: var(--radius-2xl);
-            box-shadow: var(--shadow-md);
-            backdrop-filter: blur(10px);
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 3.2rem;
-            font-weight: var(--font-weight-bold);
-            color: var(--primary-color);
-            display: block;
-        }
-
-        .stat-text {
-            font-size: 1.3rem;
-            color: var(--text-muted);
-            font-weight: var(--font-weight-medium);
-            margin-top: 0.5rem;
-        }
-
-        .hero-image {
-            display: flex;
-            align-items: center;
             justify-content: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .floating-image {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
-        .hero-placeholder, .image-placeholder, .gallery-placeholder {
-            background: rgba(255, 255, 255, 0.9);
-            border: 2px dashed var(--primary-color);
-            border-radius: var(--radius-xl);
-            padding: 4rem 2rem;
-            text-align: center;
-            color: var(--primary-color);
-            min-height: 300px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            backdrop-filter: blur(10px);
-            transition: var(--transition-normal);
-        }
-
-        .hero-placeholder:hover, .image-placeholder:hover, .gallery-placeholder:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-            border-color: var(--primary-light);
-        }
-
-        .hero-placeholder p, .image-placeholder p, .gallery-placeholder p {
-            margin: 1rem 0 0 0;
-            font-weight: var(--font-weight-semibold);
-            font-size: 1.6rem;
         }
 
         .hero-wave {
@@ -793,13 +711,257 @@
         }
 
         /*--------------------------------------------------------------
+        # Before & After Gallery
+        --------------------------------------------------------------*/
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .gallery-item {
+            background-color: var(--light-color);
+            border-radius: var(--radius-2xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-normal);
+            border: 1px solid var(--grey-dark);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .comparison-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: 250px;
+        }
+
+        .before-image,
+        .after-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .before-image img,
+        .after-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-normal);
+        }
+
+        .gallery-item:hover .before-image img,
+        .gallery-item:hover .after-image img {
+            transform: scale(1.05);
+        }
+
+        .image-label {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            padding: 0.5rem 1rem;
+            font-size: 1.2rem;
+            font-weight: var(--font-weight-bold);
+            border-radius: var(--radius-md);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .image-label.before {
+            background-color: rgba(239, 68, 68, 0.9);
+            color: var(--light-color);
+        }
+
+        .image-label.after {
+            background-color: rgba(16, 185, 129, 0.9);
+            color: var(--light-color);
+        }
+
+        .gallery-info {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .gallery-info h3 {
+            font-size: 2.2rem;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        .gallery-info p {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+
+        /*--------------------------------------------------------------
         # About Section
         --------------------------------------------------------------*/
         .about-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 4rem;
+            max-width: 80rem;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-text h3 {
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+            color: var(--dark-color);
+        }
+
+        .about-text p {
+            font-size: 1.7rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2rem;
+            background: var(--light-color);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--grey-dark);
+            transition: var(--transition-normal);
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-item i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .feature-item h4 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-item p {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /*--------------------------------------------------------------
+        # Referral Section
+        --------------------------------------------------------------*/
+        .referral-section {
+            background: var(--gradient-primary);
+            color: var(--light-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .referral-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            animation: slide-pattern 25s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes slide-pattern {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(30px, 30px);
+            }
+        }
+
+        .referral-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 70rem;
+            margin: 0 auto;
+        }
+
+        .referral-icon {
+            width: 8rem;
+            height: 8rem;
+            display: flex;
             align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--light-color);
+            font-size: 3.5rem;
+            border-radius: 50%;
+            margin: 0 auto 2.5rem;
+            box-shadow: var(--shadow-lg);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .referral-content h3 {
+            font-size: 3.6rem;
+            margin-bottom: 2rem;
+            color: var(--light-color);
+        }
+
+        .discount-highlight {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--primary-color);
+            font-size: 4rem;
+            font-weight: 900;
+            padding: 1rem 2rem;
+            border-radius: 1.5rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow-lg);
+            animation: bounce-highlight 3s infinite;
+        }
+
+        @keyframes bounce-highlight {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .referral-content p {
+            font-size: 1.8rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
         }
 
         /*--------------------------------------------------------------
@@ -1099,8 +1261,6 @@
             }
             
             .hero-content {
-                grid-template-columns: 1fr;
-                gap: 4rem;
                 text-align: center;
             }
 
@@ -1112,6 +1272,11 @@
             .contact-content {
                 grid-template-columns: 1fr;
                 gap: 4rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
             }
         }
 
@@ -1181,6 +1346,15 @@
             .form-row {
                 grid-template-columns: 1fr;
             }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .comparison-images {
+                height: 200px;
+            }
         }
 
         /* Small Mobile */
@@ -1203,12 +1377,6 @@
                 max-width: 300px;
             }
             
-            .hero-stats {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-                padding: 2rem;
-            }
-            
             .logo-text {
                 font-size: 2rem;
             }
@@ -1229,6 +1397,16 @@
 
             .contact-form-container {
                 padding: 2rem;
+            }
+
+            .comparison-images {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+
+            .before-image,
+            .after-image {
+                height: 180px;
             }
         }
 
@@ -1375,6 +1553,7 @@
                     <ul class="nav-menu" id="nav-menu">
                         <li><a href="#home" class="nav-link active">Home</a></li>
                         <li><a href="#services" class="nav-link">Services</a></li>
+                        <li><a href="#gallery" class="nav-link">Before & After</a></li>
                         <li><a href="#contact" class="nav-link">Contact</a></li>
                     </ul>
 
@@ -1402,56 +1581,29 @@
         
         <div class="container">
             <div class="hero-content">
-                <div class="hero-text">
-                    <div class="badge" data-aos="fade-up" data-aos-delay="200">
-                        <i class="fas fa-star"></i>
-                        Seattle's Premier Cleaning Service
-                    </div>
-                    
-                    <h1 class="hero-title" data-aos="fade-up" data-aos-delay="300">
-                        Crystal Clear <span class="highlight">Windows</span> & 
-                        Spotless <span class="highlight">Surfaces</span>
-                    </h1>
-                    
-                    <p class="hero-description" data-aos="fade-up" data-aos-delay="400">
-                        Professional window cleaning and pressure washing services for Ballard, Queen Anne, and surrounding neighborhoods. I make your property sparkle with exceptional results, every time.
-                    </p>
-                    
-                    <div class="hero-cta" data-aos="fade-up" data-aos-delay="500">
-                        <a href="tel:+12063006614" class="btn btn-primary btn-lg btn-pulse">
-                            <i class="fas fa-phone"></i>
-                            Get Free Estimate
-                        </a>
-                        <a href="#services" class="btn btn-outline-primary btn-lg">
-                            <i class="fas fa-eye"></i>
-                            View Services
-                        </a>
-                    </div>
-                    
-                    <div class="hero-stats" data-aos="fade-up" data-aos-delay="600">
-                        <div class="stat">
-                            <span class="stat-number">500+</span>
-                            <span class="stat-text">Happy Customers</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">5★</span>
-                            <span class="stat-text">Average Rating</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">100%</span>
-                            <span class="stat-text">Satisfaction</span>
-                        </div>
-                    </div>
+                <div class="badge" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-star"></i>
+                    Seattle's Premier Residential Cleaning Service
                 </div>
                 
-                <div class="hero-image" data-aos="fade-left" data-aos-delay="700">
-                    <div class="floating-image">
-                        <img src="images/hero-cleaning.jpg" alt="Professional Window and Pressure Washing" style="width: 100%; max-width: 500px; border-radius: 2rem; box-shadow: var(--shadow-xl);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="hero-placeholder" style="display: none;">
-                            <i class="fas fa-image" style="font-size: 4rem;"></i>
-                            <p>Hero Image<br><small>images/hero-cleaning.jpg</small></p>
-                        </div>
-                    </div>
+                <h1 class="hero-title" data-aos="fade-up" data-aos-delay="300">
+                    Crystal Clear <span class="highlight">Windows</span> & 
+                    Spotless <span class="highlight">Surfaces</span>
+                </h1>
+                
+                <p class="hero-description" data-aos="fade-up" data-aos-delay="400">
+                    Professional window cleaning and pressure washing services for residential properties in Ballard, Queen Anne, and surrounding neighborhoods. I make your home sparkle with exceptional results, every time.
+                </p>
+                
+                <div class="hero-cta" data-aos="fade-up" data-aos-delay="500">
+                    <a href="tel:+12063006614" class="btn btn-primary btn-lg btn-pulse">
+                        <i class="fas fa-phone"></i>
+                        Get Free Estimate
+                    </a>
+                    <a href="#services" class="btn btn-outline-primary btn-lg">
+                        <i class="fas fa-eye"></i>
+                        View Services
+                    </a>
                 </div>
             </div>
         </div>
@@ -1469,9 +1621,9 @@
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-subtitle">My Services</span>
-                <h2 class="section-title">Professional Cleaning Solutions</h2>
+                <h2 class="section-title">Professional Residential Cleaning Solutions</h2>
                 <p class="section-description">
-                    From sparkling windows to pristine driveways, I provide comprehensive cleaning services that enhance your property's appearance and value.
+                    From sparkling windows to pristine driveways, I provide comprehensive cleaning services that enhance your home's appearance and value.
                 </p>
             </div>
             
@@ -1482,7 +1634,7 @@
                         <i class="fas fa-window-restore"></i>
                     </div>
                     <h3>Professional Window Cleaning</h3>
-                    <p>Crystal clear windows inside and out. I clean residential and commercial windows, leaving them streak-free and spotless. My eco-friendly solutions ensure your windows shine while protecting the environment.</p>
+                    <p>Crystal clear windows inside and out. I clean residential windows, leaving them streak-free and spotless. My eco-friendly solutions ensure your windows shine while protecting the environment.</p>
                 </div>
                 
                 <!-- Pressure Washing Service -->
@@ -1491,20 +1643,11 @@
                         <i class="fas fa-spray-can"></i>
                     </div>
                     <h3>Pressure Washing Services</h3>
-                    <p>Remove dirt, grime, and mildew from driveways, sidewalks, decks, and building exteriors. My high-powered equipment and expert techniques restore surfaces to their original beauty.</p>
-                </div>
-                
-                <!-- Commercial Services -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <h3>Commercial Cleaning</h3>
-                    <p>Professional window and pressure washing services for businesses, restaurants, and office buildings. Regular maintenance packages available to keep your commercial property looking its best.</p>
+                    <p>Remove dirt, grime, and mildew from driveways, sidewalks, decks, and home exteriors. My high-powered equipment and expert techniques restore surfaces to their original beauty.</p>
                 </div>
                 
                 <!-- Emergency Services -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="service-icon">
                         <i class="fas fa-clock"></i>
                     </div>
@@ -1515,48 +1658,153 @@
         </div>
     </section>
 
+    <!-- Before & After Gallery Section -->
+    <section class="gallery section-padding bg-light" id="gallery">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Results Gallery</span>
+                <h2 class="section-title">Before & After Transformations</h2>
+                <p class="section-description">
+                    See the amazing difference professional cleaning makes. These real results showcase the quality and attention to detail you can expect from Emerald City Sparkle.
+                </p>
+            </div>
+            
+            <div class="gallery-grid">
+                <!-- Pressure Washing - Driveway -->
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="comparison-images">
+                        <div class="before-image">
+                            <img src="images/driveway-before.jpg" alt="Driveway Before Pressure Washing">
+                            <div class="image-label before">Before</div>
+                        </div>
+                        <div class="after-image">
+                            <img src="images/driveway-after.jpg" alt="Driveway After Pressure Washing">
+                            <div class="image-label after">After</div>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Driveway Pressure Washing</h3>
+                        <p>Removed years of dirt, oil stains, and grime to reveal the original concrete underneath.</p>
+                    </div>
+                </div>
+
+                <!-- Pressure Washing - Deck -->
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="comparison-images">
+                        <div class="before-image">
+                            <img src="images/deck-before.jpg" alt="Deck Before Pressure Washing">
+                            <div class="image-label before">Before</div>
+                        </div>
+                        <div class="after-image">
+                            <img src="images/deck-after.jpg" alt="Deck After Pressure Washing">
+                            <div class="image-label after">After</div>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Deck Restoration</h3>
+                        <p>Stripped away mold, mildew, and weathering to restore this deck's natural beauty.</p>
+                    </div>
+                </div>
+
+                <!-- Window Cleaning - House Exterior -->
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="comparison-images">
+                        <div class="before-image">
+                            <img src="images/house-before.jpg" alt="House Windows Before Cleaning">
+                            <div class="image-label before">Before</div>
+                        </div>
+                        <div class="after-image">
+                            <img src="images/house-after.jpg" alt="House Windows After Cleaning">
+                            <div class="image-label after">After</div>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Whole House Window Cleaning</h3>
+                        <p>Transformed this home's appearance with crystal-clear windows that let in maximum natural light.</p>
+                    </div>
+                </div>
+
+                <!-- Commercial Building (repurposed as residential) -->
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="500">
+                    <div class="comparison-images">
+                        <div class="before-image">
+                            <img src="images/commercial-before.jpg" alt="Building Before Cleaning">
+                            <div class="image-label before">Before</div>
+                        </div>
+                        <div class="after-image">
+                            <img src="images/commercial-after.jpg" alt="Building After Cleaning">
+                            <div class="image-label after">After</div>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Complete Exterior Cleaning</h3>
+                        <p>Combined window cleaning and pressure washing for a complete home exterior transformation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
-    <section class="about section-padding bg-light" id="about">
+    <section class="about section-padding" id="about">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-subtitle">About Me</span>
-                <h2 class="section-title">Serving Seattle with Pride</h2>
+                <h2 class="section-title">Serving Seattle Homes with Pride</h2>
                 <p class="section-description">
                     With years of experience serving Seattle neighborhoods, I combine professional expertise with friendly, reliable service to deliver exceptional results every time.
                 </p>
             </div>
             
             <div class="about-content">
-                <div data-aos="fade-right">
-                    <img src="images/about-team.jpg" alt="Professional Cleaning Service" style="width: 100%; border-radius: 2rem; box-shadow: var(--shadow-lg);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="image-placeholder" style="display: none;">
-                        <i class="fas fa-image" style="font-size: 4rem;"></i>
-                        <p>About Photo<br><small>images/about-team.jpg</small></p>
-                    </div>
-                </div>
-                
-                <div data-aos="fade-left">
-                    <h3 style="font-size: 2.8rem; margin-bottom: 2rem; color: var(--dark-color);">Quality You Can Trust</h3>
-                    <p style="font-size: 1.7rem; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.6;">
-                        Founded in Seattle, Emerald City Sparkle has been making properties shine across Ballard, Queen Anne, and surrounding neighborhoods. I'm not just another cleaning service – I'm your neighbor, committed to enhancing our community one window and surface at a time.
+                <div class="about-text" data-aos="fade-up">
+                    <h3>Quality You Can Trust</h3>
+                    <p>
+                        Founded in Seattle, Emerald City Sparkle has been making homes shine across Ballard, Queen Anne, and surrounding neighborhoods. I'm not just another cleaning service – I'm your neighbor, committed to enhancing our community one window and surface at a time.
                     </p>
-                    <p style="font-size: 1.7rem; color: var(--text-muted); margin-bottom: 3rem; line-height: 1.6;">
-                        I use the latest equipment and eco-friendly cleaning solutions to deliver results that exceed expectations. From residential homes to commercial properties, I treat every job with the same attention to detail and commitment to excellence.
+                    <p>
+                        I use the latest equipment and eco-friendly cleaning solutions to deliver results that exceed expectations. From residential homes to multi-unit properties, I treat every job with the same attention to detail and commitment to excellence.
                     </p>
                     
-                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
-                        <div style="text-align: center; padding: 2rem; background: white; border-radius: 1rem; box-shadow: var(--shadow-sm);">
-                            <i class="fas fa-leaf" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
-                            <h4 style="font-size: 1.8rem; margin-bottom: 1rem;">Eco-Friendly</h4>
-                            <p style="font-size: 1.4rem; color: var(--text-muted); margin: 0;">Safe, biodegradable cleaning solutions</p>
+                    <div class="features-grid">
+                        <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
+                            <i class="fas fa-leaf"></i>
+                            <h4>Eco-Friendly</h4>
+                            <p>Safe, biodegradable cleaning solutions</p>
                         </div>
-                        <div style="text-align: center; padding: 2rem; background: white; border-radius: 1rem; box-shadow: var(--shadow-sm);">
-                            <i class="fas fa-handshake" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
-                            <h4 style="font-size: 1.8rem; margin-bottom: 1rem;">Personal Service</h4>
-                            <p style="font-size: 1.4rem; color: var(--text-muted); margin: 0;">Direct communication with the owner</p>
+                        <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+                            <i class="fas fa-handshake"></i>
+                            <h4>Personal Service</h4>
+                            <p>Direct communication with the owner</p>
+                        </div>
+                        <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Fully Insured</h4>
+                            <p>Licensed and insured for your peace of mind</p>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Referral Section -->
+    <section class="referral-section section-padding">
+        <div class="container">
+            <div class="referral-content" data-aos="fade-up">
+                <div class="referral-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Refer a Friend & Get Rewarded!</h3>
+                <div class="discount-highlight">20% Cash Back</div>
+                <p>
+                    Love my work? Share the sparkle! When you refer a friend who becomes a new customer, 
+                    <strong>you'll receive 20% of their job cost back in cash</strong>. It's my way of saying 
+                    thank you for spreading the word about quality cleaning services.
+                </p>
+                <p>
+                    There's no limit to how many friends you can refer. The more you share, the more you save!
+                </p>
             </div>
         </div>
     </section>
@@ -1568,7 +1816,7 @@
                 <span class="section-subtitle" style="color: rgba(255,255,255,0.8);">Get In Touch</span>
                 <h2 class="section-title" style="color: white;">Ready for Sparkling Clean Results?</h2>
                 <p class="section-description" style="color: rgba(255,255,255,0.9);">
-                    Contact me today for your free estimate. I serve Ballard, Queen Anne, and surrounding Seattle neighborhoods with professional window cleaning and pressure washing services.
+                    Contact me today for your free estimate. I serve residential properties in Ballard, Queen Anne, and surrounding Seattle neighborhoods with professional window cleaning and pressure washing services.
                 </p>
             </div>
             
@@ -1607,7 +1855,7 @@
                             </div>
                             <div>
                                 <strong>Service Area</strong>
-                                <p>Seattle & Surrounding Areas</p>
+                                <p>Seattle Residential Areas</p>
                             </div>
                         </div>
                         
@@ -1617,7 +1865,7 @@
                             </div>
                             <div>
                                 <strong>Hours</strong>
-                                <p>Mon - Sat: 7AM - 6PM</p>
+                                <p>Weekends & Weekday Afternoons</p>
                             </div>
                         </div>
                     </div>
@@ -1657,7 +1905,6 @@
                                 <option value="Window Cleaning">Window Cleaning</option>
                                 <option value="Pressure Washing">Pressure Washing</option>
                                 <option value="Both Window Cleaning and Pressure Washing">Both Window Cleaning and Pressure Washing</option>
-                                <option value="Commercial Services">Commercial Services</option>
                                 <option value="Emergency/Same-Day Service">Emergency/Same-Day Service</option>
                             </select>
                         </div>
@@ -1693,7 +1940,7 @@
                             <p style="margin: 0; font-size: 1.3rem; color: rgba(255,255,255,0.7);">Window & Pressure Washing</p>
                         </div>
                     </div>
-                    <p>Professional window cleaning and pressure washing services for Seattle and surrounding areas. Making your property sparkle since day one.</p>
+                    <p>Professional window cleaning and pressure washing services for residential properties in Seattle and surrounding areas. Making your home sparkle since day one.</p>
                     <div class="social-links">
                         <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
@@ -1707,8 +1954,8 @@
                     <ul>
                         <li><a href="#services">Window Cleaning</a></li>
                         <li><a href="#services">Pressure Washing</a></li>
-                        <li><a href="#services">Commercial Services</a></li>
                         <li><a href="#services">Emergency Services</a></li>
+                        <li><a href="#gallery">Before & After Gallery</a></li>
                     </ul>
                 </div>
                 
@@ -1731,14 +1978,14 @@
                     <div class="contact-info">
                         <p><i class="fas fa-phone"></i> (206) 300-6614</p>
                         <p><i class="fas fa-envelope"></i> jackodseattle@gmail.com</p>
-                        <p><i class="fas fa-clock"></i> Mon - Sat: 7AM - 6PM</p>
-                        <p><i class="fas fa-map-marker-alt"></i> Serving Seattle & Surrounding Areas</p>
+                        <p><i class="fas fa-clock"></i> Weekends & Weekday Afternoons</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Serving Seattle Residential Areas</p>
                     </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 Emerald City Sparkle. All rights reserved. | Eco-Friendly Solutions</p>
+                <p>&copy; 2025 Emerald City Sparkle. All rights reserved. | Residential Eco-Friendly Solutions</p>
             </div>
         </div>
     </footer>
@@ -1866,41 +2113,6 @@
         // Initialize particles
         createParticles();
 
-        // Counter animation for hero stats
-        function animateCounters() {
-            const counters = document.querySelectorAll('.stat-number');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const counter = entry.target;
-                        const finalValue = counter.textContent;
-                        const numericValue = parseInt(finalValue.replace(/\D/g, ''));
-                        const suffix = finalValue.replace(/\d/g, '');
-                        
-                        if (numericValue) {
-                            let currentValue = 0;
-                            const increment = numericValue / 50;
-                            const timer = setInterval(() => {
-                                currentValue += increment;
-                                if (currentValue >= numericValue) {
-                                    counter.textContent = numericValue + suffix;
-                                    clearInterval(timer);
-                                } else {
-                                    counter.textContent = Math.floor(currentValue) + suffix;
-                                }
-                            }, 30);
-                        }
-                        observer.unobserve(counter);
-                    }
-                });
-            });
-            
-            counters.forEach(counter => observer.observe(counter));
-        }
-
-        // Initialize counter animation
-        animateCounters();
-
         // Form handling
         const contactForm = document.querySelector('.contact-form');
         if (contactForm) {
@@ -1927,6 +2139,17 @@
             });
             
             card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Gallery item hover effects
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0) scale(1)';
             });
         });
@@ -2098,7 +2321,7 @@
         // Add some fun console styling
         console.log('%c✨ Welcome to Emerald City Sparkle! ✨', 
             'color: #059669; font-size: 18px; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);');
-        console.log('%cMaking Seattle sparkle, one window at a time! 🏢🪟', 
+        console.log('%cMaking Seattle homes sparkle, one window at a time! 🏠🪟', 
             'color: #1e40af; font-size: 14px; font-style: italic;');
     </script>
 </body>
