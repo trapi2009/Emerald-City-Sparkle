@@ -828,6 +828,9 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
+            max-width: 60rem;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .feature-item {
@@ -1558,9 +1561,9 @@
                     </ul>
 
                     <!-- Call-to-Action Button -->
-                    <a href="tel:+12063006614" class="btn btn-primary header-cta">
-                        <i class="fas fa-phone"></i>
-                        Call Now
+                    <a href="#contact" class="btn btn-primary header-cta">
+                        <i class="fas fa-envelope"></i>
+                        Get Quote
                     </a>
 
                     <!-- Mobile Menu Toggle -->
@@ -1596,8 +1599,8 @@
                 </p>
                 
                 <div class="hero-cta" data-aos="fade-up" data-aos-delay="500">
-                    <a href="tel:+12063006614" class="btn btn-primary btn-lg btn-pulse">
-                        <i class="fas fa-phone"></i>
+                    <a href="#contact" class="btn btn-primary btn-lg btn-pulse">
+                        <i class="fas fa-envelope"></i>
                         Get Free Estimate
                     </a>
                     <a href="#services" class="btn btn-outline-primary btn-lg">
@@ -1682,10 +1685,6 @@
                             <div class="image-label after">After</div>
                         </div>
                     </div>
-                    <div class="gallery-info">
-                        <h3>Driveway Pressure Washing</h3>
-                        <p>Removed years of dirt, oil stains, and grime to reveal the original concrete underneath.</p>
-                    </div>
                 </div>
 
                 <!-- Pressure Washing - Deck -->
@@ -1699,10 +1698,6 @@
                             <img src="images/deck-after.jpg" alt="Deck After Pressure Washing">
                             <div class="image-label after">After</div>
                         </div>
-                    </div>
-                    <div class="gallery-info">
-                        <h3>Deck Restoration</h3>
-                        <p>Stripped away mold, mildew, and weathering to restore this deck's natural beauty.</p>
                     </div>
                 </div>
 
@@ -1718,13 +1713,9 @@
                             <div class="image-label after">After</div>
                         </div>
                     </div>
-                    <div class="gallery-info">
-                        <h3>Whole House Window Cleaning</h3>
-                        <p>Transformed this home's appearance with crystal-clear windows that let in maximum natural light.</p>
-                    </div>
                 </div>
 
-                <!-- Commercial Building (repurposed as residential) -->
+                <!-- Complete Exterior Cleaning -->
                 <div class="gallery-item" data-aos="fade-up" data-aos-delay="500">
                     <div class="comparison-images">
                         <div class="before-image">
@@ -1735,10 +1726,6 @@
                             <img src="images/commercial-after.jpg" alt="Building After Cleaning">
                             <div class="image-label after">After</div>
                         </div>
-                    </div>
-                    <div class="gallery-info">
-                        <h3>Complete Exterior Cleaning</h3>
-                        <p>Combined window cleaning and pressure washing for a complete home exterior transformation.</p>
                     </div>
                 </div>
             </div>
@@ -1760,7 +1747,7 @@
                 <div class="about-text" data-aos="fade-up">
                     <h3>Quality You Can Trust</h3>
                     <p>
-                        Founded in Seattle, Emerald City Sparkle has been making homes shine across Ballard, Queen Anne, and surrounding neighborhoods. I'm not just another cleaning service – I'm your neighbor, committed to enhancing our community one window and surface at a time.
+                        Founded in Seattle, Emerald City Sparkle has been making homes shine across Ballard, Queen Anne, and surrounding neighborhoods. I'm not just another cleaning service – I'm your neighbor, committed to enhancing our community one surface at a time.
                     </p>
                     <p>
                         I use the latest equipment and eco-friendly cleaning solutions to deliver results that exceed expectations. From residential homes to multi-unit properties, I treat every job with the same attention to detail and commitment to excellence.
@@ -1777,11 +1764,6 @@
                             <h4>Personal Service</h4>
                             <p>Direct communication with the owner</p>
                         </div>
-                        <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
-                            <i class="fas fa-shield-alt"></i>
-                            <h4>Fully Insured</h4>
-                            <p>Licensed and insured for your peace of mind</p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1793,7 +1775,8 @@
         <div class="container">
             <div class="referral-content" data-aos="fade-up">
                 <div class="referral-icon">
-                    <i class="fas fa-users"></i>
+                    <img src="images/logo.png" alt="Emerald City Sparkle Logo" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <i class="fas fa-users" style="display: none;"></i>
                 </div>
                 <h3>Refer a Friend & Get Rewarded!</h3>
                 <div class="discount-highlight">20% Cash Back</div>
