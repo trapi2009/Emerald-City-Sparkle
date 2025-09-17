@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emerald City Sparkle | Professional Window Cleaning & Pressure Washing Services</title>
-    <meta name="description" content="Professional window cleaning and pressure washing services for Ballard and Queen Anne! Crystal clear windows and spotless surfaces guaranteed.">
+    <title>Emerald City Sparkle | Professional Pressure Washing & Cleaning Services</title>
+    <meta name="description" content="Professional pressure washing, window cleaning, house washing, roof cleaning, and trash bin cleaning services for Ballard and Queen Anne! Comprehensive exterior cleaning solutions.">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="apple-touch-icon" href="images/logo.png">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="apple-touch-icon" href="images/logo.png">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -639,7 +643,7 @@
         --------------------------------------------------------------*/
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 3rem;
         }
 
@@ -1206,6 +1210,67 @@
         }
 
         /*--------------------------------------------------------------
+        # Checkbox Styling
+        --------------------------------------------------------------*/
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background-color: var(--grey-color);
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            transition: var(--transition-normal);
+            border: 2px solid var(--grey-dark);
+            font-size: 1.4rem;
+            font-weight: var(--font-weight-medium);
+        }
+
+        .checkbox-item:hover {
+            background-color: var(--primary-light);
+            border-color: var(--primary-color);
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            display: none;
+        }
+
+        .checkmark {
+            width: 2rem;
+            height: 2rem;
+            border: 2px solid var(--grey-dark);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-normal);
+            flex-shrink: 0;
+        }
+
+        .checkbox-item input[type="checkbox"]:checked + .checkmark {
+            background: var(--gradient-primary);
+            border-color: var(--primary-color);
+        }
+
+        .checkbox-item input[type="checkbox"]:checked + .checkmark::after {
+            content: '✓';
+            color: white;
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        .checkbox-item input[type="checkbox"]:checked ~ span:not(.checkmark) {
+            color: var(--primary-color);
+            font-weight: var(--font-weight-semibold);
+        }
+
+        /*--------------------------------------------------------------
         # Back to Top Button
         --------------------------------------------------------------*/
         .back-to-top {
@@ -1602,7 +1667,7 @@
                             <span class="logo-text">
                                 <span class="highlight">Emerald City</span> Sparkle
                             </span>
-                            <span class="logo-subtitle">Pressure & Window Washing</span>
+                            <span class="logo-subtitle">Complete Exterior Cleaning</span>
                         </div>
                     </div>
                 </a>
@@ -1646,12 +1711,12 @@
                 </div>
                 
                 <h1 class="hero-title" data-aos="fade-up" data-aos-delay="300">
-                    Crystal Clear <span class="highlight">Windows</span> & 
-                    Spotless <span class="highlight">Surfaces</span>
+                    <span class="highlight">Complete</span> Exterior 
+                    Cleaning <span class="highlight">Solutions</span>
                 </h1>
                 
                 <p class="hero-description" data-aos="fade-up" data-aos-delay="400">
-                    Professional pressure washing and window cleaning services for residential properties in Ballard, Queen Anne, and surrounding neighborhoods. I make your home sparkle with exceptional results, every time.
+                    Professional pressure washing, window cleaning, house washing, roof cleaning, soft washing, and trash bin cleaning services for residential properties in Ballard, Queen Anne, and surrounding neighborhoods. I make your home sparkle with exceptional results, every time.
                 </p>
                 
                 <div class="hero-cta" data-aos="fade-up" data-aos-delay="500">
@@ -1673,9 +1738,9 @@
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <span class="section-subtitle">My Services</span>
-                <h2 class="section-title">Professional Residential Cleaning Solutions</h2>
+                <h2 class="section-title">Complete Residential Exterior Cleaning</h2>
                 <p class="section-description">
-                    From pristine driveways to sparkling windows, I provide comprehensive cleaning services that enhance your home's appearance and value.
+                    From pristine driveways to sparkling windows, clean roofs to sanitized trash bins, I provide comprehensive exterior cleaning services that enhance your home's appearance and value.
                 </p>
             </div>
             
@@ -1686,20 +1751,56 @@
                         <i class="fas fa-spray-can"></i>
                     </div>
                     <h3>Pressure Washing Services</h3>
-                    <p>Remove dirt, grime, and mildew from driveways, sidewalks, decks, and home exteriors. My high-powered equipment and expert techniques restore surfaces to their original beauty.</p>
+                    <p>Remove dirt, grime, and mildew from driveways, sidewalks, decks, and patios. My high-powered equipment and expert techniques restore surfaces to their original beauty.</p>
+                </div>
+                
+                <!-- House Washing Service -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>House Washing</h3>
+                    <p>Complete exterior house cleaning using safe, effective methods. Remove dirt, algae, and stains from siding, brick, stucco, and other exterior surfaces.</p>
+                </div>
+                
+                <!-- Soft Washing Service -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3>Soft Washing</h3>
+                    <p>Gentle, low-pressure cleaning perfect for delicate surfaces. Uses specialized cleaning solutions to safely remove organic stains, mold, and mildew without damage.</p>
+                </div>
+                
+                <!-- Roof Cleaning Service -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="350">
+                    <div class="service-icon">
+                        <i class="fas fa-house-damage"></i>
+                    </div>
+                    <h3>Roof Cleaning</h3>
+                    <p>Safe roof cleaning to remove moss, algae, and stains. Extends roof life and improves curb appeal while maintaining structural integrity.</p>
                 </div>
                 
                 <!-- Window Cleaning Service -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="service-icon">
                         <i class="fas fa-window-restore"></i>
                     </div>
                     <h3>Professional Window Cleaning</h3>
-                    <p>Crystal clear windows inside and out. I clean residential windows, leaving them streak-free and spotless. My eco-friendly solutions ensure your windows shine while protecting the environment.</p>
+                    <p>Crystal clear windows inside and out. Streak-free and spotless results using eco-friendly solutions that ensure your windows shine while protecting the environment.</p>
+                </div>
+                
+                <!-- Trash Bin Cleaning Service -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="450">
+                    <div class="service-icon">
+                        <i class="fas fa-trash"></i>
+                    </div>
+                    <h3>Trash Bin Cleaning</h3>
+                    <p>Deep sanitization of garbage and recycling bins. Eliminate odors, bacteria, and pests with thorough cleaning and deodorizing treatments.</p>
                 </div>
                 
                 <!-- Emergency Services -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
                     <div class="service-icon">
                         <i class="fas fa-clock"></i>
                     </div>
@@ -1796,10 +1897,10 @@
                 <div class="about-text" data-aos="fade-up">
                     <h3>Quality You Can Trust</h3>
                     <p>
-                        Founded in Seattle, Emerald City Sparkle has been making homes shine across Ballard, Queen Anne, and surrounding neighborhoods. I'm not just another cleaning service – I'm your neighbor, committed to enhancing our community one surface and window at a time.
+                        Founded in Seattle, Emerald City Sparkle has been making homes shine across Ballard, Queen Anne, and surrounding neighborhoods. I'm not just another cleaning service – I'm your neighbor, committed to enhancing our community one surface at a time.
                     </p>
                     <p>
-                        I use the latest equipment and eco-friendly cleaning solutions to deliver results that exceed expectations. From residential homes to multi-unit properties, I treat every job with the same attention to detail and commitment to excellence.
+                        I use the latest equipment and eco-friendly cleaning solutions to deliver results that exceed expectations. From complete house washing to detailed window cleaning, roof maintenance to trash bin sanitization, I treat every job with the same attention to detail and commitment to excellence.
                     </p>
                     
                     <div class="features-grid">
@@ -1828,11 +1929,11 @@
                     <i class="fas fa-users" style="display: none;"></i>
                 </div>
                 <h3>Refer a Friend & Get Rewarded!</h3>
-                <div class="discount-highlight">20% Cash Back</div>
+                <div class="discount-highlight">10% Cash Back</div>
                 <p>
                     Love my work? Share the sparkle! When you refer a friend who becomes a new customer, 
-                    <strong>you'll receive 20% of their job cost back in cash</strong>. It's my way of saying 
-                    thank you for spreading the word about quality cleaning services.
+                    <strong>you'll receive 10% of their job cost back in cash</strong>. It's my way of saying 
+                    thank you for spreading the word about quality exterior cleaning services.
                 </p>
                 <p>
                     There's no limit to how many friends you can refer. The more you share, the more you save!
@@ -1848,7 +1949,7 @@
                 <span class="section-subtitle" style="color: rgba(255,255,255,0.8);">Get In Touch</span>
                 <h2 class="section-title" style="color: white;">Ready for Sparkling Clean Results?</h2>
                 <p class="section-description" style="color: rgba(255,255,255,0.9);">
-                    Contact me today for your free estimate. I serve residential properties in Ballard, Queen Anne, and surrounding Seattle neighborhoods with professional pressure washing and window cleaning services.
+                    Contact me today for your free estimate. I serve residential properties in Ballard, Queen Anne, and surrounding Seattle neighborhoods with comprehensive exterior cleaning services including pressure washing, window cleaning, house washing, roof cleaning, soft washing, and trash bin cleaning.
                 </p>
             </div>
             
@@ -1932,13 +2033,43 @@
                         
                         <div class="form-group">
                             <label for="services">Services Needed *</label>
-                            <select id="services" name="services" class="form-control" required>
-                                <option value="">Select services you need</option>
-                                <option value="Pressure Washing">Pressure Washing</option>
-                                <option value="Window Cleaning">Window Cleaning</option>
-                                <option value="Both Pressure Washing and Window Cleaning">Both Pressure Washing and Window Cleaning</option>
-                                <option value="Emergency/Same-Day Service">Emergency/Same-Day Service</option>
-                            </select>
+                            <div class="checkbox-group">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="services[]" value="Pressure Washing">
+                                    <span class="checkmark"></span>
+                                    Pressure Washing
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="services[]" value="House Washing">
+                                    <span class="checkmark"></span>
+                                    House Washing
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="services[]" value="Soft Washing">
+                                    <span class="checkmark"></span>
+                                    Soft Washing
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="services[]" value="Roof Cleaning">
+                                    <span class="checkmark"></span>
+                                    Roof Cleaning
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="services[]" value="Window Cleaning">
+                                    <span class="checkmark"></span>
+                                    Window Cleaning
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="services[]" value="Trash Bin Cleaning">
+                                    <span class="checkmark"></span>
+                                    Trash Bin Cleaning
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="services[]" value="Emergency/Same-Day Service">
+                                    <span class="checkmark"></span>
+                                    Emergency/Same-Day Service
+                                </label>
+                            </div>
                         </div>
                         
                         <div class="form-group">
@@ -1969,10 +2100,10 @@
                         </div>
                         <div>
                             <h3 style="margin: 0; font-size: 2rem;">Emerald City Sparkle</h3>
-                            <p style="margin: 0; font-size: 1.3rem; color: rgba(255,255,255,0.7);">Pressure & Window Washing</p>
+                            <p style="margin: 0; font-size: 1.3rem; color: rgba(255,255,255,0.7);">Complete Exterior Cleaning</p>
                         </div>
                     </div>
-                    <p>Professional pressure washing and window cleaning services for residential properties in Seattle and surrounding areas. Making your home sparkle since day one.</p>
+                    <p>Comprehensive exterior cleaning services for residential properties in Seattle and surrounding areas. Making your home sparkle since day one.</p>
                     <div class="social-links">
                         <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
@@ -1985,7 +2116,11 @@
                     <h4>My Services</h4>
                     <ul>
                         <li><a href="#services">Pressure Washing</a></li>
+                        <li><a href="#services">House Washing</a></li>
+                        <li><a href="#services">Soft Washing</a></li>
+                        <li><a href="#services">Roof Cleaning</a></li>
                         <li><a href="#services">Window Cleaning</a></li>
+                        <li><a href="#services">Trash Bin Cleaning</a></li>
                         <li><a href="#services">Emergency Services</a></li>
                         <li><a href="#gallery">Before & After Gallery</a></li>
                     </ul>
