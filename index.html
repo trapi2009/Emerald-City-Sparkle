@@ -1853,7 +1853,7 @@
                         <i class="fas fa-spray-can"></i>
                     </div>
                     <h3>Pressure Washing Services</h3>
-                    <p>I blast away dirt, grime, and mildew from driveways, sidewalks, decks, and patios. Gets surfaces looking like new again.</p>
+                    <p>I blast away dirt, grime, and mildew from driveways, sidewalks, decks, and patios. This gets surfaces looking like new again.</p>
                 </div>
                 
                 <!-- House Washing Service -->
@@ -1880,7 +1880,7 @@
                         <i class="fas fa-house-damage"></i>
                     </div>
                     <h3>Roof Cleaning</h3>
-                    <p>I clean moss, algae, and stains off your roof safely. Helps your roof last longer and look better from the street.</p>
+                    <p>I clean moss, algae, and stains off your roof safely. This helps your roof last longer and look better from the street.</p>
                 </div>
                 
                 <!-- Window Cleaning Service -->
@@ -1898,7 +1898,7 @@
                         <i class="fas fa-trash"></i>
                     </div>
                     <h3>Trash Bin Cleaning</h3>
-                    <p>Deep cleaning for your garbage and recycling bins. Gets rid of the smell, bacteria, and bugs that build up over time.</p>
+                    <p>Deep cleaning for your garbage and recycling bins. This gets rid of the smell, bacteria, and bugs that build up over time.</p>
                 </div>
                 
                 <!-- Emergency Services -->
@@ -1999,10 +1999,10 @@
                 <div class="about-text" data-aos="fade-up">
                     <h3>Honest Work, Fair Prices</h3>
                     <p>
-                        I started Emerald City Sparkle right here in Seattle to help folks in Ballard, Queen Anne, and nearby neighborhoods keep their homes looking good. I'm not some big company – just me doing the work.
+                        I started Emerald City Sparkle right here in Seattle to help folks in Ballard, Queen Anne, and nearby neighborhoods keep their homes looking great. I'm not some big company – it's just me doing the work.
                     </p>
                     <p>
-                        I've got good equipment and know how to use it safely. Whether it's washing your whole house or just cleaning the windows, I'll do it right the first time.
+                        I have good equipment and know how to use it safely. Whether it's washing your whole house or just cleaning the windows, I'll do it right the first time.
                     </p>
                 </div>
                 </div>
@@ -2369,10 +2369,20 @@
         // Initialize particles
         createParticles();
 
-        // Form handling
+        // Form handling with checkbox validation
         const contactForm = document.querySelector('.contact-form');
         if (contactForm) {
             contactForm.addEventListener('submit', function(e) {
+                // Check if at least one service checkbox is checked
+                const serviceCheckboxes = this.querySelectorAll('input[name="services[]"]');
+                const isAnyServiceChecked = Array.from(serviceCheckboxes).some(checkbox => checkbox.checked);
+                
+                if (!isAnyServiceChecked) {
+                    e.preventDefault();
+                    alert('Please select at least one service.');
+                    return;
+                }
+                
                 const submitBtn = this.querySelector('button[type="submit"]');
                 const originalText = submitBtn.innerHTML;
                 
